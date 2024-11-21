@@ -1,0 +1,20 @@
+{
+  "name": "programming-notes",
+  "version": "2.0.0",
+  "license": "UNLICENSED",
+  "author": "blaxberry333",
+  "description": "blaxberry333's programming notes",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "docs:format": "prettier --write ./**/*.md --cache --cache-location=./.cache/.prettiercache",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "prettier": "3.3.3",
+    "sass-embedded": "^1.81.0",
+    "vitepress": "^1.5.0"
+  }
+}

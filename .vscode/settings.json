@@ -1,0 +1,8 @@
+{
+  "material-icon-theme.folders.associations": {
+    "database": "",
+
+    "__base__": "base",
+    "__performance__": "benchmark"
+  }
+}

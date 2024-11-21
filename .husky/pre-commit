@@ -1,0 +1,9 @@
+COLOR_PURPLE='\033[0;35m'
+COLOR_GREEN='\033[0;32m'
+COLOR_NOCOLOR='\033[0m'
+
+
+echo "${COLOR_PURPLE}[Husky pre-commit]${COLOR_NOCOLOR}"
+
+# Prettier
+yarn docs:format

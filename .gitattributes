@@ -1,0 +1,9 @@
+*.md linguist-vendored=false
+*.md linguist-generated=false
+*.md linguist-documentation=false
+*.md linguist-detectable=true
+
+*.vue linguist-vendored=false
+*.vue linguist-generated=false
+*.vue linguist-documentation=false
+*.vue linguist-detectable=true
