@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { toRefs } from "vue";
+import { withBase } from "vitepress";
 
 interface SkillTextLinkCard {
   name: string;
@@ -27,7 +28,7 @@ const { textList } = toRefs(props);
       <li class="skill-text-card">
         <img
           v-if="item.imgSrc"
-          :src="item.imgSrc"
+          :src="withBase(item.imgSrc)"
           :alt="item.name"
           loading="lazy"
           class="skill-img"

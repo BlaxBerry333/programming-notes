@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { toRefs } from "vue";
+import { withBase } from "vitepress";
 
 interface SkillIconCard {
   name: string;
@@ -26,7 +27,7 @@ const { skillList } = toRefs(props);
     >
       <li class="skill-icon-card">
         <img
-          :src="item.imgSrc"
+          :src="withBase(item.imgSrc)"
           :alt="item.name"
           loading="lazy"
           class="skill-img"

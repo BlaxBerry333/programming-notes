@@ -8,8 +8,8 @@ export const SITE_HEAD: HeadConfig[] = [
   [
     "link",
     {
-      rel: "icon",
-      href: "/favicon.ico",
+      rel: "shortcut icon",
+      href: "/programming-notes/favicon.ico", // base 需要与仓库名一致才能部署到 GitHub Pages
     },
   ],
 
