@@ -21,7 +21,7 @@ const { textList } = toRefs(props);
     <a
       v-for="(item, index) in textList"
       :key="index"
-      :href="item.link"
+      :href="item.openNewTag ? item.link : withBase(item.link)"
       :target="item.openNewTag ? '_blank' : '_self'"
       rel="noopener noreferrer"
     >
@@ -54,7 +54,7 @@ ul.skill-text-links-block {
   gap: 14px;
   grid-template-columns: repeat(2, 1fr);
 
-  @media (max-width: 1200px) {
+  @media (max-width: 938px) {
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -122,8 +122,11 @@ ul.skill-text-links-block {
       @media (max-width: 590px) {
         width: 300px;
       }
-      @media (min-width: 591px) and (max-width: 1199px) {
-        width: 500px;
+      @media (min-width: 591px) and (max-width: 937px) {
+        width: 300px;
+      }
+      @media (min-width: 938px) and (max-width: 1199px) {
+        width: 350px;
       }
       @media (min-width: 1200px) {
         width: 500px;

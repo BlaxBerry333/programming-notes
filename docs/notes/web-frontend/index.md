@@ -31,12 +31,12 @@ const __LANGUAGES__ = [
 const  __FRAMEWORKS__ = [
     { 
         name: "React", 
-        link: "/notes/web-frontend/react/", 
+        link: "/notes/web-frontend/frameworks/react/", 
         imgSrc: "/static/skill-icons/web-frontend--react.png"
     },
     { 
         name: "Vue", 
-        link: "/notes/web-frontend/vue/", 
+        link: "/notes/web-frontend/frameworks/vue/", 
         imgSrc: "/static/skill-icons/web-frontend--vue.png"
     }
 ]
@@ -92,27 +92,27 @@ const __AUTOMATED_TESTING__ = [
 const __EXTENSIONS__ = [
     { 
         name: "WebAssembly", 
-        link: "",
+        link: "/notes/web-frontend/__extensions__/webassembly/",
         imgSrc: "/static/skill-icons/web-frontend--webassembly.png", 
     },
     { 
         name: "WebRTC", 
-        link: "",
+        link: "/notes/web-frontend/__extensions__/webrtc/",
         imgSrc: "/static/skill-icons/web-frontend--webrtc.png",
     },
 ]
 
 const __PERFORMANCE_OPTIMIZATION__ = [
+    {
+        name: "首屏加载优化",
+        link: "/notes/web-frontend/__performance__/first-screen-load-optimization"
+    },
     { 
-        name: "图片懒加载、格式压缩、分辨率优化", 
-        link: "", 
+        name: "图片性能优化", 
+        link: "/notes/web-frontend/__performance__/image-optimization", 
     },
     { 
         name: "减少 HTTP 请求", 
-        link: "", 
-    },
-    { 
-        name: "代码分割、树摇、懒加载", 
         link: "", 
     },
     { 

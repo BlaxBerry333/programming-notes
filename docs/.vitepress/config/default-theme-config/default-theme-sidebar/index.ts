@@ -3,6 +3,9 @@ import { DefaultTheme } from "vitepress/theme";
 // web-frontend
 // ------------------------------------------------------------------------------------------------------------------------
 import { JS_ROOT, JS_SIDEBAR } from "./web-frontend/_javascript";
+import { TS_ROOT, TS_SIDEBAR } from "./web-frontend/_typescript";
+import { REACT_JS_ROOT, REACT_JS_SIDEBAR } from "./web-frontend/_react";
+import { VUE_JS_ROOT, VUE_JS_SIDEBAR } from "./web-frontend/_vue";
 
 // web-backend
 // ------------------------------------------------------------------------------------------------------------------------
@@ -15,6 +18,9 @@ export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
    * ------------------------------------------------------------------------------------------------------------------------
    */
   [JS_ROOT]: JS_SIDEBAR,
+  [TS_ROOT]: TS_SIDEBAR,
+  [REACT_JS_ROOT]: REACT_JS_SIDEBAR,
+  [VUE_JS_ROOT]: VUE_JS_SIDEBAR,
 
   /**
    * web-backend

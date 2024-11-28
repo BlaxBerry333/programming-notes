@@ -1,48 +1,28 @@
 import { type DefaultTheme } from "vitepress";
 
-export const DJANGO_ROOT = `/notes/web-backend/frameworks/django`;
+export const TS_ROOT = "/notes/web-frontend/languages/typescript";
 
-export const DJANGO_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
+export const TS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
   {
-    text: "Django 基础",
+    text: "TypeScript 基础",
     collapsed: false,
     items: [
       {
-        text: "应用 ( Application )",
-        link: `${DJANGO_ROOT}/__base__/application`,
+        text: "常用类型",
+        link: `${TS_ROOT}/__base__/common-types`,
       },
       {
-        text: "路由 ( urls )",
-        link: `${DJANGO_ROOT}/__base__/urls`,
+        text: "类型操作",
+        link: `${TS_ROOT}/__base__/type-operation`,
       },
       {
-        text: "模型 ( Model )",
-        link: `${DJANGO_ROOT}/__base__/mtv-model`,
+        text: "泛型",
+        link: `${TS_ROOT}/__base__/generics`,
       },
       {
-        text: "视图 ( View )",
-        link: `${DJANGO_ROOT}/__base__/mtv-view`,
+        text: "内置工具类型",
+        link: `${TS_ROOT}/__base__/utility-types`,
       },
-      {
-        text: "模版 ( Template )",
-        link: `${DJANGO_ROOT}/__base__/mtv-template`,
-      },
-      {
-        text: "管理系统 ( Admin )",
-        link: `${DJANGO_ROOT}/__base__/admin`,
-      },
-      {
-        text: "身份认证与权限",
-        link: `${DJANGO_ROOT}/__base__/authentication-authorization`,
-      },
-      {
-        text: "项目配置",
-        link: `${DJANGO_ROOT}/__base__/project-settings`,
-      },
-      // {
-      //   text: "项目部署",
-      //   link: `${DJANGO_ROOT}/__base__/project-deployment`,
-      // },
     ],
   },
 
@@ -51,14 +31,15 @@ export const DJANGO_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
     collapsed: false,
     items: [
       {
-        text: "Django REST Framework",
-        link: `${DJANGO_ROOT}/__extensions__/django-rest-framework`,
+        text: "Zod",
+        // link: `${TS_ROOT}/__extensions__/zod`,
+        link: `https://zenn.dev/terrierscript/books/2023-01-typed-zod/viewer/0-1-introduction`,
       },
     ],
   },
 
   {
     text: "返回首页",
-    link: `${DJANGO_ROOT}/`,
+    link: `${TS_ROOT}/`,
   },
 ];

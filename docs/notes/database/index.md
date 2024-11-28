@@ -10,13 +10,44 @@ hero:
     alt: picture
 ---
 
+<script setup lang="ts"> 
+import SkillIconsBlock from '../../components/SkillIconsBlock.vue'
+
+
+const __SQL_DATABASE__ = [
+    { 
+        name: "MySQL", 
+        link: "/notes/database/mysql/", 
+        imgSrc: "/static/skill-icons/database--mysql.png"
+    },
+    { 
+        name: "PostgreSQL", 
+        link: "/notes/database/postgresql/", 
+        imgSrc: "/static/skill-icons/database--postgresql.png"
+    }
+]
+
+const __NO_SQL_DATABASE__ = [
+    { 
+        name: "MongoDB", 
+        link: "/notes/database/mongodb/", 
+        imgSrc: "/static/skill-icons/database--mongodb.png"
+    },
+    { 
+        name: "Redis", 
+        link: "/notes/database/redis/", 
+        imgSrc: "/static/skill-icons/database--redis.png"
+    },
+]
+</script>
+
 ## 关系型数据库
 
-MySQL、PostgreSQL、SQLite、Oracle
+<SkillIconsBlock :skillList="__SQL_DATABASE__"/>
 
 ## 非关系型数据库
 
-MongoDB、Cassandra、Redis、CouchDB
+<SkillIconsBlock :skillList="__NO_SQL_DATABASE__"/>
 
 ## 数据库设计与建模
 

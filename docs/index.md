@@ -20,11 +20,11 @@ features:
     link: /notes/web-backend/
     icon:
       src: /static/cartoon-images/hero--spiderman.png
-  - title: 网络基础
-    details: Web Fundamentals
-    link: /notes/web-fundamentals/
+  - title: 基础设施
+    details: Web Infrastructure
+    link: /notes/web-infrastructure/
     icon:
-      src: /static/cartoon-images/hero--captainamerica.png
+      src: /static/cartoon-images/hero--captainmarvel.png
   - title: 数据库与数据
     details: DataBase & Data
     link: /notes/database/
@@ -35,24 +35,24 @@ features:
     link: /notes/dev-tools/
     icon:
       src: /static/cartoon-images/hero--ironman.png
-  - title: 容器相关
-    details: Containerization
-    link: /notes/containerization/
-    icon:
-      src: /static/cartoon-images/hero--captainmarvel.png
-  # - title: 移动端开发
-  #   details: Mobile App Dev
-  #   link: /notes/mobile-app/
+  # - title: 跨平台开发
+  #   details: Cross-Platform Dev
+  #   link: /notes/cross-platform-dev/
   #   icon:
   #     src: /static/cartoon-images/hero--daredevil.png
-  # - title: 云计算与运维
-  #   details: Cloud & DevOps
-  #   link: /notes/cloud-devops/
+  # - title: ?
+  #   details: ?
+  #   link: /notes/?/
+  #   icon:
+  #     src: /static/cartoon-images/hero--captainamerica.png
+  # - title: ?
+  #   details: ?
+  #   link: /notes/?/
   #   icon:
   #     src: /static/cartoon-images/hero--thor.png
-  # - title: ？？
-  #   details: ？？？
-  #   link: /notes/web-frontend/
+  # - title: 游戏开发
+  #   details: Game Dev
+  #   link: /notes/?/
   #   icon:
   #     src: /static/cartoon-images/hero--gambi.png
 ---

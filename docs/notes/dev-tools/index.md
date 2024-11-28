@@ -10,22 +10,43 @@ hero:
     alt: picture
 ---
 
+<script setup lang="ts"> 
+import SkillIconsBlock from '../../components/SkillIconsBlock.vue'
+
+
+const __VERSION_CONTROL__ = [
+    { 
+        name: "Git", 
+        link: "/notes/dev-tools/version/git/", 
+        imgSrc: "/static/skill-icons/dev-tools--git.png"
+    }
+]
+
+const __AUTOMATED_BUILDS__ = [
+    { 
+        name: "Makefile", 
+        link: "/notes/dev-tools/auto-build/makefile/", 
+        imgSrc: "/static/skill-icons/dev-tools--makefile.png"
+    }
+]
+
+const __DEBUGGING_ANALYZING__ = [
+    { 
+        name: "cURL", 
+        link: "/notes/dev-tools/debugging/curl/", 
+        imgSrc: "/static/skill-icons/dev-tools--curl.png"
+    }
+]
+</script>
+
 ## 版本控制
 
-Git、GitHub、GitLab、GitFlow
+<SkillIconsBlock :skillList="__VERSION_CONTROL__"/>
 
-## 容器化与虚拟化
+## 自动构建
 
-Docker、Docker Compose、Kubernetes、VirtualBox、Vagrant
+<SkillIconsBlock :skillList="__AUTOMATED_BUILDS__"/>
 
-## 调试与性能分析
+## 调试与分析
 
-Chrome DevTools、Postman、cURL、VSCode Debugger
-
-## CI/CD 与自动化部署
-
-Jenkins、GitLab CI、CircleCI、Travis CI
-
-## 包管理与构建工具
-
-npm、Yarn、Maven、Gradle、pip、Composer
+<SkillIconsBlock :skillList="__DEBUGGING_ANALYZING__"/>

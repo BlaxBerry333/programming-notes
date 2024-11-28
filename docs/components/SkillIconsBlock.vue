@@ -21,7 +21,7 @@ const { skillList } = toRefs(props);
     <a
       v-for="(item, index) in skillList"
       :key="index"
-      :href="item.link"
+      :href="item.openNewTag ? item.link : withBase(item.link)"
       :target="item.openNewTag ? '_blank' : '_self'"
       rel="noopener noreferrer"
     >

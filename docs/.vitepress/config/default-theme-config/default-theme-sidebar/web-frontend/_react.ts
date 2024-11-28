@@ -31,22 +31,20 @@ export const REACT_JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
   },
 
   {
-    text: "React 性能优化",
-    collapsed: false,
-    items: [],
-  },
-
-  {
     text: "功能扩展",
     collapsed: false,
     items: [
       {
-        text: "React Router Dom",
-        link: `${REACT_JS_ROOT}/__extensions__/react-router-dom`,
+        text: "React Router",
+        link: `https://reactrouter.com/`,
       },
       {
         text: "Redux Toolkit",
-        link: `${REACT_JS_ROOT}/__extensions__/redux-toolkit`,
+        link: `https://redux-toolkit.js.org/`,
+      },
+      {
+        text: "TanStack Query",
+        link: `https://tanstack.com/query/latest/docs/framework/react/overview`,
       },
     ],
   },
