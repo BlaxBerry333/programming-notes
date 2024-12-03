@@ -146,6 +146,10 @@
   @media screen and (max-width: 559px) {
     padding-bottom: 0px !important;
   }
+
+  img.VPImage {
+    margin-top: 32px !important;
+  }
 }
 
 .VPHomeFeatures {
@@ -199,15 +203,21 @@
         top: 5px !important;
         margin: 0px !important;
         width: 75px !important;
-        filter: grayscale(20%) !important;
+        filter: grayscale(30%) !important;
         transition:
           filter 0.25s,
           transform 0.25s;
       }
 
-      &:hover img.VPImage {
-        filter: grayscale(0) !important;
-        transform: scale(1.1);
+      &:hover {
+        h2.title,
+        p.details {
+          color: var(--vp-c-brand-1);
+        }
+        img.VPImage {
+          filter: grayscale(0) !important;
+          transform: scale(1.1);
+        }
       }
     }
   }

@@ -6,7 +6,7 @@ hero:
   text: 前端开发
   tagline: BlaxBerry 的个人编程学习笔记
   image:
-    src: /static/cartoon-images/hero--deadpool.png
+    src: /static/cartoon-images/hero--deadpool.webp
     alt: picture
 ---
 
@@ -25,19 +25,29 @@ const __LANGUAGES__ = [
         name: "TypeScript", 
         link: "/notes/web-frontend/languages/typescript/", 
         imgSrc: "/static/skill-icons/web-frontend--typescript.png"
-    }
+    },
+    // { 
+    //     name: "CSS", 
+    //     link: "/notes/web-frontend/languages/css/", 
+    //     imgSrc: "/static/skill-icons/web-frontend--css.png"
+    // },
+    // { 
+    //     name: "Sass", 
+    //     link: "/notes/web-frontend/languages/sass/", 
+    //     imgSrc: "/static/skill-icons/web-frontend--sass.png"
+    // }
 ]
 
 const  __FRAMEWORKS__ = [
     { 
-        name: "React", 
-        link: "/notes/web-frontend/frameworks/react/", 
-        imgSrc: "/static/skill-icons/web-frontend--react.png"
-    },
-    { 
         name: "Vue", 
         link: "/notes/web-frontend/frameworks/vue/", 
         imgSrc: "/static/skill-icons/web-frontend--vue.png"
+    },
+    { 
+        name: "React", 
+        link: "/notes/web-frontend/frameworks/react/", 
+        imgSrc: "/static/skill-icons/web-frontend--react.png"
     }
 ]
 
@@ -91,14 +101,26 @@ const __AUTOMATED_TESTING__ = [
 
 const __EXTENSIONS__ = [
     { 
-        name: "WebAssembly", 
+        name: "Web Assembly", 
         link: "/notes/web-frontend/__extensions__/webassembly/",
         imgSrc: "/static/skill-icons/web-frontend--webassembly.png", 
     },
     { 
-        name: "WebRTC", 
+        name: "Web Components", 
+        link: "https://www.webcomponents.org/introduction/",
+        imgSrc: "/static/skill-icons/web-frontend--webcomponents.png",
+        openNewTag: true
+    },
+    { 
+        name: "Web RTC", 
         link: "/notes/web-frontend/__extensions__/webrtc/",
         imgSrc: "/static/skill-icons/web-frontend--webrtc.png",
+    },
+    { 
+        name: "Chrome Extension", 
+        link: "https://developer.chrome.com/docs/extensions/reference/api?hl=zh-cn",
+        imgSrc: "/static/skill-icons/web-frontend--chrome-extension.png",
+        openNewTag: true 
     },
 ]
 
@@ -108,17 +130,17 @@ const __PERFORMANCE_OPTIMIZATION__ = [
         link: "/notes/web-frontend/__performance__/first-screen-load-optimization"
     },
     { 
-        name: "图片性能优化", 
+        name: "图片优化", 
         link: "/notes/web-frontend/__performance__/image-optimization", 
     },
     { 
-        name: "减少 HTTP 请求", 
-        link: "", 
+        name: "优化大文件上传", 
+        link: "/notes/web-frontend/__performance__/large-file-uploading", 
     },
     { 
-        name: "Service Workers 资源缓存", 
-        link: "", 
-    }
+        name: "优化请求接口的并发", 
+        link: "/notes/web-frontend/__performance__/requests-concurrent", 
+    },
 ]
 </script>
 

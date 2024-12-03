@@ -8,62 +8,46 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
     collapsed: false,
     items: [
       {
-        text: "变量与常量",
-        link: `${JS_ROOT}/__base__/variable-constant`,
-      },
-      {
-        text: "引用与拷贝",
-        link: `${JS_ROOT}/__base__/data-reference-copy`,
-      },
-      {
-        text: "数据类型操作",
-        link: `${JS_ROOT}/__base__/data-types/type-operations`,
-      },
-      {
         text: "数据类型",
         collapsed: true,
         items: [
           {
-            text: "值类型",
+            text: "基本数据类型 ( 原始类型 )",
             collapsed: true,
-            items: [
-              {
-                text: "数值 ( Number )",
-                link: `${JS_ROOT}/__base__/data-types/value-types/number`,
-              },
-              {
-                text: "布尔值 ( Boolean )",
-                link: `${JS_ROOT}/__base__/data-types/value-types/boolean`,
-              },
-              {
-                text: "字符串 ( String )",
-                link: `${JS_ROOT}/__base__/data-types/value-types/string`,
-              },
-              {
-                text: "符号 ( Symbol )",
-                link: `${JS_ROOT}/__base__/data-types/value-types/symbol`,
-              },
-              {
-                text: "空值、未定义",
-                link: `${JS_ROOT}/__base__/data-types/value-types/null-undefined`,
-              },
-            ],
+            link: `${JS_ROOT}/__base__/data-types/primitive-types`,
           },
           {
-            text: "引用类型",
-            collapsed: true,
-            items: [
-              {
-                text: "数组 ( Array )",
-                link: `${JS_ROOT}/__base__/data-types/reference-types/array`,
-              },
-              {
-                text: "对象 ( Object )",
-                link: `${JS_ROOT}/__base__/data-types/reference-types/object`,
-              },
-            ],
+            text: "引用数据类型 ( 对象类型 )",
+            link: `${JS_ROOT}/__base__/data-types/reference-types`,
+          },
+          {
+            text: "类型操作",
+            link: `${JS_ROOT}/__base__/data-types/type-operations`,
           },
         ],
+      },
+
+      {
+        text: "数据存储与拷贝",
+        collapsed: true,
+        items: [
+          {
+            text: "内存管理",
+            link: `${JS_ROOT}/__base__/data-storage-copy/memory-management`,
+          },
+          {
+            text: "拷贝与修改",
+            link: `${JS_ROOT}/__base__/data-storage-copy/copy-change`,
+          },
+        ],
+      },
+      {
+        text: "变量",
+        link: `${JS_ROOT}/__base__/variable`,
+      },
+      {
+        text: "函数",
+        link: `${JS_ROOT}/__base__/function`,
       },
       {
         text: "运算符",
@@ -72,14 +56,6 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
       {
         text: "流程控制",
         link: `${JS_ROOT}/__base__/control-flow`,
-      },
-      {
-        text: "函数",
-        link: `${JS_ROOT}/__base__/function`,
-      },
-      {
-        text: "异常处理",
-        link: `${JS_ROOT}/__base__/exception-handling`,
       },
       {
         text: "模块开发",
@@ -96,51 +72,87 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         collapsed: true,
         items: [
           {
-            text: "类 ( Class )",
-            link: `${JS_ROOT}/__base__/oop/class`,
+            text: "类",
+            link: `${JS_ROOT}/__base__/oop/oop-class`,
           },
           {
-            text: "原型 ( Prototype )",
-            link: `${JS_ROOT}/__base__/oop/prototype`,
+            text: "构造函数与原型链",
+            link: `${JS_ROOT}/__base__/oop/oop-constructor-function-prototype-chain`,
+          },
+          {
+            text: "this 指向",
+            link: `${JS_ROOT}/__base__/oop/this-pointing`,
           },
         ],
       },
       {
-        text: "并发与异步",
+        text: "进程与线程",
+        collapsed: true,
+        link: `${JS_ROOT}/__base__/process-thread`,
+      },
+      {
+        text: "异步与并发",
         collapsed: true,
         items: [
           {
             text: "Promise",
-            link: `${JS_ROOT}/__base__/concurrency-async/promise`,
+            link: `${JS_ROOT}/__base__/async-concurrency/promise`,
           },
           {
-            text: "Async/Await",
-            link: `${JS_ROOT}/__base__/concurrency-async/async-await`,
+            text: "Generator",
+            link: `${JS_ROOT}/__base__/async-concurrency/generator`,
           },
+          {
+            text: "Async / Await",
+            link: `${JS_ROOT}/__base__/async-concurrency/async-await`,
+          },
+        ],
+      },
+
+      {
+        text: "常用 Web API",
+        collapsed: true,
+        items: [
+          {
+            text: "BOM",
+            link: `${JS_ROOT}/__base__/web-apis/BOM`,
+          },
+          {
+            text: "DOM",
+            link: `${JS_ROOT}/__base__/web-apis/DOM`,
+          },
+          {
+            text: "Workers",
+            link: `${JS_ROOT}/__base__/web-apis/workers`,
+          },
+          {
+            text: "Browser Storage",
+            link: `${JS_ROOT}/__base__/web-apis/browser-storage`,
+          },
+          // {
+          //   text: "网络请求",
+          //   link: `${JS_ROOT}/__base__/web-apis/networking`,
+          // },
+          // {
+          //   text: "图像预览",
+          //   link: `${JS_ROOT}/web-apis/image-preview`,
+          // },
         ],
       },
     ],
   },
 
   {
-    text: "Web API",
+    text: "JavaScript 高级",
     collapsed: false,
     items: [
       {
-        text: "浏览器存储",
-        link: `${JS_ROOT}/web-apis/browser-storage`,
+        text: "常见设计模式",
+        link: `${JS_ROOT}/__advanced__/design-patterns/`,
       },
       {
-        text: "网络请求",
-        link: `${JS_ROOT}/web-apis/networking`,
-      },
-      {
-        text: "DOM",
-        link: `${JS_ROOT}/web-apis/dom`,
-      },
-      {
-        text: "图像预览",
-        link: `${JS_ROOT}/web-apis/image-preview`,
+        text: "常见算法",
+        link: `${JS_ROOT}/__advanced__/algorithms`,
       },
     ],
   },
@@ -151,7 +163,7 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
     items: [
       {
         text: "Lodash",
-        link: `${JS_ROOT}/__extensions__/lodash`,
+        link: `https://lodash.com/docs/`,
       },
     ],
   },

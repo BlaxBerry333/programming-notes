@@ -22,7 +22,7 @@
 <head>
   <link rel="preload" href="首页脚本.js" as="script" />
   <link rel="preload" href="首页样式.css" as="style" />
-  <link rel="preload" href="首屏图片.jpg" as="image" />
+  <link rel="preload" href="首屏图片.格式" as="image" />
 </head>
 ```
 

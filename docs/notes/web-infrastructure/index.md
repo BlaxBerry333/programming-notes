@@ -6,7 +6,7 @@ hero:
   text: 基础设施
   tagline: BlaxBerry 的个人编程学习笔记
   image:
-    src: /static/cartoon-images/hero--captainmarvel.png
+    src: /static/cartoon-images/hero--captainmarvel.webp
     alt: picture
 ---
 
@@ -17,9 +17,9 @@ import SkillIconsBlock from '../../components/SkillIconsBlock.vue'
 
 const __OPERATING_SYSTEM__ = [
     { 
-        name: "Linux", 
-        link: "/notes/web-infrastructure/operating-system/linux/", 
-        imgSrc: "/static/skill-icons/web-infrastructure--linux.png"
+        name: "Shell", 
+        link: "/notes/web-infrastructure/operating-system/shell/", 
+        imgSrc: "/static/skill-icons/web-infrastructure--shell.png"
     },
 ]
 
@@ -43,14 +43,16 @@ const __CONTAINERIZATION__ = [
 
 const __CI_CD__ = [
     { 
-        name: "GitLab CI", 
-        link: "/notes/web-infrastructure/ci-cd/gitlab-ci/", 
-        imgSrc: "/static/skill-icons/web-infrastructure--gitlab.png"
+        name: "GitLab CI/CD", 
+        link: "https://gitlab-docs.creationline.com/ee/ci/yaml/#keywords", 
+        imgSrc: "/static/skill-icons/web-infrastructure--gitlab-cicd.png",
+        openNewTag: true
     },
     { 
         name: "GitHub Actions", 
-        link: "/notes/web-infrastructure/ci-cd/github-actions/", 
-        imgSrc: "/static/skill-icons/web-infrastructure--github-actions.png"
+        link: "https://docs.github.com/zh/actions", 
+        imgSrc: "/static/skill-icons/web-infrastructure--github-actions.png",
+        openNewTag: true
     }
 ]
 </script>
@@ -67,7 +69,7 @@ const __CI_CD__ = [
 
 <SkillIconsBlock :skillList="__CI_CD__"/>
 
-## 网络基础
+<!-- ## 网络基础
 
 OSI 模型、TCP/IP 协议栈、IPv4/IPv6、子网划分
 
@@ -83,4 +85,4 @@ OSI 模型、TCP/IP 协议栈、IPv4/IPv6、子网划分
 
 ## 负载均衡
 
-Nginx、HAProxy、LVS、负载均衡算法
+Nginx、HAProxy、LVS、负载均衡算法 -->

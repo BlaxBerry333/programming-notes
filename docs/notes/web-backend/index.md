@@ -6,7 +6,7 @@ hero:
   text: 后端开发
   tagline: BlaxBerry 的个人编程学习笔记
   image:
-    src: /static/cartoon-images/hero--spiderman.png
+    src: /static/cartoon-images/hero--spiderman.webp
     alt: picture
 ---
 
@@ -42,6 +42,11 @@ const __PYTHON_AND_RELATED_FRAMEWORKS__ = [
         name: "Django", 
         link: "/notes/web-backend/frameworks/django/", 
         imgSrc: "/static/skill-icons/web-backend--django.png"
+    },
+    { 
+        name: "Fast API", 
+        link: "/notes/web-backend/frameworks/fastapi/", 
+        imgSrc: "/static/skill-icons/web-backend--fastapi.png"
     }
 ]
 
@@ -58,6 +63,32 @@ const __GOLANG_AND_RELATED_FRAMEWORKS__ = [
     }
 ]
 
+// const __RUBY_AND_RELATED_FRAMEWORKS__ = [
+//     { 
+//         name: "Ruby", 
+//         link: "/notes/web-backend/languages/ruby/", 
+//         imgSrc: "/static/skill-icons/web-backend--ruby.png"
+//     },
+//     { 
+//         name: "Ruby On Rails", 
+//         link: "/notes/web-backend/frameworks/ruby-on-rails/", 
+//         imgSrc: "/static/skill-icons/web-backend--ruby-on-rails.png"
+//     }
+// ]
+
+// const __RUST_AND_RELATED_FRAMEWORKS__ = [
+//     { 
+//         name: "Rust", 
+//         link: "/notes/web-backend/languages/rust/", 
+//         imgSrc: "/static/skill-icons/web-backend--rust.png"
+//     },
+//     { 
+//         name: "Actix Web", 
+//         link: "https://actix.rs/", 
+//         imgSrc: "/static/skill-icons/web-backend--rust.png",
+//         openNewTag: true
+//     }
+// ]
 
 const __API__ = [
     { 
@@ -71,15 +102,26 @@ const __API__ = [
         imgSrc: "/static/skill-icons/web-backend--graphql.png"
     },
     { 
-        name: "WebSocket", 
-        link: "/notes/web-backend/api/websocket/", 
-        imgSrc: "/static/skill-icons/web-backend--websocket.png"
-    },
-    { 
         name: "gRPC", 
         link: "https://grpc.io/", 
         imgSrc: "/static/skill-icons/web-backend--grpc.png",
         openNewTag: true
+    },    
+    { 
+        name: "tRPC", 
+        link: "https://trpc.io/", 
+        imgSrc: "/static/skill-icons/web-backend--trpc.png",
+        openNewTag: true
+    },  
+    { 
+        name: "Protocol Buffers",
+        link: "/notes/web-backend/api/protobuf/", 
+        imgSrc: "/static/skill-icons/web-backend--protobuf.png",
+    },
+    { 
+        name: "WebSocket", 
+        link: "/notes/web-backend/api/websocket/", 
+        imgSrc: "/static/skill-icons/web-backend--websocket.png"
     },
 ]
 
@@ -105,17 +147,19 @@ const __AUTHENTICATION_AUTHORIZATION__ = [
 <SkillIconsBlock :skillList="__NODEJS_AND_RELATED_FRAMEWORKS__"/>
 <SkillIconsBlock :skillList="__PYTHON_AND_RELATED_FRAMEWORKS__"/>
 <SkillIconsBlock :skillList="__GOLANG_AND_RELATED_FRAMEWORKS__"/>
+<!-- <SkillIconsBlock :skillList="__RUBY_AND_RELATED_FRAMEWORKS__"/> -->
+<!-- <SkillIconsBlock :skillList="__RUST_AND_RELATED_FRAMEWORKS__"/> -->
 
 ## API 开发
 
 <SkillIconsBlock :skillList="__API__"/>
 
-## 身份验证与授权
+## 身份验证与权限
 
 <SkillIconsBlock :skillList="__AUTHENTICATION_AUTHORIZATION__"/>
 
-## 架构设计
+<!-- ## 架构设计
 
 > Architecture Design
 
-微服务架构、单体架构、Serverless、消息队列（RabbitMQ、Kafka）
+微服务架构、单体架构、Serverless、消息队列（RabbitMQ、Kafka） -->

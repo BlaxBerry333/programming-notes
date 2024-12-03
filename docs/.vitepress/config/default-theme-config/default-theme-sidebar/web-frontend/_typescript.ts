@@ -8,8 +8,8 @@ export const TS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
     collapsed: false,
     items: [
       {
-        text: "常用类型",
-        link: `${TS_ROOT}/__base__/common-types`,
+        text: "数据类型",
+        link: `${TS_ROOT}/__base__/data-types`,
       },
       {
         text: "类型操作",

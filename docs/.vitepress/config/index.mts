@@ -72,7 +72,22 @@ export default defineConfig({
    * 其他配置
    * ----------------------------------------------------------------------------------------------------
    */
+  appearance: "dark",
   cleanUrls: true,
   ignoreDeadLinks: true,
-  appearance: "dark",
+  metaChunk: true,
+
+  /**
+   * Vite 配置
+   * ----------------------------------------------------------------------------------------------------
+   */
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler",
+        },
+      },
+    },
+  },
 });

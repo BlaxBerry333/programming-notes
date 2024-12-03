@@ -6,7 +6,7 @@ hero:
   text: 开发工具
   tagline: BlaxBerry 的个人编程学习笔记
   image:
-    src: /static/cartoon-images/hero--ironman.png
+    src: /static/cartoon-images/hero--ironman.webp
     alt: picture
 ---
 
@@ -19,6 +19,11 @@ const __VERSION_CONTROL__ = [
         name: "Git", 
         link: "/notes/dev-tools/version/git/", 
         imgSrc: "/static/skill-icons/dev-tools--git.png"
+    },
+    { 
+        name: "asdf", 
+        link: "/notes/dev-tools/version/asdf/", 
+        imgSrc: "/static/skill-icons/dev-tools--asdf.png"
     }
 ]
 
@@ -47,6 +52,6 @@ const __DEBUGGING_ANALYZING__ = [
 
 <SkillIconsBlock :skillList="__AUTOMATED_BUILDS__"/>
 
-## 调试与分析
+## 调试分析
 
 <SkillIconsBlock :skillList="__DEBUGGING_ANALYZING__"/>
