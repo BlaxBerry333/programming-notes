@@ -19,6 +19,11 @@ const __VERSION_CONTROL__ = [
         name: "Git", 
         link: "/notes/dev-tools/version/git/", 
         imgSrc: "/static/skill-icons/dev-tools--git.png"
+    },
+    { 
+        name: "asdf", 
+        link: "/notes/dev-tools/version/asdf/", 
+        imgSrc: "/static/skill-icons/dev-tools--asdf.png"
     }
 ]
 
@@ -47,6 +52,6 @@ const __DEBUGGING_ANALYZING__ = [
 
 <SkillIconsBlock :skillList="__AUTOMATED_BUILDS__"/>
 
-## 调试与分析
+## 调试分析
 
 <SkillIconsBlock :skillList="__DEBUGGING_ANALYZING__"/>

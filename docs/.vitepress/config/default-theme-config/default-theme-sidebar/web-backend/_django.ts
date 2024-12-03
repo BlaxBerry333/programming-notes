@@ -54,6 +54,10 @@ export const DJANGO_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         text: "Django REST Framework",
         link: `${DJANGO_ROOT}/__extensions__/django-rest-framework`,
       },
+      {
+        text: "django-allauth",
+        link: `https://zenn.dev/mom/books/4c7430e6a7b321/viewer/76c6b9`,
+      },
     ],
   },
 

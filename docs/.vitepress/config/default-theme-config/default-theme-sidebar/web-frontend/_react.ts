@@ -8,25 +8,39 @@ export const REACT_JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
     collapsed: false,
     items: [
       {
-        text: "JSX / TSX",
-        link: `${REACT_JS_ROOT}/__base__/jsx-tsx`,
-      },
-      {
         text: "组件基础",
-        link: `${REACT_JS_ROOT}/__base__/component`,
+        collapsed: true,
+        items: [
+          {
+            text: "标签语法 ( JSX / TSX )",
+            link: `${REACT_JS_ROOT}/__base__/components-jsx-tsx`,
+          },
+          {
+            text: "组件间通信",
+            link: `${REACT_JS_ROOT}/__base__/component-communication`,
+          },
+          {
+            text: "组件样式",
+            link: `${REACT_JS_ROOT}/__base__/component-styles`,
+          },
+          {
+            text: "常用内置组件",
+            link: `${REACT_JS_ROOT}/__base__/builtin-components`,
+          },
+        ],
       },
       {
-        text: "内置组件",
-        link: `${REACT_JS_ROOT}/__base__/builtin-components`,
+        text: "钩子函数 ( Hooks )",
+        link: `${REACT_JS_ROOT}/__base__/hooks`,
       },
       {
-        text: "内置函数",
+        text: "常用内置函数",
         link: `${REACT_JS_ROOT}/__base__/builtin-functions`,
       },
-      {
-        text: "内置 Hooks",
-        link: `${REACT_JS_ROOT}/__base__/builtin-hooks`,
-      },
+      // {
+      //   text: "TypeScript",
+      //   link: `${REACT_JS_ROOT}/__base__/typescript`,
+      // },
     ],
   },
 
@@ -41,6 +55,10 @@ export const REACT_JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
       {
         text: "Redux Toolkit",
         link: `https://redux-toolkit.js.org/`,
+      },
+      {
+        text: "React Hook Form",
+        link: `https://www.react-hook-form.com/`,
       },
       {
         text: "TanStack Query",

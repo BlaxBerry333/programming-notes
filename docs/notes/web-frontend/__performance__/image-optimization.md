@@ -1,96 +1,185 @@
 # 图片优化
 
-1. 选择合适的图片格式
-   不同的图片格式适用于不同的场景，选择合适的格式可以有效减少图片文件的大小。
+## 图片格式
 
-JPEG：适合摄影类的图片，压缩比高但有损失。适用于色彩丰富、细节复杂的图片，文件较小。
-PNG：适合带透明度的图片，但相对较大。适合图标、简单图形和需要透明背景的场景。
-WebP：现代浏览器支持的格式，提供更高的压缩率和较小的文件大小，支持有损和无损压缩，适用于大部分图片。
-SVG：适用于图标和矢量图形，支持无损压缩和缩放，不会失真。对于简单的图形，使用 SVG 可以极大地减小文件大小。
-AVIF：较新的一种图像格式，压缩效果非常好，质量高，文件体积小，但兼容性目前还不如 WebP。
-策略：
+根据不同场景使用不同的图片格式，来有效减少图片文件的大小
 
-使用现代格式（如 WebP、AVIF）来替代传统格式（如 JPEG、PNG），尽可能减少图片文件大小。
-对于简单图形，考虑使用矢量格式（SVG）。2. 图片大小的合适选择
-按需加载大小：根据图片显示区域的实际需求选择图片的尺寸。如果图片仅用于小尺寸显示，不需要加载原图的大尺寸版本。
-响应式图片：使用 <picture> 标签和 srcset 属性为不同的设备和屏幕分辨率提供不同尺寸的图片。例如，对于手机可以加载小尺寸图片，桌面加载大尺寸图片。
-html
-复制代码
+|    图片格式    | 说明                                                                                   |
+| :------------: | -------------------------------------------------------------------------------------- |
+|     `.ico`     | 仅设用于网站图标 favicon                                                               |
+| `.jpeg`/`.jpg` | 文件较小，适用于色彩丰富且对细节要求不高的图片<br/>压缩比高但有损失                    |
+|     `.png`     | 文件较大，适用于带透明度背景的图标、简单图形                                           |
+|     `.svg`     | 文件极小，适用于矢量图与图标<br/>支持无损压缩和缩放，且图像不会失真                    |
+|    `.webp`     | 文件较小，适用于大部分图片 ( 旧浏览器不兼容 )<br/>有更高的压缩率，且支持有损和无损压缩 |
+|    `.avif`     | 文件极小，一种较新的图像 ( 旧浏览器不兼容 )<br/>格式压缩效果非常好，且质量高           |
+
+> [!IMPORTANT] 建议：
+>
+> - 现代浏览器优先使用`.webp`、`.avif`，但是为了兼容性的话选择`.jpeg`
+> - 简单小图像优先考虑`.svg`
+> - 网站图标 favicon 建议生成多个不同尺寸
+
+可以利用现代浏览器WebP 和 AVIF 格式的自动切换根据浏览器的支持情况自动选择适当的格式
+
+```html
 <picture>
-
-  <source srcset="image-800w.jpg" media="(max-width: 600px)">
-  <source srcset="image-1600w.jpg" media="(min-width: 601px)">
-  <img src="image-1600w.jpg" alt="image">
+  <source srcset="image.webp" type="image/webp" />
+  <img src="image.jpg" alt="image" />
 </picture>
-策略：
+```
 
-使用 srcset 为不同设备提供适配的图片，避免加载过大的图片。
-在设计时，确保图片尺寸不会大于其显示区域，避免浪费带宽和加载时间。3. 图片懒加载（Lazy Loading）
-图片懒加载是一种延迟加载策略，只有当图片进入视口时，才开始加载该图片。这可以显著减少初始页面加载时需要加载的图片数量，提升页面加载速度。
+## 图像压缩
 
-html
-复制代码
-<img src="placeholder.jpg" data-src="real-image.jpg" class="lazyload" alt="image">
-现代浏览器支持 loading="lazy" 属性，这可以很方便地启用懒加载功能：
+项目的静态图片在不影响可视效果的情况下应该尽量减小图片体积
 
-html
-复制代码
-<img src="image.jpg" loading="lazy" alt="image">
-策略：
+可使用在线工具[TinyPNG](https://tinypng.com/)、[Squoosh](https://squoosh.app/)
 
-在图片较多的页面上，使用懒加载来延迟加载图片，减少初始加载的资源占用。4. 图像压缩
-压缩图片可以显著减少图片的文件大小，但要确保不会显著影响图片的质量。
+## 渲染优化
 
-有损压缩：会丢失部分数据，适合色彩丰富、对细节要求不高的图片。例如，JPEG 格式。
-无损压缩：不会丢失任何数据，适合需要保持高质量的图像，如透明背景的 PNG 图片。
-你可以使用一些工具或库进行图片压缩：
+### 预加载
 
-在线工具：TinyPNG、ImageOptim、Squoosh 等。
-构建工具集成：如使用 imagemin、webpack-image-loader、gulp-imagemin 等工具来在构建过程中自动压缩图片。
-策略：
+> PreLoad
 
-使用压缩工具减少图片的文件大小，确保在不影响可视效果的情况下减小图片体积。5. 使用图片 CDN（内容分发网络）
-将图片托管在 CDN 上可以减少服务器负载，加速图片的加载。CDN 会根据用户的地理位置将图片分发到离用户最近的节点，从而提高加载速度。
+为关键图片使用预加载在 DOM 渲染前提前请求资源，以减少延迟和闪烁
 
-策略：
+```html
+<head>
+  <link rel="preload" href="图片.格式" as="image" />
+</head>
+```
 
-将图片存储在 CDN 上，利用 CDN 提供的优化服务（如自动压缩、格式转换等）来加速图片加载。6. 图片缓存策略
-合理设置缓存头：确保图片能够被浏览器缓存，减少重复请求。通常可以设置长时间的缓存过期时间（例如，1个月），并通过版本号控制图片更新。
-例如，通过 HTTP 头部设置缓存策略：
+---
 
-arduino
-复制代码
-Cache-Control: public, max-age=31536000, immutable
-这表示浏览器可以缓存图片 1 年，并且图片在此期间不会改变。
+### 懒加载
 
-策略：
+> Lazy Loading
 
-设置合理的缓存策略，以便重复访问时可以从缓存中加载图片，避免不必要的网络请求。7. 图片精灵（CSS Sprites）
-对于很多小图标或小图形，可以考虑使用 CSS Sprites 技术，将多个小图标合并成一张大图，再通过 CSS 背景定位显示需要的部分。这样可以减少 HTTP 请求次数。
+只有当图片进入视口时才开始加载该图片，以减少初始页面加载时的加载数量
 
-策略：
+旧浏览器需要通过 JavaScript 监听滚动事件实现，但现代浏览器都支持`<img> + loading`
 
-将多个小图片合并为一张精灵图，减少 HTTP 请求的数量，尤其是在图标类应用中非常有效。8. 图像预加载
-通过使用 <link rel="preload"> 可以提前加载页面中的关键图片，确保图片能够尽早地展示出来。
+```html
+<img src="图片.格式" loading="lazy" alt="图片说明" />
+```
 
-html
-复制代码
+---
 
-<link rel="preload" href="image.jpg" as="image">
-这样浏览器会在渲染页面时优先加载这些图片，避免图片在滚动或显示时出现延迟加载的情况。
+### 骨架屏与占位图
 
-策略：
+> Skeleton Screens & Placeholder Images
 
-使用预加载为重要图片提前加载，以减少延迟和闪烁。9. WebP 和 AVIF 格式的自动切换
-可以利用现代浏览器支持 WebP 和 AVIF 格式的优势，根据浏览器的支持情况自动选择适当的格式。例如，使用 picture 标签结合不同格式的 <source>，或者通过后端动态生成 WebP 格式的图片。
+在图片加载期间可使用骨架屏 ( 或一张体积极小的 SVG 静态图片 ) 做一个空状态的占位预览
 
-html
-复制代码
+骨架屏结构可以通过 HTML/CSS 自定义，或者使用主流 UI 组件库内置的骨架屏组件
+
+<div class="skeleton-screen-wrapper" >
+  <div class="skeleton-block" /> 
+  <div class="skeleton-avatar" />
+  <div class="skeleton-text" />
+  <div class="skeleton-text" />
+  <div class="skeleton-text" />
+  <div class="skeleton-text" />
+</div>
+
+<style lang="scss">
+  div.skeleton-screen-wrapper {
+    height: 230px; 
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    border: #E2E2E3 0.5px solid;
+    & > div {
+      background-color: #F5F5F5; 
+    }
+    & > div.skeleton-block {
+      height: 120px; 
+      width: 100%;
+      margin-bottom: 0.6rem;
+    }
+    & > div.skeleton-avatar {
+      height: 80px; 
+      width: 80px;
+      float: left;
+    }
+    & > div.skeleton-text {
+      height: 12px; 
+      margin-left: calc(80px + 0.3rem);
+      margin-bottom: 0.5rem;
+    }
+  }
+  html.dark {
+    div.skeleton-screen-wrapper {
+      border: #2E2E32 1px solid;
+      & > div {
+        background-color: #FFFFFF21; 
+      }
+    }
+  }
+</style>
+
+---
+
+### 响应式尺寸
+
+根据显示区域的实际需求来加载不同尺寸的图片
+
+> 如下：两种写法`<picture> + <source>`、`<img> + srcset + sizes`
+
+::: code-group
+
+```html [写法一]
 <picture>
-
-  <source srcset="image.webp" type="image/webp">
-  <img src="image.jpg" alt="image">
+  <source srcset="image-800w.jpg" media="(max-width: 600px)" />
+  <source srcset="image-1600w.jpg" media="(min-width: 601px)" />
+  <img src="image-1600w.jpg" alt="image-alt-message" />
 </picture>
-策略：
+```
 
-使用 WebP 或 AVIF 格式来替代传统的图片格式，减少图片体积，同时保持较好的图片质量。
+```html [写法二]
+<img
+  srcset="image-800w.jpg 800w, image-1600w.jpg 1600w"
+  sizes="(max-width: 600px) 100vw, (min-width: 601px) 1600px"
+  src="image-1600w.jpg"
+  alt="image-alt-message"
+/>
+```
+
+:::
+
+---
+
+### 精灵图
+
+> CSS Sprites
+
+精灵图是指将多个图标、小图片等合并成的一张图像文件，可以减少 HTTP 请求次数
+
+> 如下：使用精灵图时需要通过 CSS `background-position`定位到其中小图片
+
+```css
+.icon {
+  background-image: url("sprites.png");
+  width: 40px;
+  height: 40px;
+}
+
+.icon-home {
+  background-position: 0 0;
+}
+
+.icon-settings {
+  background-position: -40px 0;
+}
+```
+
+> [!CAUTION] 不建议使用
+>
+> - 现代浏览器的缓存机制改善了多图像请求时的性能问题，精灵图的优势变得不那么明显
+> - 精灵图包含的图片过多时会影响首次加载速度
+> - 灵活性差使用时的定位复杂，后期的修改时影响范围大
+> - 在高清设备上的分辨率差，更建议使用 SVG 矢量图、 Web 字体图标等
+
+## 缓存策略
+
+利用浏览器的缓存策略直接使用本地缓存而不发送请求
+
+[强缓存](./first-screen-load-optimization.md#强缓存)、[协商缓存](./first-screen-load-optimization.md#协商缓存)

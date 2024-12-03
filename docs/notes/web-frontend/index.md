@@ -30,14 +30,14 @@ const __LANGUAGES__ = [
 
 const  __FRAMEWORKS__ = [
     { 
-        name: "React", 
-        link: "/notes/web-frontend/frameworks/react/", 
-        imgSrc: "/static/skill-icons/web-frontend--react.png"
-    },
-    { 
         name: "Vue", 
         link: "/notes/web-frontend/frameworks/vue/", 
         imgSrc: "/static/skill-icons/web-frontend--vue.png"
+    },
+    { 
+        name: "React", 
+        link: "/notes/web-frontend/frameworks/react/", 
+        imgSrc: "/static/skill-icons/web-frontend--react.png"
     }
 ]
 
@@ -108,7 +108,7 @@ const __PERFORMANCE_OPTIMIZATION__ = [
         link: "/notes/web-frontend/__performance__/first-screen-load-optimization"
     },
     { 
-        name: "图片性能优化", 
+        name: "图片优化", 
         link: "/notes/web-frontend/__performance__/image-optimization", 
     },
     { 

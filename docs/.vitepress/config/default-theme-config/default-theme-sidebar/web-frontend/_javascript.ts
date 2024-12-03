@@ -8,62 +8,31 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
     collapsed: false,
     items: [
       {
-        text: "变量与常量",
-        link: `${JS_ROOT}/__base__/variable-constant`,
-      },
-      {
-        text: "引用与拷贝",
-        link: `${JS_ROOT}/__base__/data-reference-copy`,
-      },
-      {
-        text: "数据类型操作",
-        link: `${JS_ROOT}/__base__/data-types/type-operations`,
-      },
-      {
         text: "数据类型",
         collapsed: true,
         items: [
           {
-            text: "值类型",
+            text: "基本数据类型 ( 原始类型 )",
             collapsed: true,
-            items: [
-              {
-                text: "数值 ( Number )",
-                link: `${JS_ROOT}/__base__/data-types/value-types/number`,
-              },
-              {
-                text: "布尔值 ( Boolean )",
-                link: `${JS_ROOT}/__base__/data-types/value-types/boolean`,
-              },
-              {
-                text: "字符串 ( String )",
-                link: `${JS_ROOT}/__base__/data-types/value-types/string`,
-              },
-              {
-                text: "符号 ( Symbol )",
-                link: `${JS_ROOT}/__base__/data-types/value-types/symbol`,
-              },
-              {
-                text: "空值、未定义",
-                link: `${JS_ROOT}/__base__/data-types/value-types/null-undefined`,
-              },
-            ],
+            link: `${JS_ROOT}/__base__/data-types/primitive-types`,
           },
           {
-            text: "引用类型",
-            collapsed: true,
-            items: [
-              {
-                text: "数组 ( Array )",
-                link: `${JS_ROOT}/__base__/data-types/reference-types/array`,
-              },
-              {
-                text: "对象 ( Object )",
-                link: `${JS_ROOT}/__base__/data-types/reference-types/object`,
-              },
-            ],
+            text: "引用数据类型 ( 对象类型 )",
+            link: `${JS_ROOT}/__base__/data-types/reference-types`,
+          },
+          {
+            text: "类型操作",
+            link: `${JS_ROOT}/__base__/data-types/type-operations`,
+          },
+          {
+            text: "存储与拷贝",
+            link: `${JS_ROOT}/__base__/data-storage-copy`,
           },
         ],
+      },
+      {
+        text: "变量与常量",
+        link: `${JS_ROOT}/__base__/variable-constant`,
       },
       {
         text: "运算符",
@@ -122,28 +91,28 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
     ],
   },
 
-  {
-    text: "Web API",
-    collapsed: false,
-    items: [
-      {
-        text: "浏览器存储",
-        link: `${JS_ROOT}/web-apis/browser-storage`,
-      },
-      {
-        text: "网络请求",
-        link: `${JS_ROOT}/web-apis/networking`,
-      },
-      {
-        text: "DOM",
-        link: `${JS_ROOT}/web-apis/dom`,
-      },
-      {
-        text: "图像预览",
-        link: `${JS_ROOT}/web-apis/image-preview`,
-      },
-    ],
-  },
+  // {
+  //   text: "Web API",
+  //   collapsed: false,
+  //   items: [
+  //     {
+  //       text: "浏览器存储",
+  //       link: `${JS_ROOT}/web-apis/browser-storage`,
+  //     },
+  //     {
+  //       text: "网络请求",
+  //       link: `${JS_ROOT}/web-apis/networking`,
+  //     },
+  //     {
+  //       text: "DOM",
+  //       link: `${JS_ROOT}/web-apis/dom`,
+  //     },
+  //     {
+  //       text: "图像预览",
+  //       link: `${JS_ROOT}/web-apis/image-preview`,
+  //     },
+  //   ],
+  // },
 
   {
     text: "功能扩展",

@@ -43,14 +43,16 @@ const __CONTAINERIZATION__ = [
 
 const __CI_CD__ = [
     { 
-        name: "GitLab CI", 
-        link: "/notes/web-infrastructure/ci-cd/gitlab-ci/", 
-        imgSrc: "/static/skill-icons/web-infrastructure--gitlab.png"
+        name: "GitLab CI/CD", 
+        link: "https://gitlab-docs.creationline.com/ee/ci/yaml/#keywords", 
+        imgSrc: "/static/skill-icons/web-infrastructure--gitlab-cicd.png",
+        openNewTag: true
     },
     { 
         name: "GitHub Actions", 
-        link: "/notes/web-infrastructure/ci-cd/github-actions/", 
-        imgSrc: "/static/skill-icons/web-infrastructure--github-actions.png"
+        link: "https://docs.github.com/zh/actions", 
+        imgSrc: "/static/skill-icons/web-infrastructure--github-actions.png",
+        openNewTag: true
     }
 ]
 </script>

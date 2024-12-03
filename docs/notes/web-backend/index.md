@@ -80,6 +80,12 @@ const __API__ = [
         link: "https://grpc.io/", 
         imgSrc: "/static/skill-icons/web-backend--grpc.png",
         openNewTag: true
+    },    
+    { 
+        name: "tRPC", 
+        link: "https://trpc.io/", 
+        imgSrc: "/static/skill-icons/web-backend--trpc.png",
+        openNewTag: true
     },
 ]
 
@@ -110,12 +116,12 @@ const __AUTHENTICATION_AUTHORIZATION__ = [
 
 <SkillIconsBlock :skillList="__API__"/>
 
-## 身份验证与授权
+## 身份验证与权限
 
 <SkillIconsBlock :skillList="__AUTHENTICATION_AUTHORIZATION__"/>
 
-## 架构设计
+<!-- ## 架构设计
 
 > Architecture Design
 
-微服务架构、单体架构、Serverless、消息队列（RabbitMQ、Kafka）
+微服务架构、单体架构、Serverless、消息队列（RabbitMQ、Kafka） -->

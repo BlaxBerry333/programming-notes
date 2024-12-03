@@ -12,6 +12,11 @@ import { VUE_JS_ROOT, VUE_JS_SIDEBAR } from "./web-frontend/_vue";
 import { PYTHON_ROOT, PYTHON_SIDEBAR } from "./web-backend/_python";
 import { DJANGO_ROOT, DJANGO_SIDEBAR } from "./web-backend/_django";
 
+// dev-tools
+// ------------------------------------------------------------------------------------------------------------------------
+
+import { DEV_TOOLS_ROOT, DEV_TOOLS_SIDEBAR } from "./dev-tools";
+
 export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
   /**
    * web-frontend
@@ -28,4 +33,10 @@ export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
    */
   [PYTHON_ROOT]: PYTHON_SIDEBAR,
   [DJANGO_ROOT]: DJANGO_SIDEBAR,
+
+  /**
+   * dev-tools
+   * ------------------------------------------------------------------------------------------------------------------------
+   */
+  [DEV_TOOLS_ROOT]: DEV_TOOLS_SIDEBAR,
 };
