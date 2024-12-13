@@ -25,7 +25,7 @@ features:
     link: /notes/web-infrastructure/
     icon:
       src: /static/cartoon-images/hero--captainmarvel.png
-  - title: 数据库与数据
+  - title: 数据库 & 数据
     details: DataBase & Data
     link: /notes/database/
     icon:
@@ -35,11 +35,6 @@ features:
     link: /notes/dev-tools/
     icon:
       src: /static/cartoon-images/hero--ironman.png
-  # - title: 跨平台开发
-  #   details: Cross-Platform Dev
-  #   link: /notes/cross-platform-dev/
-  #   icon:
-  #     src: /static/cartoon-images/hero--daredevil.png
   # - title: ?
   #   details: ?
   #   link: /notes/?/
@@ -50,9 +45,19 @@ features:
   #   link: /notes/?/
   #   icon:
   #     src: /static/cartoon-images/hero--thor.png
+  # - title: 跨平台开发
+  #   details: Cross-Platform Dev
+  #   link: /notes/cross-platform-dev/
+  #   icon:
+  #     src: /static/cartoon-images/hero--daredevil.png
   # - title: 游戏开发
   #   details: Game Dev
   #   link: /notes/?/
   #   icon:
   #     src: /static/cartoon-images/hero--gambi.png
+  # - title: Web3 & 区块链
+  #   details: Web3 & Blockchain
+  #   link: /notes/web3/
+  #   icon:
+  #     src: /static/cartoon-images/villain--loki.png
 ---

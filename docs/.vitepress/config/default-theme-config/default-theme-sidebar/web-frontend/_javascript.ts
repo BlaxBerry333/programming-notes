@@ -24,15 +24,30 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
             text: "类型操作",
             link: `${JS_ROOT}/__base__/data-types/type-operations`,
           },
+        ],
+      },
+
+      {
+        text: "数据存储与拷贝",
+        collapsed: true,
+        items: [
           {
-            text: "存储与拷贝",
-            link: `${JS_ROOT}/__base__/data-storage-copy`,
+            text: "内存管理",
+            link: `${JS_ROOT}/__base__/data-storage-copy/memory-management`,
+          },
+          {
+            text: "拷贝与修改",
+            link: `${JS_ROOT}/__base__/data-storage-copy/copy-change`,
           },
         ],
       },
       {
-        text: "变量与常量",
-        link: `${JS_ROOT}/__base__/variable-constant`,
+        text: "变量",
+        link: `${JS_ROOT}/__base__/variable`,
+      },
+      {
+        text: "函数",
+        link: `${JS_ROOT}/__base__/function`,
       },
       {
         text: "运算符",
@@ -41,10 +56,6 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
       {
         text: "流程控制",
         link: `${JS_ROOT}/__base__/control-flow`,
-      },
-      {
-        text: "函数",
-        link: `${JS_ROOT}/__base__/function`,
       },
       {
         text: "异常处理",
@@ -65,30 +76,56 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         collapsed: true,
         items: [
           {
-            text: "类 ( Class )",
-            link: `${JS_ROOT}/__base__/oop/class`,
+            text: "类",
+            link: `${JS_ROOT}/__base__/oop/oop-class`,
           },
           {
-            text: "原型 ( Prototype )",
-            link: `${JS_ROOT}/__base__/oop/prototype`,
+            text: "构造函数与原型链",
+            link: `${JS_ROOT}/__base__/oop/oop-constructor-function-prototype-chain`,
+          },
+          {
+            text: "this 指向",
+            link: `${JS_ROOT}/__base__/oop/this-pointing`,
           },
         ],
       },
       {
-        text: "并发与异步",
+        text: "进程与线程",
+        collapsed: true,
+        link: `${JS_ROOT}/__base__/process-thread`,
+      },
+      {
+        text: "异步与并发",
         collapsed: true,
         items: [
           {
             text: "Promise",
-            link: `${JS_ROOT}/__base__/concurrency-async/promise`,
+            link: `${JS_ROOT}/__base__/async-concurrency/promise`,
           },
           {
-            text: "Async/Await",
-            link: `${JS_ROOT}/__base__/concurrency-async/async-await`,
+            text: "Generator",
+            link: `${JS_ROOT}/__base__/async-concurrency/generator`,
+          },
+          {
+            text: "Async / Await",
+            link: `${JS_ROOT}/__base__/async-concurrency/async-await`,
           },
         ],
       },
+      {
+        text: "BOM 操作",
+        link: `${JS_ROOT}/__base__/bom-dom/bom`,
+      },
+      {
+        text: "DOM 操作",
+        link: `${JS_ROOT}/__base__/bom-dom/dom`,
+      },
     ],
+  },
+
+  {
+    text: "JavaScript 设计模式",
+    link: `${JS_ROOT}/design-patterns/`,
   },
 
   // {
@@ -120,7 +157,7 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
     items: [
       {
         text: "Lodash",
-        link: `${JS_ROOT}/__extensions__/lodash`,
+        link: `https://lodash.com/docs/`,
       },
     ],
   },

@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: DataBase & Data
-  text: 数据库与数据
+  text: 数据库 & 数据
   tagline: BlaxBerry 的个人编程学习笔记
   image:
     src: /static/cartoon-images/hero--punisher.png

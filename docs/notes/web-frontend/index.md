@@ -112,13 +112,13 @@ const __PERFORMANCE_OPTIMIZATION__ = [
         link: "/notes/web-frontend/__performance__/image-optimization", 
     },
     { 
-        name: "减少 HTTP 请求", 
-        link: "", 
+        name: "优化大文件上传", 
+        link: "/notes/web-frontend/__performance__/large-file-uploading", 
     },
     { 
-        name: "Service Workers 资源缓存", 
-        link: "", 
-    }
+        name: "优化请求接口的并发", 
+        link: "/notes/web-frontend/__performance__/requests-concurrent", 
+    },
 ]
 </script>
 

@@ -64,7 +64,22 @@ const 组件: FC = () => {
 
 ## memo( )
 
-TODO:
+该函数用于将一个组件转换为缓存组件
+
+缓存组件会通过浅比较来检查组件参数`props`的变化，来避免不必要的组件重新渲染
+
+```tsx{0}
+import type { NamedExoticComponent } from "react";
+
+const 组件: NamedExoticComponent = memo(() => {
+  return (
+    <>
+      {/* 渲染内容 */}
+      {/* 渲染内容 */}
+    </>
+  );
+});
+```
 
 ## createContext( )
 
@@ -116,4 +131,49 @@ TODO:
 
 ## createPortal( )
 
-TODO:
+该方法用于创建一个传送门 ( Portal ) 将一些 JSX 渲染到当前组件以外的其他 DOM 上
+
+```tsx{0}
+import type { FC } from "react";
+import { createPortal } from "react";
+
+const 组件: FC = () => {
+  return (
+    <>
+      {createPortal(            // [!code focus:8]
+        <>
+          {/* 渲染内容 */}
+          {/* 渲染内容 */}
+        </>,
+        目标DOM节点,
+        唯一标识,
+      )}
+    </>
+  );
+};
+```
+
+::: details 例子：利用传送门 ( Portal ) 指定 JSX 要渲染在哪里
+
+```tsx
+import type { FC } from "react";
+import { createPortal } from "react";
+
+const ContentComponent: FC = () => {
+  return (
+    <>
+      {createPortal(
+        <p>Hello World</p>,
+        document.getElementById("content-wrapper"),
+        "xxx",
+      )}
+    </>
+  );
+};
+
+const ContentWrapperComponent: FC = () => {
+  return <div id="content-wrapper" />;
+};
+```
+
+:::

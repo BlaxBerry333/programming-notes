@@ -8,10 +8,11 @@
 const 字符串类型名 = typeof 数据;
 ```
 
-> [!CAUTION] 无法正确判断引用数据类型以及基本数据类型的<code>null</code>
+> [!CAUTION] 不推荐用于精准判断
 >
-> - 引用数据类型除了函数以外一律都被视为`object`
-> - `null`被视为`object`是 JavaScript 的一个固有 Bug，建议使用`===`运算符判断
+> - 无法明确判断引用数据类型，除了函数类型以外一律都被视为`object`类型
+> - 无法正确判断基本数据类型的`null`，会被视为`object` ( JavaScript 的固有 Bug )
+> - `null`建议使用`===`运算符判断
 >
 > ```js{0}
 > console.log(typeof 100);            // "number"
@@ -38,9 +39,10 @@ const 字符串类型名 = typeof 数据;
 const 布尔值 = 数据 instanceof 类;
 ```
 
-> [!CAUTION] 无法正确判断基本数据类型
+> [!CAUTION] 不推荐用于精准判断
 >
 > - 仅能正常判断引用类型
+> - 无法正确判断基本数据类型
 >
 > ```js{0}
 > console.log(100 instanceof Number);              // false
@@ -80,7 +82,8 @@ function _instanceof(data, dataClass) {
 const 字符串类型名 = Object.prototype.toString.call(数据);
 ```
 
-> [!IMPORTANT] 该方法比<code>typeof</code>、<code>instanceof</code>更加准确
+> [!IMPORTANT] 推荐不用于精准判断
+> 该方法比<code>typeof</code>、<code>instanceof</code>更加准确，但是返回值可能需要进行进行处理
 >
 > ```js{0}
 > console.log(Object.prototype.toString.call(100));              // [object Number]
@@ -129,6 +132,22 @@ console.log(checkType(Promise.resolve())); // "Promise"
 
 :::
 
+---
+
+### Array.isArray( )
+
+专门用于判断数据是否为一个数组
+
+```js
+const 布尔值 = Array.isArray(数据);
+```
+
+```js{0}
+console.log(Array.isArray(100));            // false
+console.log(Array.isArray([]));             // true
+console.log(Array.isArray(Array.from(4)));  // true
+```
+
 ## 类型转换
 
 ### 强制转换
@@ -161,4 +180,7 @@ console.log(checkType(Promise.resolve())); // "Promise"
 
 ### 隐式转换
 
-TODO:
+|                      | 说明                                                                     |
+| -------------------- | ------------------------------------------------------------------------ |
+| 非数值类型的加法运算 | 左右包含布尔值类型时：加法运算<br/>左右包含字符串类型时：字符串拼接<br/> |
+| 逻辑非               | 将数据转为对应的布尔值                                                   |
