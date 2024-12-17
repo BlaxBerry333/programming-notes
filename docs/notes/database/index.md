@@ -49,7 +49,7 @@ const __NO_SQL_DATABASE__ = [
 
 <SkillIconsBlock :skillList="__NO_SQL_DATABASE__"/>
 
-## 数据库设计与建模
+<!-- ## 数据库设计与建模
 
 正规化、ER 图、关系建模、数据索引
 
@@ -63,4 +63,4 @@ const __NO_SQL_DATABASE__ = [
 
 ## 分布式数据库
 
-Sharding、分布式事务、CAP 理论、分布式一致性
+Sharding、分布式事务、CAP 理论、分布式一致性 -->

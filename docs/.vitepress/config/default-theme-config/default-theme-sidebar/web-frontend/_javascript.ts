@@ -58,10 +58,6 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         link: `${JS_ROOT}/__base__/control-flow`,
       },
       {
-        text: "异常处理",
-        link: `${JS_ROOT}/__base__/exception-handling`,
-      },
-      {
         text: "模块开发",
         collapsed: true,
         items: [

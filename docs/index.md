@@ -35,6 +35,11 @@ features:
     link: /notes/dev-tools/
     icon:
       src: /static/cartoon-images/hero--ironman.png
+  - title: 移动端开发
+    details: Mobile App Dev
+    link: /notes/mobile-app/
+    icon:
+      src: /static/cartoon-images/hero--daredevil.png
   # - title: ?
   #   details: ?
   #   link: /notes/?/
@@ -45,11 +50,6 @@ features:
   #   link: /notes/?/
   #   icon:
   #     src: /static/cartoon-images/hero--thor.png
-  # - title: 跨平台开发
-  #   details: Cross-Platform Dev
-  #   link: /notes/cross-platform-dev/
-  #   icon:
-  #     src: /static/cartoon-images/hero--daredevil.png
   # - title: 游戏开发
   #   details: Game Dev
   #   link: /notes/?/

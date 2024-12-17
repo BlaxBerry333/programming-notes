@@ -86,6 +86,14 @@ console.log(!true, !false);     // false true
 console.log(![], !![]);         // false true
 ```
 
+## 三目运算符
+
+> Ternary Operator / Conditional Operator
+
+| 运算符 | 说明                             | 例子                     |
+| :----: | -------------------------------- | ------------------------ |
+| `? :`  | 用于基于判断条件返回一个对应的值 | `条件 ? value1 : value2` |
+
 ## 展开运算符
 
 > Spread Operator

@@ -1,16 +1,16 @@
 # TypeScript 常用类型
 
-## JS 基本数据类型
+## JS 原始数据类型
 
-在 TypeScript 中可直接使用 JavaScript 中的基本数据类型
+TypeScript 中可直接使用 JavaScript 中的基本数据类型 [更多详见](/notes/web-frontend/languages/javascript/__base__/data-types/primitive-types)
 
 |  数据类型   |    说明    | 例子                                          |
 | :---------: | :--------: | --------------------------------------------- |
 |  `number`   |    数值    | `100`、`-100`、`NaN`、`Infinity`、`-Infinity` |
 |  `string`   |   字符串   | `""`、` `` `                                  |
 |  `boolean`  |   布尔值   | `true`、`false`                               |
-|   `null`    |    空值    |                                               |
-| `undefined` | 未定义的值 |                                               |
+|   `null`    |    空值    | `null`                                        |
+| `undefined` | 未定义的值 | `undefined`                                   |
 
 ::: details 例子：使用 JS 的基本数据类型
 
@@ -37,7 +37,11 @@ let e: undefined = undefined;
 
 :::
 
-## JS 对象类型
+## JS 对象数据类型
+
+TypeScript 中也可使用 JavaScript 中的引用数据类型，但是略有不同 [更多详见](/notes/web-frontend/languages/javascript/__base__/data-types/reference-types)
+
+---
 
 ### 数组
 

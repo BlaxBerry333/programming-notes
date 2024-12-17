@@ -41,7 +41,7 @@ if (条件) {
 
 线性判断每一个条件后执行符合的代码块中的逻辑
 
-分支条件过多时建议使用`switch...case...`
+对于处理多个值的匹配判断时，则建议使用`switch...case...`
 
 ```js
 if (条件1) {
@@ -59,7 +59,7 @@ if (条件1) {
 
 线性判断每一个条件后执行符合的代码块中的逻辑
 
-分支条件过多时建议使用`switch...case...`
+对于处理多个值的匹配判断时，则建议使用`switch...case...`
 
 ```js
 if (条件1) {
@@ -115,7 +115,7 @@ switch (数据) {
 }
 ```
 
-## 循环语句
+## 循环遍历
 
 ### while...
 
@@ -337,3 +337,67 @@ for (const [key, value] of Object.entries(键值对对象)) {
 - `find()`
 - `findIndex()`
 - `reduce()`
+
+## 异常处理
+
+> [!IMPORTANT] 常见异常类型
+>
+> - `SyntaxError` 语法错误
+> - `TypeError` 类型错误
+> - `ReferenceError` 引用错误
+> - `RangeError` 边界错误
+> - `URIError` URL 错误
+
+### try...catch...finally
+
+可用于捕获异常
+
+```js
+try {
+  // ...
+} catch (error) {
+  // ...
+} finally {
+  // ...
+}
+```
+
+---
+
+### throw
+
+可用于实现抛出异常
+
+```js
+// ...
+throw new Error();
+throw new Error("自定义信息");
+// ...
+```
+
+---
+
+### debugger
+
+`debugger`语句可以在代码中的指定位置打一个断点
+
+断点不会对代码产生任何影响，仅在调试时程序会在此处暂停执行
+
+```js
+// ...
+debugger;
+// ...
+```
+
+<!--
+### console
+
+该内置对象中提供了调试的方法
+
+|     常用方法      | 说明                |
+| :---------------: | ------------------- |
+|  `console.log()`  | 打印一个普通信息    |
+| `console.info()`  | 打印一个说明信息    |
+| `console.error()` | 打印一个错误信息    |
+| `console.debug()` | 打印一个 Debug 信息 |
+| `console.clear()` | 清空所有打印的信息  | -->

@@ -2,7 +2,9 @@
 
 > Class
 
-TODO:
+## 定义
+
+类使用关键字`class`定义，类名使用大驼峰命名 ( CamelCase )
 
 ```js
 class 类 {

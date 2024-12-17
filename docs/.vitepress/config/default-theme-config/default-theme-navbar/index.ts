@@ -1,10 +1,19 @@
 import { type DefaultTheme } from "vitepress";
 
+// 语言
+// ------------------------------------------------------------------------------------------------------------------------
 import { JS_ROOT } from "../default-theme-sidebar/web-frontend/_javascript";
 import { PYTHON_ROOT } from "../default-theme-sidebar/web-backend/_python";
-import { DJANGO_ROOT } from "../default-theme-sidebar/web-backend/_django";
+
+// 框架
+// ------------------------------------------------------------------------------------------------------------------------
 import { REACT_JS_ROOT } from "../default-theme-sidebar/web-frontend/_react";
 import { VUE_JS_ROOT } from "../default-theme-sidebar/web-frontend/_vue";
+import { DJANGO_ROOT } from "../default-theme-sidebar/web-backend/_django";
+import { FLUTTER_ROOT } from "../default-theme-sidebar/mobile-app/_flutter";
+
+// 常用工具
+// ------------------------------------------------------------------------------------------------------------------------
 import { DOCKER_ROOT } from "../default-theme-sidebar/web-infrastructure/_docker";
 import { DEV_TOOLS_ROOT__GIT } from "../default-theme-sidebar/dev-tools";
 
@@ -25,6 +34,7 @@ export const DEFAULT_THEME_NAVBAR: Array<DefaultTheme.NavItem> = [
           { text: "React.js", link: `${REACT_JS_ROOT}/` },
           { text: "Vue.js", link: `${VUE_JS_ROOT}/` },
           { text: "Django", link: `${DJANGO_ROOT}/` },
+          { text: "Flutter", link: `${FLUTTER_ROOT}/` },
         ],
       },
     ],

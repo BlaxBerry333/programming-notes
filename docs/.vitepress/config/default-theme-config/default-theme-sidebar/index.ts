@@ -14,8 +14,12 @@ import { DJANGO_ROOT, DJANGO_SIDEBAR } from "./web-backend/_django";
 
 // dev-tools
 // ------------------------------------------------------------------------------------------------------------------------
-
 import { DEV_TOOLS_ROOT, DEV_TOOLS_SIDEBAR } from "./dev-tools";
+
+// mobile-app
+// ------------------------------------------------------------------------------------------------------------------------
+import { DART_ROOT, DART_SIDEBAR } from "./mobile-app/_dart";
+import { FLUTTER_ROOT, FLUTTER_SIDEBAR } from "./mobile-app/_flutter";
 
 export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
   /**
@@ -39,4 +43,11 @@ export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
    * ------------------------------------------------------------------------------------------------------------------------
    */
   [DEV_TOOLS_ROOT]: DEV_TOOLS_SIDEBAR,
+
+  /**
+   * mobile-app
+   * ------------------------------------------------------------------------------------------------------------------------
+   */
+  [DART_ROOT]: DART_SIDEBAR,
+  [FLUTTER_ROOT]: FLUTTER_SIDEBAR,
 };

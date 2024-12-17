@@ -75,7 +75,7 @@ function 函数(形参1, 形参2) {
 
 可以通过剩余参数以一个数组形式一口气接收所有的实参
 
-剩余参数必须定义在所有形参之后
+剩余参数必须定义在所有明确定义的形参之后
 
 ```js
 function 函数(...剩余参数) {
@@ -265,6 +265,7 @@ function 函数() {
   let 变量 = 值;
 
   return function () {
+    // [!code hl:3]
     return 变量;
   };
 }
@@ -272,11 +273,13 @@ function 函数() {
 const 变量值 = 函数()();
 ```
 
+::: details 例子：通过闭包实现在函数外访问函数作用域中变量
+
 ```js{0}
 function getPerson() {
   let person = 'Andy';
 
-  return function () {        // [!code hl:3]
+  return function () {
     return person;
   };
 }
@@ -284,6 +287,8 @@ function getPerson() {
 let person = getPerson()();
 console.log(person);          // "Andy"
 ```
+
+:::
 
 > [!CAUTION] 不要滥用闭包
 > 闭包的变量会一直保存在内存中，尤其是在循环、频繁执行的逻辑中会导致内存泄漏和性能下降

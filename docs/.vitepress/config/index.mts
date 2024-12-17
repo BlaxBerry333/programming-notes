@@ -72,7 +72,8 @@ export default defineConfig({
    * 其他配置
    * ----------------------------------------------------------------------------------------------------
    */
+  appearance: "dark",
   cleanUrls: true,
   ignoreDeadLinks: true,
-  appearance: "dark",
+  metaChunk: true,
 });
