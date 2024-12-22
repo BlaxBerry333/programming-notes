@@ -2,8 +2,10 @@
 
 ## 列表 ( List )
 
-```dart
-void main(){
+::: code-group
+
+```dart [字面量写法]
+void main() {
   List 列表 = [];                       // [!code focus:8]
   List 列表 = [元素1, 元素2, 元素3];
 
@@ -15,12 +17,22 @@ void main(){
 }
 ```
 
+```dart [列表方法写法]
+void main() {
+  List<元素类型> 列表 = List.empty(growable: true);             // [!code focus:8]
+
+  List<元素类型> 列表 = List.generate(元素个数, (索引) => 元素);
+}
+```
+
+:::
+
 ---
 
 ### 常用操作
 
 ```dart
-void main(){
+void main() {
   List 列表 = [元素1, 元素2, 元素3];        // [!code focus:10]
 
   // 获取长度
@@ -62,7 +74,7 @@ void main(){
 ## 集合 ( Set )
 
 ```dart
-void main(){
+void main() {
   Set 集合 = {};                            // [!code focus:8]
   Set 集合 = {元素1, 元素2, 元素3};
 
@@ -79,7 +91,7 @@ void main(){
 ### 常用操作
 
 ```dart
-void main(){
+void main() {
   Set 集合 = {元素1, 元素2, 元素3};         // [!code focus:4]
 
   // 获取长度
@@ -103,7 +115,7 @@ void main(){
 ::: details 例子：利用集合实现列表元素的去重
 
 ```dart
-void main(){
+void main() {
   List<String> l = ["a", "b", "b"];     // [!code focus:7]
 
   Set<String> s = {};
@@ -118,8 +130,12 @@ void main(){
 
 ## 映射 ( Map )
 
+此处主要是指键值对的对象
+
+结构复杂的对象则需要通过类 ( Class ) 的实例化实现
+
 ```dart
-void main(){
+void main() {
   Map 映射 = {};                            // [!code focus:8]
   Map 映射 = {键1: 值, 键2: 值};
 
@@ -136,7 +152,7 @@ void main(){
 ### 常用操作
 
 ```dart
-void main(){
+void main() {
   Map 映射 = {键1: 值, 键2: 值};            // [!code focus:10]
 
   // 获取键值对个数

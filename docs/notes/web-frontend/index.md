@@ -6,7 +6,7 @@ hero:
   text: 前端开发
   tagline: BlaxBerry 的个人编程学习笔记
   image:
-    src: /static/cartoon-images/hero--deadpool.png
+    src: /static/cartoon-images/hero--deadpool.webp
     alt: picture
 ---
 

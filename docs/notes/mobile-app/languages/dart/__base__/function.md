@@ -7,7 +7,7 @@
   // ...
 }
 
-void main(){
+void main() {
   函数名();             // [!code focus]
 }
 ```
@@ -21,7 +21,7 @@ void 函数名() {         // [!code focus:3]
   // ...
 }
 
-void main(){
+void main() {
   函数名();             // [!code focus]
 }
 ```
@@ -35,7 +35,7 @@ void main(){
   return 返回值;
 }
 
-void main(){
+void main() {
   返回值类型 返回值 = 函数名();      // [!code focus]
 }
 ```
@@ -49,7 +49,7 @@ void main(){
   return (返回值1, 返回值2);
 }
 
-void main(){
+void main() {
   print(函数名());  // (返回值1, 返回值2)           // [!code focus]
 }
 ```
@@ -63,7 +63,7 @@ void main(){
   // ...
 }
 
-void main(){
+void main() {
   函数名(实参1, 实参2);                             // [!code focus]
 }
 ```
@@ -100,7 +100,7 @@ void main(){
   // ...
 }
 
-void main(){
+void main() {
   函数名(形参1: 值, 形参2: 值);                                      // [!code focus:3]
   函数名(形参2: 值, 形参1: 值);
   函数名(形参2: 值);
@@ -116,7 +116,7 @@ void main(){
   // ...
 }
 
-void main(){
+void main() {
   函数名(实参1, 实参2);                                             // [!code focus]
 }
 ```
@@ -136,7 +136,7 @@ typedef 回调函数类型 = 返回值类型 Function(形参1类型 形参1, 形
   回调函数(实参1, 实参2);
 }
 
-void main(){
+void main() {
   函数名((形参1, 形参2){                                                   // [!code focus:3]
     // ...
   });
@@ -150,7 +150,7 @@ void main(){
 Dart 中的所有逻辑都要在入口函数`main`中执行
 
 ```dart
-void main(){
+void main() {
   // ...
 }
 ```

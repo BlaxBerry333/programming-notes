@@ -6,7 +6,7 @@ hero:
   text: 后端开发
   tagline: BlaxBerry 的个人编程学习笔记
   image:
-    src: /static/cartoon-images/hero--spiderman.png
+    src: /static/cartoon-images/hero--spiderman.webp
     alt: picture
 ---
 

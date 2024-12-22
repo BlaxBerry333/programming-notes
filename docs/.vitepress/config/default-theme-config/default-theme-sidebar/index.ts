@@ -11,6 +11,7 @@ import { VUE_JS_ROOT, VUE_JS_SIDEBAR } from "./web-frontend/_vue";
 // ------------------------------------------------------------------------------------------------------------------------
 import { PYTHON_ROOT, PYTHON_SIDEBAR } from "./web-backend/_python";
 import { DJANGO_ROOT, DJANGO_SIDEBAR } from "./web-backend/_django";
+import { GOLANG_ROOT, GOLANG_SIDEBAR } from "./web-backend/_golang";
 
 // dev-tools
 // ------------------------------------------------------------------------------------------------------------------------
@@ -37,6 +38,7 @@ export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
    */
   [PYTHON_ROOT]: PYTHON_SIDEBAR,
   [DJANGO_ROOT]: DJANGO_SIDEBAR,
+  [GOLANG_ROOT]: GOLANG_SIDEBAR,
 
   /**
    * dev-tools

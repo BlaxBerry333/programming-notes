@@ -7,7 +7,7 @@
 变量名使用小驼峰命名 ( camelCase )
 
 ```dart
-void main(){
+void main() {
   var 变量名;                       // [!code focus:11]
   var 变量名 = 值;
 

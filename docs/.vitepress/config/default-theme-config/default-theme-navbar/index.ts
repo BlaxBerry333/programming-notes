@@ -8,7 +8,6 @@ import { PYTHON_ROOT } from "../default-theme-sidebar/web-backend/_python";
 // 框架
 // ------------------------------------------------------------------------------------------------------------------------
 import { REACT_JS_ROOT } from "../default-theme-sidebar/web-frontend/_react";
-import { VUE_JS_ROOT } from "../default-theme-sidebar/web-frontend/_vue";
 import { DJANGO_ROOT } from "../default-theme-sidebar/web-backend/_django";
 import { FLUTTER_ROOT } from "../default-theme-sidebar/mobile-app/_flutter";
 
@@ -32,7 +31,6 @@ export const DEFAULT_THEME_NAVBAR: Array<DefaultTheme.NavItem> = [
         text: "框架",
         items: [
           { text: "React.js", link: `${REACT_JS_ROOT}/` },
-          { text: "Vue.js", link: `${VUE_JS_ROOT}/` },
           { text: "Django", link: `${DJANGO_ROOT}/` },
           { text: "Flutter", link: `${FLUTTER_ROOT}/` },
         ],

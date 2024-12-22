@@ -6,7 +6,7 @@ hero:
   text: 开发工具
   tagline: BlaxBerry 的个人编程学习笔记
   image:
-    src: /static/cartoon-images/hero--ironman.png
+    src: /static/cartoon-images/hero--ironman.webp
     alt: picture
 ---
 

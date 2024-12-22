@@ -45,7 +45,7 @@ Dart SDK version: 3.5.0 (stable) (Tue Jul 30 02:17:59 2024 -0700) on "macos_arm6
   "dart.flutterSdkPath": "/Users/[用户名]/.asdf/installs/flutter/[版本]",  // [!code ++:4]
   "dart.previewFlutterUiGuides": true,
   "dart.previewFlutterUiGuidesCustomTracking": true,
-  "dart.closingLabels": false
+  // "dart.closingLabels": false
 }
 ```
 

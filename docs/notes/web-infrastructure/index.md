@@ -6,7 +6,7 @@ hero:
   text: 基础设施
   tagline: BlaxBerry 的个人编程学习笔记
   image:
-    src: /static/cartoon-images/hero--captainmarvel.png
+    src: /static/cartoon-images/hero--captainmarvel.webp
     alt: picture
 ---
 
@@ -69,7 +69,7 @@ const __CI_CD__ = [
 
 <SkillIconsBlock :skillList="__CI_CD__"/>
 
-## 网络基础
+<!-- ## 网络基础
 
 OSI 模型、TCP/IP 协议栈、IPv4/IPv6、子网划分
 
@@ -85,4 +85,4 @@ OSI 模型、TCP/IP 协议栈、IPv4/IPv6、子网划分
 
 ## 负载均衡
 
-Nginx、HAProxy、LVS、负载均衡算法
+Nginx、HAProxy、LVS、负载均衡算法 -->

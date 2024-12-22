@@ -6,7 +6,7 @@ hero:
   text: 移动端开发
   tagline: BlaxBerry 的个人编程学习笔记
   image:
-    src: /static/cartoon-images/hero--daredevil.png
+    src: /static/cartoon-images/hero--daredevil.webp
     alt: picture
 ---
 

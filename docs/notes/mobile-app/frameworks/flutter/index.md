@@ -94,13 +94,15 @@ Doctor summary (to see all details, run flutter doctor -v):
   "dart.flutterSdkPath": "/Users/[用户名]/.asdf/installs/flutter/[版本]",  // [!code ++:4]
   "dart.previewFlutterUiGuides": true,
   "dart.previewFlutterUiGuidesCustomTracking": true,
-  "dart.closingLabels": false
+  // "dart.closingLabels": false
 }
 ```
 
 :::
 
 ## 项目初始化
+
+项目名使用蛇形命名 ( snake_case )
 
 ```zsh
 # 1. 创建项目，进入项目目录                   # [!code focus:6]
@@ -142,23 +144,26 @@ The Flutter DevTools debugger and profiler on Chrome is available at: http://127
 
 ## 项目目录结构
 
+目录与文件使用蛇形命名 ( snake_case )
+
 ::: code-group
 
 ```[目录结构]
 [项目目录]
 ├─ .dart_tool/
 │
-├─ android/
-├─ ios/
-├─ linux/
-├─ macos/
-├─ windows/
-├─ web/
+├─ android/               # Android 原生目录
+├─ ios/                   # IOS 原生目录
+├─ linux/                 # Linux 原生目录
+├─ macos/                 # MacOS 原生目录
+├─ windows/               # Windows 原生目录
+├─ web/                   # Web 项目目录
 │
 ├─ build/
 ├─ test/
-├─ lib/
-│  └─ main.dart     # 项目入口文件
+│
+├─ lib/                   # 存放项目中的 Dart 代码
+│  └─ main.dart           # 项目入口文件
 │
 ├─ analysis_options.yaml
 ├─ pubspec.yaml
@@ -169,11 +174,22 @@ The Flutter DevTools debugger and profiler on Chrome is available at: http://127
 
 :::
 
-## 组件
+## 常用命令
+
+|                                                        | 说明                                                    |
+| ------------------------------------------------------ | ------------------------------------------------------- |
+| `flutter create`                                       | 创建项目                                                |
+| `flutter run`                                          | 启动项目                                                |
+| `flutter build [web\|apk\|ios\|macos\|linux\|windows]` | 构建项目<br/>基于选项生成项目的构建目录`build`          |
+| `flutter clean`                                        | 清空项目生成的文件<br/>执行后需要重新下载项目中的依赖包 |
+
+## 组件化
 
 > Widget
 
-组件是 Flutter 中构建 UI 的基本单元，界面上所有元素都可以用组件展示
+Flutter 中一切皆组件，组件构建界面的基本单元
+
+界面上所有元素可视化的元素、控件或者布局都可以看作是一个组件
 
 组件的实质都为 Dart 类，使用时需要通过实例化创建组件的实例对象
 
@@ -192,7 +208,3 @@ void main() {
   );
 }
 ```
-
-## 相关链接
-
-[带有推送功能的聊天应用](https://www.bilibili.com/video/BV19RYNe7ESa?spm_id_from=333.788.recommend_more_video.6&vd_source=8960252a3845b76b699282b11f36ab5c)

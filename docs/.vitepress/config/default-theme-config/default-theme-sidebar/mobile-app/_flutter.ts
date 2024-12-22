@@ -16,12 +16,23 @@ export const FLUTTER_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         link: `${FLUTTER_ROOT}/__base__/builtin-widgets`,
       },
       {
-        text: "状态管理",
-        link: `${FLUTTER_ROOT}/__base__/`,
+        text: "路由管理",
+        link: `${FLUTTER_ROOT}/__base__/router-management`,
       },
+      // {
+      //   text: "动画效果",
+      //   link: `${FLUTTER_ROOT}/__base__/`,
+      // },
+    ],
+  },
+
+  {
+    text: "功能扩展",
+    collapsed: false,
+    items: [
       {
-        text: "动画效果",
-        link: `${FLUTTER_ROOT}/__base__/`,
+        text: "GetX",
+        link: `https://github.com/jonataslaw/getx?tab=readme-ov-file`,
       },
     ],
   },

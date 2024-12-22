@@ -6,7 +6,7 @@ hero:
   text: Web3 & 区块链
   tagline: BlaxBerry 的个人编程学习笔记
   image:
-    src: /static/cartoon-images/villain--loki.png
+    src: /static/cartoon-images/villain--loki.webp
     alt: picture
 ---
 

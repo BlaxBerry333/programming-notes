@@ -2,6 +2,8 @@
 
 Dart 是是一个面向对象语言，一切皆对象
 
+不仅用于封装相关逻辑，还可用于创建结构复杂的对象实例
+
 ## 定义
 
 Dart 类使用关键字`class`定义，类名使用大驼峰命名 ( CamelCase )
@@ -21,58 +23,38 @@ class 类名 {                           // [!code focus:3]
   // ...
 }
 
-void main(){
-  var 实例对象 = 类名();            // [!code focus:2]
+void main() {
+  var 实例对象 = 类名();                // [!code focus:2]
   类名 实例对象 = 类名();
 }
 ```
 
-## 类的成员
-
-### 构造函数
+## 构造函数
 
 Dart 类中的构造函数与当前类同名，在实例化时会自动触发
 
-::: code-group
+---
 
-```dart [默认构造函数]
-class 类名 {                             // [!code focus:10]
+### 默认构造函数
+
+```dart
+class 类名 {                             // [!code focus:12]
   数据类型 实例属性1 = 初始值;
   数据类型 实例属性2 = 初始值;
 
-  类名(this.实例属性1, this.实例属性2);     // [!code ++]
-  类名(参数1, 参数2) {                     // [!code --:4]
-    this.实例属性1 = 参数1;
-    this.实例属性2 = 参数2;
-  }
+  类名(this.实例属性1, this.实例属性2);     // [!code hl]
+
+  // 相当于：
+  // 类名(参数1, 参数2) {
+  //   this.实例属性1 = 参数1;
+  //   this.实例属性2 = 参数2;
+  // }
 }
 
-void main(){
-  var 实例对象 = 类名(参数1, 参数2);    // [!code focus]
-}
-```
-
-```dart [命名构造函数]
-class 类名 {                                                                // [!code focus:10]
-  数据类型 实例属性1 = 初始值;
-  数据类型 实例属性2 = 初始值;
-
-  // 默认构造函数
-  类名(this.实例属性1, this.实例属性2);
-
-  // 命名构造函数
-  类名.[构造函数命名1](this.实例属性1, this.实例属性2);
-  类名.[构造函数命名2](this.实例属性1, this.实例属性2);
-}
-
-void main(){
-  var 实例对象 = 类名(参数1, 参数2);             // 使用默认构造函数进行实例化       // [!code focus:3]
-  var 实例对象 = 类名.构造函数命名1(参数1, 参数2); // 使用命名构造函数1进行实例化
-  var 实例对象 = 类名.构造函数命名2(参数1, 参数2); // 使用命名构造函数2进行实例化
+void main() {
+  var 实例对象 = 类名(参数1, 参数2);        // [!code focus]
 }
 ```
-
-:::
 
 ::: details 例子：通过默认构造函数实现对不同实例对象的赋值
 
@@ -98,41 +80,172 @@ void main() {
 
 :::
 
-::: details 例子：分别通过默认构造函数、具名构造函数实现对不同实例对象的赋值
+---
+
+### 命名构造函数
+
+类可通过不同的命名构造函数进行不同的实例化
 
 ```dart
-class Person {
-  String? name;
-  int? age;
-  String? nickName;
-  List<String>? superpower;
+class 类名 {                                                                  // [!code focus:14]
+  数据类型 实例属性1 = 初始值;
+  数据类型 实例属性2 = 初始值;
+  数据类型 实例属性3 = 初始值;
 
-  Person(this.name, this.age);
+  // 默认构造函数
+  // 类名(this.实例属性1, this.实例属性2);
 
-  Person.hero(this.nickName, this.superpower);
+  类名.构造函数命名1(this.实例属性1, this.实例属性2);                             // [!code hl:5]
 
-  void getInfo() {
-    print({
-      if (this.name != null) "name": this.name,
-      if (this.age != null) "age": this.age,
-      if (this.nickName != null) "nickName": this.nickName,
-      if (this.superpower != null) "superpower": this.superpower,
-    });
+  类名.构造函数命名2(this.实例属性1)
+    : 实例属性1 = 值,
+      实例属性2 = 值;
+}
+
+void main() {
+  var 实例对象 = 类名(参数1, 参数2);             // 使用默认构造函数进行实例化       // [!code focus:3]
+  var 实例对象 = 类名.构造函数命名1(参数1, 参数2); // 使用命名构造函数1进行实例化
+  var 实例对象 = 类名.构造函数命名2(参数1);       // 使用命名构造函数2进行实例化
+}
+```
+
+::: details 例子：通过默认构造函数、具名构造函数实现对不同实例对象的赋值
+
+```dart
+class CustomText {                                                    // [!code focus:27]
+  final String text;
+  final double fontSize;
+  final int fontWeight;
+  final String? color;
+
+  CustomText(this.text, {this.color})
+      : fontSize = 16,
+        fontWeight = 500;
+
+  CustomText.title(this.text, {this.color})
+      : fontSize = 32,
+        fontWeight = 700;
+
+  CustomText.subTitle(this.text, {this.color = "#5c5c5c"})
+      : fontSize = 24,
+        fontWeight = 600;
+
+  CustomText.body(this.text, {this.color})
+      : fontSize = 16,
+        fontWeight = 500;
+
+  @override
+  String toString() {
+    return 'CustomText(text: $text, fontSize: $fontSize, fontWeight: $fontWeight, color: $color)';
   }
 }
 
 void main() {
-  var normal = Person("Andy", 28);
-  normal.getInfo();   // {name: Andy, age: 28}
+  var CustomText text1 = CustomText("111", color: "#000000");         // [!code focus]
+  print(text1);   // CustomText(text: 111, fontSize: 16, fontWeight: 500, color: #000000)
 
-  var hero = Person.hero("SuperAndyMan", ["fly", "laser eye"]);
-  hero.getInfo();     // {nickName: "SuperAndyMan", superpower: ["fly", "laser eye"]}
+  var CustomText text2 = CustomText.title("222", color: "#000000");   // [!code focus]
+  print(text2);   // CustomText(text: 222, fontSize: 32, fontWeight: 700, color: #000000)
+
+  var CustomText text3 = CustomText.subTitle("333");                  // [!code focus]
+  print(text3);   // CustomText(text: 333, fontSize: 24, fontWeight: 600, color: #5c5c5c)
+
+  var CustomText text4 = CustomText.body("444", color: "#000000");    // [!code focus]
+  print(text4);   // CustomText(text: 444, fontSize: 16, fontWeight: 500, color: #000000)
 }
 ```
 
 :::
 
 ---
+
+### 私有构造函数
+
+类可通过私有构造函数来禁止当前类的实例化
+
+常用于定义一个仅向外公开自身静态成员的工具类
+
+```dart
+class 类名 {                                          // [!code focus:9]
+  static const 数据类型 静态属性 = 值;
+
+  const 类名._();                                     // [!code hl]
+
+  static 返回值类型 静态方法() {
+    // ...
+  }
+}
+
+void main() {
+  print(类名.静态属性);                                // [!code focus:2]
+  类名.静态方法();
+}
+```
+
+::: details 例子：通过私有构造函数定义一个常量工具类
+
+```dart
+import 'package:flutter/material.dart';
+
+class CustomColors {                                          // [!code focus:7]
+  static const Color primary = Color(0xFF0175C2);
+  static const Color secondary = Color(0xFFA7A7A7);
+  // ...
+
+  CustomColors._();
+}
+
+void main() {
+  print(CustomColors.primary);                                // [!code focus:2]
+  print(CustomColors.secondary);
+}
+```
+
+:::
+
+---
+
+### 常量构造函数
+
+类可通过常量构造函数实例化一个不可变的类实例 ( 在应用中共享同一内存地址，可优化性能 )
+
+常量构造函数需通过关键字`const`定义，且其更新的类比例属性需通过`final`定义
+
+```dart
+class 类名 {                                          // [!code focus:12]
+  final 数据类型 实例属性1 = 初始值;
+  final 数据类型 实例属性2 = 初始值;
+
+  const 类名(this.实例属性1, this.实例属性2);           // [!code hl]
+}
+
+void main() {
+  const 实例对象 = const 类名(参数1, 参数2);            // [!code focus]
+}
+```
+
+::: details 例子：通过常量构造函数创建的实例对象共享同一内存地址
+
+```dart
+class RGBColor {                                      // [!code focus:7]
+  final int red;
+  final int green;
+  final int blue;
+
+  const RGBColor(this.red, this.green, this.blue);
+}
+
+void main() {
+  const RGBColor color1 = const RGBColor(255, 0, 0);  // [!code focus:4]
+  const RGBColor color2 = const RGBColor(255, 0, 0);
+
+  print(identical(color1, color2));                   // true
+}
+```
+
+:::
+
+## 类的成员
 
 ### 实例属性、实例方法
 
@@ -152,7 +265,7 @@ class 类名 {                           // [!code focus:8]
   }
 }
 
-void main(){
+void main() {
   var 实例对象 = 类名();            // [!code focus:3]
   print(实例对象.实例属性);  // 访问实例属性
   实例对象.实例方法();       // 调用实例方法
@@ -196,7 +309,7 @@ class 类名 {                                // [!code focus:8]
   }
 }
 
-void main(){
+void main() {
   print(类名.实例属性);  // 访问静态属性    // [!code focus:2]
   类名.实例方法();       // 调用静态方法
 }
@@ -230,7 +343,7 @@ class 子类 extends 父类 {
   }
 }
 
-void main(){
+void main() {
   const 子类实例对象 = 子类();    // [!code focus]
 }
 ```
@@ -263,7 +376,7 @@ class 子类 extends 父类 {
   }
 }
 
-void main(){
+void main() {
   const 子类实例对象 = 子类(参数1, 参数2);    // [!code focus]
 }
 ```

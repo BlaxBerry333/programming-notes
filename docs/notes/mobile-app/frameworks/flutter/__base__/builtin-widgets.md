@@ -2,13 +2,15 @@
 
 Flutter 内置组件实质为 Dart 类，使用时需要通过实例化创建组件的实例对象
 
-## MaterialApp 组件
+## APP
+
+### MaterialApp 组件
 
 可用于作为项目的根组件
 
 提供了 Material Design 风格的功能和特性 ( 包括主题、导航、路由管理等 )
 
-建议将所有的组件定义在 MaterialApp 与 Scaffold 组件中，以防止失去样式以及各种布局的问题
+建议将所有的组件定义在 MaterialApp 与 Scaffold 组件中
 
 ```dart
 import 'package:flutter/material.dart';
@@ -23,13 +25,13 @@ void main() {
 }
 ```
 
-## Scaffold 组件
+---
 
-可用于构建 Material Design 风格的应用的基本界面 ( 包括顶部导航栏、侧边栏、浮动按钮等 )
+### Scaffold 组件
 
-不能单独使用，必须定义在 MaterialApp 根组件内部
+可用于构建 Material Design 风格的基本页面的根组件
 
-建议将所有的组件定义在 MaterialApp 与 Scaffold 组件中，以防止失去样式以及各种布局的问题
+建议将所有的组件定义在 MaterialApp 与 Scaffold 组件中
 
 ```dart
 import 'package:flutter/material.dart';
@@ -37,6 +39,9 @@ import 'package:flutter/material.dart';
 var Scaffold组件实例 = Scaffold(
   appBar: AppBar组件实例,
   body: 其他组件实例,
+  floatingActionButton: FloatingActionButton组件实例,
+  bottomNavigationBar: BottomNavigationBar组件实例,
+  // ...
 );
 
 void main() {
@@ -348,6 +353,90 @@ void main() {
 
 ---
 
+### Card 组件
+
+```dart
+import 'package:flutter/material.dart';
+
+var Card组件实例 = Card(                         // [!code focus:5]
+  child: 其他组件实例,
+  // ...
+);
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        body: Card组件实例,
+      ),
+    ),
+  );
+}
+```
+
+| 常用参数      | 说明                                              | 参数值例子                                                                 |
+| ------------- | ------------------------------------------------- | -------------------------------------------------------------------------- |
+| `child`       | 展示内容，值为一个组件实例                        | ...                                                                        |
+| `elevation`   | 阴影海拔，值为浮点数                              | ...                                                                        |
+| `color`       | 背景颜色<br/>值为`Colors`类的静态属性             | `Colors.red`<br/>`Color.fromRGBO()`: GRBO值<br/>`Color.fromARGB()`: ARGB值 |
+| `shadowColor` | 阴影颜色<br/>值为`Colors`类的静态属性             | `Colors.red`<br/>`Color.fromRGBO()`: GRBO值<br/>`Color.fromARGB()`: ARGB值 |
+| `shape`       | 容器形状<br/>值为`RoundedRectangleBorder`类的实例 | `RoundedRectangleBorder()`                                                 |
+
+::: details 例子：
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        body: GridView.count(
+          scrollDirection: Axis.vertical,
+          crossAxisCount: 2,
+          padding: EdgeInsets.all(8),
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
+          children: [
+            ...List.generate(
+              2 * 10,
+              (index) => Card(                                        // [!code hl:23]
+                elevation: 5,
+                color: Colors.grey,
+                shadowColor: Colors.black87,
+                shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(8)),
+                child: Container(
+                  padding: EdgeInsets.all(8),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.network(
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTet_5-OuOci4vkqC62wHBfY_9xT7qHx94U9Yf4pPn1TlhVM3SGb8UQt-yPxeDex9TefMW51mimsGySlGuXAlWiRQ",
+                        fit: BoxFit.cover,
+                      ),
+                      Divider(),
+                      Text(
+                        'xxx' * 100,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                      ),
+                    ]
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+```
+
+:::
+
+## 布局
+
 ### Column 组件
 
 用于展示一组垂直排列的内容，继承自 Flex 组件类
@@ -499,12 +588,12 @@ void main() {
 }
 ```
 
-| 常用参数     | 说明                                | 参数值例子                                                        |
-| ------------ | ----------------------------------- | ----------------------------------------------------------------- |
-| `children`   | 展示内容<br/>值为一个组件实例的列表 | ...                                                               |
-| `direction`  | 子组件的排列方向<br/>值为枚举`Axis` | `Axis.horizontal`: 水平方向排列<br/>`Axis.vertical`: 垂直方向排列 |
-| `spacing`    | 主轴上子组件的间隔<br/>值为浮点数   | ...                                                               |
-| `runSpacing` | 副轴上子组件的间隔<br/>值为浮点数   | ...                                                               |
+| 常用参数     | 说明                             | 参数值例子                                                        |
+| ------------ | -------------------------------- | ----------------------------------------------------------------- |
+| `children`   | 展示内容，值为一个组件实例的列表 | ...                                                               |
+| `direction`  | 子组件的排列方向，值为枚举`Axis` | `Axis.horizontal`: 水平方向排列<br/>`Axis.vertical`: 垂直方向排列 |
+| `spacing`    | 主轴上子组件的间隔，值为浮点数   | ...                                                               |
+| `runSpacing` | 副轴上子组件的间隔，值为浮点数   | ...                                                               |
 
 ::: details 例子：
 
@@ -610,7 +699,7 @@ void main() {
 
 :::
 
-## 布局
+---
 
 ### Center 组件
 
@@ -1253,15 +1342,15 @@ void main() {
 
 :::
 
-## 卡片
+---
 
-### Card 组件
+### PageView 组件
 
 ```dart
 import 'package:flutter/material.dart';
 
-var Card组件实例 = Card(                         // [!code focus:5]
-  child: 其他组件实例,
+var PageView组件实例 = PageView(                // [!code focus:4]
+  children: <Widget>[其他组件实例, 其他组件实例],
   // ...
 );
 
@@ -1269,20 +1358,19 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: Card组件实例,
+        body: PageView组件实例,
       ),
     ),
   );
 }
 ```
 
-| 常用参数      | 说明                                              | 参数值例子                                                                 |
-| ------------- | ------------------------------------------------- | -------------------------------------------------------------------------- |
-| `child`       | 展示内容，值为一个组件实例                        | ...                                                                        |
-| `elevation`   | 阴影海拔，值为浮点数                              | ...                                                                        |
-| `color`       | 背景颜色<br/>值为`Colors`类的静态属性             | `Colors.red`<br/>`Color.fromRGBO()`: GRBO值<br/>`Color.fromARGB()`: ARGB值 |
-| `shadowColor` | 阴影颜色<br/>值为`Colors`类的静态属性             | `Colors.red`<br/>`Color.fromRGBO()`: GRBO值<br/>`Color.fromARGB()`: ARGB值 |
-| `shape`       | 容器形状<br/>值为`RoundedRectangleBorder`类的实例 | `RoundedRectangleBorder()`                                                 |
+| 常用参数                 | 说明                                        | 参数值例子                                                          |
+| ------------------------ | ------------------------------------------- | ------------------------------------------------------------------- |
+| `children`               | 展示内容<br/>值为一个组件实例的列表         | `[组件实例, 组件实例]`                                              |
+| `scrollDirection`        | 子组件的排列方向<br/>值为枚举`Axis`         | `Axis.horizontal`: 水平方向排列<br/>`Axis.horizontal`: 垂直方向排列 |
+| `allowImplicitScrolling` | 是否缓存当前子组件前后的页面<br/>值为布尔值 | ...                                                                 |
+| `onPageChanged`          | 子组件切换时的处理函数<br/>值为函数         | `(index) => print(index)`                                           |
 
 ::: details 例子：
 
@@ -1290,54 +1378,77 @@ void main() {
 import 'package:flutter/material.dart';
 
 void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      body: PageView(                               // [!code hl:13]
+        scrollDirection: Axis.vertical,
+        allowImplicitScrolling: true,
+        onPageChanged: (index) => print(index),
+        children: [
+          ...List.generate(
+            5,
+            (index) => Center(
+              child: Text('Page #${index + 1}'),
+            ),
+          )
+        ],
+      ),
+    ),
+  ));
+}
+```
+
+:::
+
+---
+
+### PageView.builder( )
+
+```dart
+import 'package:flutter/material.dart';
+
+var PageView组件实例 = PageView.builder(        // [!code focus:5]
+  itemCount: 列表.length,
+  itemBuilder: (context, index) => 子组件实例,
+  // ...
+);
+
+void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: GridView.count(
-          scrollDirection: Axis.vertical,
-          crossAxisCount: 2,
-          padding: EdgeInsets.all(8),
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
-          children: [
-            ...List.generate(
-              2 * 10,
-              (index) => Card(                                        // [!code hl:23]
-                elevation: 5,
-                color: Colors.grey,
-                shadowColor: Colors.black87,
-                shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(8)),
-                child: Container(
-                  padding: EdgeInsets.all(8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.network(
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTet_5-OuOci4vkqC62wHBfY_9xT7qHx94U9Yf4pPn1TlhVM3SGb8UQt-yPxeDex9TefMW51mimsGySlGuXAlWiRQ",
-                        fit: BoxFit.cover,
-                      ),
-                      Divider(),
-                      Text(
-                        'xxx' * 100,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
-                      ),
-                    ]
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+        body: PageView组件实例,
       ),
     ),
   );
 }
 ```
 
+::: details 例子:
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      body: PageView.builder(                      // [!code hl:9]
+        scrollDirection: Axis.vertical,
+        allowImplicitScrolling: true,
+        onPageChanged: (index) => print(index),
+        itemCount: 5,
+        itemBuilder: (context, index) => Center(
+          child: Text('Page #${index + 1}'),
+        ),
+      ),
+    ),
+  ));
+}
+```
+
 :::
 
-## 图片
+## 图片与图标
 
 ### Image.asset( )
 
@@ -1455,7 +1566,7 @@ void main() {
 
 :::
 
-## 图标
+---
 
 ### Icon 组件
 
@@ -1648,6 +1759,150 @@ void main() {
       ),
     ),
   );
+}
+```
+
+:::
+
+## 弹出框
+
+### AlertDialog 组件
+
+用于展示一个提示框
+
+需要结合内置函数`showDialog()`、`Navigator`使用
+
+```dart
+void 展示AlertDialog组件(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: 其他组件实例,
+      content: 其他组件实例,
+      actions: [其他组件实例, 其他组件实例],
+    ),
+  );
+}
+
+void 关闭ALerDialog组件(BuildContext context) {
+  Navigator.of(context).pop();
+}
+```
+
+| AlertDialog 常用参数 | 说明                                 | 参数值例子             |
+| :------------------: | ------------------------------------ | ---------------------- |
+|       `title`        | Dialog标题，值为一个组件实例         | ...                    |
+|      `content`       | Dialog内容，值为一个组件实例         | ...                    |
+|      `actions`       | Dialog按钮组，值为一个组件实例的列表 | `[组件实例, 组件实例]` |
+
+::: details 例子：
+
+```dart
+import 'package:flutter/material.dart';
+
+class MyCustom extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        child: Text('Open Dialog'),
+        onPressed: () => showDialog(                  // [!code hl:18]
+          barrierDismissible: true,
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text('Are you sure'),
+            content: Text('Hello World'),
+            actions: [
+              TextButton(
+                child: Text('Close'),
+                onPressed: () => print("cancel"),
+              ),
+              TextButton(
+                child: Text('Confirm'),
+                onPressed: () => print("confirm"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: MyCustom(),
+  ));
+}
+```
+
+:::
+
+---
+
+### SimpleDialog 组件
+
+用于展示一个列表选项提示框
+
+需要结合内置函数`showDialog()`、`Navigator`使用
+
+```dart
+void 展示AlertDialog组件(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) => SimpleDialog(
+      title: 其他组件实例,
+      children: [其他组件实例, 其他组件实例],
+    ),
+  );
+}
+
+void 关闭ALerDialog组件(BuildContext context) {
+  Navigator.of(context).pop();
+}
+```
+
+| SimpleDialog 常用参数 | 说明                               | 参数值例子             |
+| :-------------------: | ---------------------------------- | ---------------------- |
+|        `title`        | Dialog标题，值为一个组件实例       | ...                    |
+|      `children`       | Dialog内容，值为一个组件实例的列表 | `[组件实例, 组件实例]` |
+
+::: details 例子：
+
+```dart
+import 'package:flutter/material.dart';
+
+class MyCustom extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        child: Text('Open Dialog'),
+        onPressed: () => showDialog(                      // [!code hl:16]
+          barrierDismissible: true,
+          context: context,
+          builder: (context) => SimpleDialog(
+            title: Text('Select One Option'),
+            children: [
+              ...List.generate(
+                100,
+                (index) => SimpleDialogOption(
+                  child: Text('Option $index'),
+                  onPressed: () => Navigator.of(context).pop(index),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: MyCustom(),
+  ));
 }
 ```
 

@@ -3,7 +3,7 @@
 ## 整数 ( int )
 
 ```dart
-void main(){
+void main() {
   int 变量 = 数值;                  // [!code focus]
 }
 ```
@@ -23,7 +23,7 @@ void main(){
 ## 浮点数 ( double )
 
 ```dart
-void main(){
+void main() {
   double 变量 = 数值;               // [!code focus]
 }
 ```
@@ -43,7 +43,7 @@ void main(){
 Dart 中不区分单引号与双引号
 
 ```dart
-void main(){
+void main() {
   String 变量 = '字符串';           // [!code focus:4]
   String 变量 = "字符串";
   String 变量 = '''字符串''';
@@ -56,7 +56,7 @@ void main(){
 ### 常用操作
 
 ```dart [字符串方法创建]
-void main(){
+void main() {
   String 字符串 = "值";             // [!code focus:9]
 
   // 字符串拼接
@@ -88,7 +88,7 @@ void main(){
 ## 布尔值 ( bool )
 
 ```dart [字符串方法创建]
-void main(){
+void main() {
   bool 变量 = true;                // [!code focus:2]
   bool 变量 = false;               // [!code focus:2]
 }
@@ -97,7 +97,7 @@ void main(){
 ## 空值 ( Null )
 
 ```dart
-void main(){
+void main() {
   Null 变量 = null;                // [!code focus:6]
 
   var 变量;
@@ -111,13 +111,13 @@ void main(){
 ::: code-group
 
 ```dart [字符串方法创建]
-void main(){
+void main() {
   Runes 变量 = "字符串".runes                       // [!code focus]
 }
 ```
 
 ```dart [构造函数创建]
-void main(){
+void main() {
   Runes 卢恩符文 = Runes('Unicode码值');            // [!code focus:4]
 
   // 反转回字符串
