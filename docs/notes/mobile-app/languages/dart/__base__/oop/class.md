@@ -1,12 +1,14 @@
 # Dart 类
 
-Dart 是是一个面向对象语言，一切皆对象
+Dart 是一个面向对象语言，一切皆对象
 
-不仅用于封装相关逻辑，还可用于创建结构复杂的对象实例
+类不仅用于封装相关逻辑，还可通过类的实例化创建结构复杂的 Dart 对象
 
 ## 定义
 
-Dart 类使用关键字`class`定义，类名使用大驼峰命名 ( CamelCase )
+Dart 类使用关键字`class`定义
+
+类名使用大驼峰命名 ( CamelCase )
 
 ```dart
 class 类名 {                           // [!code focus:3]
@@ -16,7 +18,9 @@ class 类名 {                           // [!code focus:3]
 
 ## 实例化
 
-可以通过调用类名来实例化类创建一个实例对象，实例对象相互独立互不影响
+可以通过调用类名来实例化类创建一个实例对象
+
+每次实例化都会生成一个新的实例对象，实例对象相互独立互不影响
 
 ```dart
 class 类名 {                           // [!code focus:3]
@@ -58,24 +62,30 @@ void main() {
 
 ::: details 例子：通过默认构造函数实现对不同实例对象的赋值
 
-```dart
-class Person {                                      // [!code focus:10]
-  String? name;
-  int? age;
+```dart{0}
+class Person {                                                  // [!code focus:11]
+  String name;
+  int age;
+  String? gender;
 
-  Person(this.name, this.age);
+  Person(this.name, {required this.age, this.gender});
 
   void getInfo() {
-    print({"name": this.name, "age": this.age});
+    print({"name": this.name, "age": this.age, "gender": this.gender});
   }
 }
 
 void main() {
-  var andy = Person("Andy", 28);                // [!code focus:4]
-  var jack = Person("Jack", 16);
-  andy.getInfo();       // {name: "Andy", age: 28}
-  jack.getInfo();       // {name: "Jack", age: 16}
+  var andy = Person("Andy", age: 28, gender: "male");           // [!code focus:8]
+  andy.getInfo();     // {name: "Andy", age: 28, gender: "male"}
+
+  var zoey = Person("Zoey", age: 16, gender: "female");
+  zoey.getInfo();     // {name: "Jack", age: 16, gender: "female"}
+
+  var empty = Person("????", age: 0);
+  empty.getInfo();    // {name: "????", age: 0, gender: null}
 }
+
 ```
 
 :::
@@ -245,7 +255,7 @@ void main() {
 
 :::
 
-## 类的成员
+## 类中成员
 
 ### 实例属性、实例方法
 
@@ -297,7 +307,7 @@ class 类名 {                           // [!code focus:8]
 
 通过关键字`static`定义的成员为类中静态成员
 
-静态成员不属于类的某个实例而是属于类本身，只能通过类进行访问
+静态成员不属于类的某个实例而是属于类本身，只能通过类名进行访问
 
 ```dart
 class 类名 {                                // [!code focus:8]
@@ -323,13 +333,13 @@ Dart 中所有的对象都是类的实例，所有的类都是 Object 的子类
 
 ### extends
 
-可以通过关键字`extends`实现类的继承
+可以通过关键字`extends`实现类的继承 ( 只能实现单继承 )
 
-子类中的实例方法会覆盖父类中同名实例方法，会出现覆写时建议加上装饰器`@override`
+子类中的实例方法会覆盖父类中同名实例方法，重写方法时建议加上装饰器`@override`
 
-关键字`extends`只能实现单继承
+::: code-group
 
-```dart
+```dart [单继承]
 class 父类 {                        // [!code focus:12]
   // ...
 }
@@ -347,6 +357,8 @@ void main() {
   const 子类实例对象 = 子类();    // [!code focus]
 }
 ```
+
+:::
 
 ---
 
@@ -381,7 +393,7 @@ void main() {
 }
 ```
 
-::: details 例子：子类调用自身构造函数的同时调用父类的构造函数并传参，并实现同名方法的覆写
+::: details 例子：子类调用自身构造函数的同时调用父类的构造函数并传参，并实现同名方法的重写
 
 ```dart
 class Animal {                                       // [!code focus:21]
@@ -419,13 +431,13 @@ void main() {
 
 ### 抽象类
 
-抽象类通过关键字`abstract`定义
-
-抽象类不能被实例化，仅用于定义一些规范供其子类去遵循
+抽象类不能被实例化，仅用于作为一个定义一些规范供其子类去遵循的基类
 
 抽象类中会定义一些无函数体的抽象方法 ( 仅定义但不实现 ) 具体的逻辑实现由子类去定义
 
-继承抽象类的子类中除了自身成员以外，必须覆写并实现抽象类中的所有抽象方法，否则报错
+继承抽象类的子类中除了自身成员以外，必须覆盖重写并实现抽象类中的所有抽象方法，否则报错
+
+Dart 的抽象类通过关键字`abstract`定义
 
 ```dart
 abstract class 抽象类 {
@@ -471,11 +483,8 @@ class Cat extends Animal {
 }
 
 void main() {
-  var dog = Dog();            // [!code focus:5]
-  dog.bark();
-
-  var cat = Cat();
-  cat.bark();
+  Dog().bark();   // "汪汪汪"           // [!code focus:2]
+  Cat().bark();   // "喵喵喵"
 }
 ```
 
@@ -512,11 +521,8 @@ class Cat extends Animal {
 }
 
 void main() {
-  var dog = Dog();            // [!code focus:5]
-  dog.bark();
-
-  var cat = Cat();
-  cat.bark();
+  Dog().bark();   // "汪汪汪"           // [!code focus:2]
+  Cat().bark();   // "喵喵喵"
 }
 ```
 

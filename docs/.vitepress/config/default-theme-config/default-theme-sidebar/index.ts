@@ -17,6 +17,14 @@ import { GOLANG_ROOT, GOLANG_SIDEBAR } from "./web-backend/_golang";
 // ------------------------------------------------------------------------------------------------------------------------
 import { DEV_TOOLS_ROOT, DEV_TOOLS_SIDEBAR } from "./dev-tools";
 
+// web-infrastructure
+// ------------------------------------------------------------------------------------------------------------------------
+import {
+  DOCKER_COMPOSE_ROOT,
+  DOCKER_ROOT,
+  DOCKER_SIDEBAR,
+} from "./web-infrastructure/_docker";
+
 // mobile-app
 // ------------------------------------------------------------------------------------------------------------------------
 import { DART_ROOT, DART_SIDEBAR } from "./mobile-app/_dart";
@@ -45,6 +53,13 @@ export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
    * ------------------------------------------------------------------------------------------------------------------------
    */
   [DEV_TOOLS_ROOT]: DEV_TOOLS_SIDEBAR,
+
+  /**
+   * web-infrastructure
+   * ------------------------------------------------------------------------------------------------------------------------
+   */
+  [DOCKER_ROOT]: DOCKER_SIDEBAR,
+  [DOCKER_COMPOSE_ROOT]: DOCKER_SIDEBAR,
 
   /**
    * mobile-app

@@ -11,7 +11,9 @@ Django 是一个基于 Python 的 Web 框架
 
 ## 下载安装
 
-```zsh
+::: code-group
+
+```zsh [虚拟环境]
 % cd [项目目录]                                 # [!code focus:11]
 
 # 1. 在项目中创建并启用虚拟环境
@@ -25,6 +27,43 @@ Django 是一个基于 Python 的 Web 框架
 (.venv) % python -m django --version
 (.venv) 4.2.16
 ```
+
+```zsh [Docker]
+% cd [项目目录]                                                # [!code focus:31]
+
+# 1. 创建第三方依赖记录文件
+% echo 'Django==4.2.16' > requirements.txt
+
+# 2. 创建 Dockerfile
+% echo '
+FROM python:3.10.0-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+CMD ["python", "manage.py", "runserver", "8080"]
+' > Dockerfile
+
+# 3. 创建项目的自定义镜像
+% docker build \
+    -t [项目镜像名:版本] \
+    -f ./Dockerfile \
+    .
+
+# 4. 创建并启动项目的自定义镜像容器
+% docker run \
+    --name [项目容器名] \
+    -e [环境变量]=[值] \
+    -d \
+    [项目镜像:版本]
+
+# 5. 进入容器中检查 Django 的版本
+% docker exec -it [项目容器名] bash
+root@[项目容器ID]:/# python -m django --version
+4.2.16
+```
+
+:::
 
 ## 架构组成
 

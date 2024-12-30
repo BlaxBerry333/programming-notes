@@ -152,6 +152,8 @@ console.log(Array.isArray(Array.from(4)));  // true
 
 JavaScript 是弱类型语言，同时支持隐式数据类型转换与显式数据类型转换
 
+---
+
 ### 强制转换
 
 > Explicit Type Conversion

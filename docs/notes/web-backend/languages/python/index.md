@@ -40,7 +40,7 @@ Python 代码不需编译便可执行
 ## 书写规范
 
 - 使用换行来分隔每个语句，一行建议仅书写一条语句
-- 使用缩进来表示代码块的层次结构，每一级缩进使用 4 个空格
+- 使用缩进来表示代码块的层次结构，每一级缩进使用 4 个空格 ( 不建议使用 Tab )
 
 > [!IMPORTANT] 第三方格式化工具
 > 建议使用 [black](https://black.readthedocs.io/en/stable/getting_started.html) 来统一代码的风格
@@ -93,3 +93,7 @@ exclude = '''
 ```
 
 :::
+
+## 相关链接
+
+[Python从入门到精通](https://www.bilibili.com/video/BV1qK411n7gQ?spm_id_from=333.788.videopod.episodes&vd_source=8960252a3845b76b699282b11f36ab5c)

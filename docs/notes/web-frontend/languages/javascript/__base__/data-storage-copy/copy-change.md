@@ -1,51 +1,173 @@
 # JavaScript 拷贝与修改
 
-## 直接赋值
+## 变量赋值
 
-将一个变量直接赋值给另一新变量的行为取决于不同的数据类型
+将一个变量直接赋值给另一新变量后，数据修改时对新变量与源变量的影响取决于不同的数据类型
 
-|                     数据类型                     | 说明                                       |
-| :----------------------------------------------: | ------------------------------------------ |
-| [基本类型数据](../data-types/primitive-types.md) | 赋值的是值本身，修改新变量时不会影响原变量 |
-| [引用类型数据](../data-types/reference-types.md) | 赋值的是引用地址，修改新变量时会影响原变量 |
+|                     数据类型                     | 说明                                                                 |
+| :----------------------------------------------: | -------------------------------------------------------------------- |
+| [基本类型数据](../data-types/primitive-types.md) | 值拷贝，拷贝赋值的是数据的值，新变量与旧变量互不影响                 |
+| [引用类型数据](../data-types/reference-types.md) | 引用拷贝，拷贝赋值的是引用地址，成员变化时新变量与旧变量都会受到影响 |
 
-::: code-group
+---
 
-```js [基本类型数据 ( 原始类型 )]
+### 值拷贝
+
+> Value Copy
+
+赋值给一个新变量赋值一个基本类型数据时，拷贝赋值的仅仅是一个该数据值的副本
+
+对新变量与源变量进行修改时都不会影响到对方
+
+```js{0}
 let a = 100;
 
 // 拷贝
 let b = a;
 
-// 修改
-b = 200;
+// 修改源变量
+a = 200;
+console.log(a); // 200
+console.log(b); // 100
 
-console.log(a); // 100 // [!code hl:2]
-console.log(b); // 200
+// 修改新变量
+b = 300;
+console.log(a); // 200
+console.log(b); // 300
 ```
 
-```js [引用类型数据 ( 对象类型 )]
-let a = {
-  name: "Andy",
-  skills: ["React"],
-};
+---
+
+### 引用拷贝
+
+> Reference Copy
+
+赋值给一个新变量赋值一个引用类型数据时，拷贝赋值的是该数据的引用地址
+
+新对象与源对象对该引用数据类型的成员进行修改时会影响到所有使用该数据的地方
+
+::: code-group
+
+```js{0} [数组]
+let a = ["React", "Vue"];
 
 // 拷贝
 let b = a;
 
-// 修改
-b.name = "Tom";
-b.skills.push("Vue");
+// 修改源对象
+a.pop();
+a[0] = "Django";
+console.log(a);     // ["Django"]
+console.log(b);     // ["Django"]
 
-console.log(a); // { name: "Tom", skills: [ "React", "Vue" ] } // [!code hl:2]
-console.log(b); // { name: "Tom", skills: [ "React", "Vue" ] }
+// 修改新对象
+b[0] = "Gin";
+b.push("Rails");
+console.log(a);     // ["Gin", "Rails"]
+console.log(b);     // ["Gin", "Rails"]
+```
+
+```js{0} [键值对对象]
+let a = { name: "Andy", skills: ["React"] };
+
+// 拷贝
+let b = a;
+
+// 修改源对象
+a.name = "Tom";
+a.skills[0] = "Vue";
+console.log(a);     // { name: "Tom", skills: ["Vue"] }
+console.log(b);     // { name: "Tom", skills: ["Vue"] }
+
+// 修改新对象
+b.name = "Jack";
+b.skills.push("Django");
+console.log(a);     // { name: "Jack", skills: ["Vue", "Django"] }
+console.log(b);     // { name: "Jack", skills: ["Vue", "Django"] }
+```
+
+:::
+
+## 函数参数传递
+
+在函数中直接修改形参时对外部实参的影响取决于不同的数据类型
+
+|                     数据类型                     | 说明                                                             |
+| :----------------------------------------------: | ---------------------------------------------------------------- |
+| [基本类型数据](../data-types/primitive-types.md) | 值传递，传递的是实参的副本，函数中修改形参时不会影响外部实参     |
+| [引用类型数据](../data-types/reference-types.md) | 引用传递，传递的是实参的引用地址，函数中修改形参时会影响外部实参 |
+
+---
+
+### 值传递
+
+> Pass by Value
+
+通过参数传递给函数的是一个基本类型数据时，传递的仅仅是一个该数据值的副本
+
+在函数中修改该参数时不会影响到函数外的源数据
+
+```js{0}
+function myFunction(num) {
+  num++;
+  console.log(num);
+}
+
+const num = 0;
+
+myFunction(num);  // 1
+myFunction(num);  // 1
+myFunction(num);  // 1
+console.log(num); // 1
+```
+
+---
+
+### 引用传递
+
+> Pass by Reference
+
+通过参数传递给函数的是一个引用类型数据时，传递的是该数据的引用地址
+
+在函数中修改该参数时会影响到函数外的源数据，以及所有使用了源数据的地方
+
+::: code-group
+
+```js{0} [数组]
+function myFunction(list, value) {
+  list.push(value);
+  console.log(list);
+}
+
+const myList = [];
+
+myFunction(myList, 1);  // [1]
+myFunction(myList, 2);  // [1, 2]
+myFunction(myList, 3);  // [1, 2, 3]
+console.log(myList);    // [1, 2, 3]
+```
+
+```js{0} [键值对对象]
+function myFunction(obj, value) {
+  obj[value] = value;
+  console.log(obj);
+}
+
+const myObj = {};
+
+myFunction(myObj, 1);   // {1: 1}
+myFunction(myObj, 2);   // {1: 1, 2: 2}
+myFunction(myObj, 3);   // {1: 1, 2: 2, 3: 3}
+console.log(myObj);     // {1: 1, 2: 2, 3: 3}
 ```
 
 :::
 
 ## 拷贝对象
 
-基于源对象类型数据创建一个新对象类型数据时，不同拷贝方式创建的对象在更新时表现也不同
+基于源对象类型数据拷贝创建一个新对象类型数据时
+
+修改新对象时对源对象的影响取决于不同的拷贝方式
 
 ---
 
@@ -116,7 +238,7 @@ console.log(b); // { 3, 4, { skill: "Vue" }}
 >
 > - `JSON.stringify()` <Badge type="warning">不推荐</Badge>
 > - 第三方库 ( 比如: `lodash.cloneDeep()` )
-> - 手写递归深拷贝
+> - 手写递归深层拷贝对象以及其内部的所有子对象
 
 ::: code-group
 

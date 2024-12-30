@@ -17,11 +17,11 @@ export const PYTHON_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         items: [
           {
             text: "不可变类型",
-            link: `${PYTHON_ROOT}/__base__/data-types/immutable`,
+            link: `${PYTHON_ROOT}/__base__/data-types/immutable-types`,
           },
           {
             text: "可变类型",
-            link: `${PYTHON_ROOT}/__base__/data-types/mutable`,
+            link: `${PYTHON_ROOT}/__base__/data-types/mutable-types`,
           },
           {
             text: "数据类型操作",
@@ -32,7 +32,16 @@ export const PYTHON_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
       {
         text: "数据存储与拷贝",
         collapsed: true,
-        items: [],
+        items: [
+          {
+            text: "内存管理",
+            link: `${PYTHON_ROOT}/__base__/data-storage-copy/memory-management`,
+          },
+          {
+            text: "拷贝与修改",
+            link: `${PYTHON_ROOT}/__base__/data-storage-copy/copy-change`,
+          },
+        ],
       },
       {
         text: "变量",
@@ -77,6 +86,10 @@ export const PYTHON_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
             text: "类",
             link: `${PYTHON_ROOT}/__base__/oop/class`,
           },
+          // {
+          //   text: "设计模式",
+          //   link: `${PYTHON_ROOT}/__base__/oop/design-patterns`,
+          // },
         ],
       },
       {

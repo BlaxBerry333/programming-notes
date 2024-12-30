@@ -17,7 +17,7 @@ Dart 是通过库与包来实现模块化开发
 
 ::: code-group
 
-```dart [直接导入]
+```dart [完全导入]
 import "dart:内置库";                       // [!code focus:7]
 
 import "package:第三方库";

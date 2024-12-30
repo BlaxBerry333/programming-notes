@@ -47,6 +47,9 @@ let str3 = `xxx`;
 ```js
 let 字符串 = "值";
 
+// 获取长度
+console.log(len(字符串));
+
 // 获取字符
 console.log(字符串[索引]);
 
@@ -113,11 +116,13 @@ console.log(false * 100);   // 0
 
 ```js
 // 显示声明
-const v1 = undefined;
+let v1 = undefined;
 
 // 隐式声明
 var v2;
-var v3 = (function () {})();
+let v3 = (function () {})();
+let v4 = []?.[0];
+let v4 = {}?.xxx;
 ```
 
 ## 空类型 ( null )
