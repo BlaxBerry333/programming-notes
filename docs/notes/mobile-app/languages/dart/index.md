@@ -18,7 +18,7 @@ Dart 与 Flutter 框架紧密集成无需单独安装与配置 ( Flutter SDK 中
 ::: code-group
 
 ```zsh [asdf]
-# 0. 下载前提库                      # [!code focus:13]
+# 0. 下载前提库                                             # [!code focus:13]
 % brew install jq
 
 # 1. 下载 asdf 插件与的版本
@@ -32,6 +32,10 @@ Dart 与 Flutter 框架紧密集成无需单独安装与配置 ( Flutter SDK 中
 # 3. 检查安装的版本
 % dart --version
 Dart SDK version: 3.5.0 (stable) (Tue Jul 30 02:17:59 2024 -0700) on "macos_arm64"
+
+# 4. 一劳永逸将所有的 Dart 的第三方工具添加到环境变量             # [!code focus:3]
+% export PATH="$PATH":"$HOME/.pub-cache/bin" >> ~/.zshrc
+% source ~/.zshrc
 ```
 
 :::

@@ -79,17 +79,6 @@ export const DART_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
   },
 
   {
-    text: "功能扩展",
-    collapsed: false,
-    items: [
-      {
-        text: "Flutter",
-        link: `${FLUTTER_ROOT}/`,
-      },
-    ],
-  },
-
-  {
     text: "返回首页",
     link: `${DART_ROOT}/`,
   },

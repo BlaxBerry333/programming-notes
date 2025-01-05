@@ -16,7 +16,7 @@ Docker Compose 是一个容器编排工具 ( 自动化部署等 )
 可以使用可视化桌面应用 [Docker Desktop](https://docs.docker.com/desktop/setup/install/mac-install/)
 
 ```zsh
-% docker-compose --version
+% docker-compose --version                  # [!code focus]
 Docker Compose version v2.24.6-desktop.1
 ```
 

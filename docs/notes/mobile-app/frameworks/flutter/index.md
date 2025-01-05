@@ -16,7 +16,7 @@ Flutter 是一个基于 Dart 的跨平台开发框架
 ::: code-group
 
 ```zsh [asdf]
-# 0. 下载前提库                                           # [!code focus:13]
+# 0. 下载 asdf 对 Flutter 支持的前提库                                           # [!code focus:18]
 % brew install jq
 
 # 1. 下载 asdf 插件与的版本
@@ -27,11 +27,15 @@ Flutter 是一个基于 Dart 的跨平台开发框架
 % asdf global flutter [版本]
 % asdf reshim flutter
 
-# 4. 检查 Flutter SDK 的下载位置
+# 3. 检查 Flutter SDK 的下载位置
 % asdf where flutter
 /Users/[用户名]/.asdf/installs/flutter/3.24.0-stable
 
-# 3. 检查安装的版本                                       # [!code focus:2]
+# 4. 一劳永逸将所有的 Dart 的第三方工具添加到环境变量
+% export PATH="$PATH":"$HOME/.pub-cache/bin" >> ~/.zshrc
+% source ~/.zshrc
+
+# 5. 检查安装的版本                                       # [!code focus:2]
 % flutter --version
 Flutter 3.24.0 • channel stable • https://github.com/flutter/flutter.git
 Framework • revision 80c2e84975 (5 months ago) • 2024-07-30 23:06:49 +0700
@@ -102,7 +106,7 @@ Doctor summary (to see all details, run flutter doctor -v):
 
 ## 项目初始化
 
-项目名使用蛇形命名 ( snake_case )
+项目名使用小写蛇形命名 ( snake_case )
 
 ```zsh
 # 1. 创建项目，进入项目目录                   # [!code focus:6]

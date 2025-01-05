@@ -12,7 +12,12 @@ next: false
 ::: code-group
 
 ```zsh [Homebrew]
+# 1. 下载安装 Git                                  # [!code focus:5]
 % brew install git
+
+# 2. 检查版本
+% git --version
+git version 2.39.2 (Apple Git-143)
 ```
 
 :::
