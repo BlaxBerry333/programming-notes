@@ -5,6 +5,7 @@ export const DEV_TOOLS_ROOT__GIT = `${DEV_TOOLS_ROOT}/version/git`;
 export const DEV_TOOLS_ROOT__ASDF = `${DEV_TOOLS_ROOT}/version/asdf`;
 export const DEV_TOOLS_ROOT__MAKEFILE = `${DEV_TOOLS_ROOT}/auto-build/makefile`;
 export const DEV_TOOLS_ROOT__CURL = `${DEV_TOOLS_ROOT}/debugging/curl`;
+export const DEV_TOOLS_ROOT__VIM = `${DEV_TOOLS_ROOT}/editor/vim`;
 
 export const DEV_TOOLS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
   {
@@ -40,6 +41,17 @@ export const DEV_TOOLS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
       {
         text: "cRUL",
         link: `${DEV_TOOLS_ROOT__CURL}/`,
+      },
+    ],
+  },
+
+  {
+    text: "编辑器",
+    collapsed: false,
+    items: [
+      {
+        text: "Vim",
+        link: `${DEV_TOOLS_ROOT__VIM}/`,
       },
     ],
   },

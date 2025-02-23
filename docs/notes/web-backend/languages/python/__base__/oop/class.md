@@ -391,15 +391,15 @@ instance.print_pi()                    # 3.1415926
 ```py
 class 类:
     @classmethod
-    def 类方法1(self):
+    def 类方法1(cls):
         pass
 
     @classmethod
-    def 类方法2(self, 形参1, 形参2):
+    def 类方法2(cls, 形参1, 形参2):
         pass
 
     @classmethod
-    def 类方法3(self, *args, **kwargs):
+    def 类方法3(cls, *args, **kwargs):
         pass
 
 
@@ -605,4 +605,48 @@ class Cat(Animal):
 
 Dog().speak()       # 汪汪汪
 Cat().speak()       # 喵喵喵
+```
+
+## 方法装饰器
+
+```py
+class 类():
+    @装饰器
+    def 方法(参数):
+        pass
+```
+
+|  类中常用装饰器   | 说明                                              |
+| :---------------: | ------------------------------------------------- |
+|  `@staticmethod`  | 用于定义一个静态方法                              |
+|  `@classmethod`   | 用于定义一个类方法                                |
+| `@abstractmethod` | 用于定义一个抽象方法                              |
+|    `@property`    | 用于定义一个动态计算的只读属性 ( 方法会变为属性 ) |
+
+::: details 例子：验证装饰器`@property`的用法
+
+```py
+from datetime import datetime
+
+
+class Person:
+    def __init__(self, name, birthday):
+        self.name = name
+        self.birthday = birthday
+
+    @property
+    def age(self):
+        current_year = datetime.now().year
+        return current_year - self.birthday
+
+    @property
+    def greeting(self):
+        return f"Hello, my name is {self.name} and I am {self.age} years old."
+
+
+person = Person("Alice", 1995)
+print(person.name)       # Alice
+print(person.birthday)   # 1995
+print(person.age)        # 30                                               # [!code hl:2]
+print(person.greeting)   # Hello, my name is Alice and I am 30 years old.
 ```

@@ -43,11 +43,11 @@ const __PYTHON_AND_RELATED_FRAMEWORKS__ = [
         link: "/notes/web-backend/frameworks/django/", 
         imgSrc: "/static/skill-icons/web-backend--django.png"
     },
-    { 
-        name: "Fast API", 
-        link: "/notes/web-backend/frameworks/fastapi/", 
-        imgSrc: "/static/skill-icons/web-backend--fastapi.png"
-    }
+    // { 
+    //     name: "Fast API", 
+    //     link: "/notes/web-backend/frameworks/fastapi/", 
+    //     imgSrc: "/static/skill-icons/web-backend--fastapi.png"
+    // }
 ]
 
 const __GOLANG_AND_RELATED_FRAMEWORKS__ = [
@@ -85,7 +85,7 @@ const __GOLANG_AND_RELATED_FRAMEWORKS__ = [
 //     { 
 //         name: "Actix Web", 
 //         link: "https://actix.rs/", 
-//         imgSrc: "/static/skill-icons/web-backend--rust.png",
+//         imgSrc: "/static/skill-icons/web-backend--actix-web.png",
 //         openNewTag: true
 //     }
 // ]

@@ -19,16 +19,19 @@ import { DEV_TOOLS_ROOT, DEV_TOOLS_SIDEBAR } from "./dev-tools";
 
 // web-infrastructure
 // ------------------------------------------------------------------------------------------------------------------------
+import { SHELL_ROOT, SHELL_SIDEBAR } from "./web-infrastructure/_shell";
 import {
   DOCKER_COMPOSE_ROOT,
   DOCKER_ROOT,
   DOCKER_SIDEBAR,
 } from "./web-infrastructure/_docker";
 
-// mobile-app
+// cross-platform
 // ------------------------------------------------------------------------------------------------------------------------
-import { DART_ROOT, DART_SIDEBAR } from "./mobile-app/_dart";
-import { FLUTTER_ROOT, FLUTTER_SIDEBAR } from "./mobile-app/_flutter";
+import { DART_ROOT, DART_SIDEBAR } from "./cross-platform/_dart";
+import { FLUTTER_ROOT, FLUTTER_SIDEBAR } from "./cross-platform/_flutter";
+
+// ------------------------------------------------------------------------------------------------------------------------
 
 export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
   /**
@@ -58,11 +61,12 @@ export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
    * web-infrastructure
    * ------------------------------------------------------------------------------------------------------------------------
    */
+  [SHELL_ROOT]: SHELL_SIDEBAR,
   [DOCKER_ROOT]: DOCKER_SIDEBAR,
   [DOCKER_COMPOSE_ROOT]: DOCKER_SIDEBAR,
 
   /**
-   * mobile-app
+   * cross-platform
    * ------------------------------------------------------------------------------------------------------------------------
    */
   [DART_ROOT]: DART_SIDEBAR,

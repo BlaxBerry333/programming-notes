@@ -17,7 +17,12 @@ import SkillIconsBlock from '../../components/SkillIconsBlock.vue'
 
 const __OPERATING_SYSTEM__ = [
     { 
-        name: "Shell", 
+        name: "Linux", 
+        link: "/notes/web-infrastructure/operating-system/linux/", 
+        imgSrc: "/static/skill-icons/web-infrastructure--linux.png"
+    },
+    { 
+        name: "Shell 脚本", 
         link: "/notes/web-infrastructure/operating-system/shell/", 
         imgSrc: "/static/skill-icons/web-infrastructure--shell.png"
     },

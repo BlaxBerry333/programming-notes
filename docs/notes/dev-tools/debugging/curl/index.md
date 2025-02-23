@@ -26,3 +26,26 @@ Release-Date: 2022-10-26
 Protocols: dict file ftp ftps gopher gophers http https imap imaps ldap ldaps mqtt pop3 pop3s rtsp smb smbs smtp smtps telnet tftp
 Features: alt-svc AsynchDNS GSS-API HSTS HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz MultiSSL NTLM NTLM_WB SPNEGO SSL threadsafe UnixSockets
 ```
+
+## 请求
+
+```zsh
+# GET
+% curl [URL]
+
+# POST
+% curl -X POST [URL] \
+    -d "属性1=值&属性2=值"
+```
+
+## 请求头
+
+```zsh
+% curl -H "Content-Type: application/json" \
+       -H "Authorization: Bearer TOKEN" \
+       [URL]
+```
+
+<!-- ## 相关链接
+
+- [常用命令](https://mp.weixin.qq.com/s/TN2XUPtCIqV3KDe3-hezEQ) -->

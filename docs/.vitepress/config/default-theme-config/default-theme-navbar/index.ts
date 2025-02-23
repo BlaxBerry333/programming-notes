@@ -9,7 +9,7 @@ import { PYTHON_ROOT } from "../default-theme-sidebar/web-backend/_python";
 // ------------------------------------------------------------------------------------------------------------------------
 import { REACT_JS_ROOT } from "../default-theme-sidebar/web-frontend/_react";
 import { DJANGO_ROOT } from "../default-theme-sidebar/web-backend/_django";
-import { FLUTTER_ROOT } from "../default-theme-sidebar/mobile-app/_flutter";
+import { FLUTTER_ROOT } from "../default-theme-sidebar/cross-platform/_flutter";
 
 // 常用工具
 // ------------------------------------------------------------------------------------------------------------------------

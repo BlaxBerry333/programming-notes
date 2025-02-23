@@ -10,6 +10,7 @@
 async function 函数() {
   // ...
   await 异步任务;
+  const 返回值 = await 异步任务;
   // ...
 }
 ```
@@ -18,6 +19,7 @@ async function 函数() {
 const 函数 = async () => {
   // ...
   await 异步任务;
+  const 返回值 = await 异步任务;
   // ...
 };
 ```
@@ -32,6 +34,6 @@ async function delay(callback, time) {
 }
 
 delay(() => console.log("xxx"), 0);     // 立即打印 "xxx"
-delay(() => console.log("yyy"), 1000);  // "xxx" 打印结束后等待 1s 打印 "yyy"
-delay(() => console.log("zzz"), 2000);  // "xxx" 打印结束后等待 2s 打印 "zzz"
+delay(() => console.log("yyy"), 1000);  // 等待 1000ms 后打印 "yyy"
+delay(() => console.log("zzz"), 2000);  // 等待 2000ms 后打印 "zzz"
 ```

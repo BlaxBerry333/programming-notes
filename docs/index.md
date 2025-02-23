@@ -20,9 +20,9 @@ features:
     link: /notes/web-backend/
     icon:
       src: /static/cartoon-images/hero--spiderman.webp
-  - title: 移动端开发
-    details: Mobile App Dev
-    link: /notes/mobile-app/
+  - title: 跨平台开发
+    details: Cross Platform Dev
+    link: /notes/cross-platform/
     icon:
       src: /static/cartoon-images/hero--daredevil.webp
   - title: 基础设施

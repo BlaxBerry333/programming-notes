@@ -42,6 +42,14 @@ const __DEBUGGING_ANALYZING__ = [
         imgSrc: "/static/skill-icons/dev-tools--curl.png"
     }
 ]
+
+const __EDITOR__ = [
+    { 
+        name: "Vim", 
+        link: "/notes/dev-tools/editor/vim/", 
+        imgSrc: "/static/skill-icons/dev-tools--vim.png"
+    }
+]
 </script>
 
 ## 版本控制
@@ -55,3 +63,7 @@ const __DEBUGGING_ANALYZING__ = [
 ## 调试分析
 
 <SkillIconsBlock :skillList="__DEBUGGING_ANALYZING__"/>
+
+## 调试分析
+
+<SkillIconsBlock :skillList="__EDITOR__"/>

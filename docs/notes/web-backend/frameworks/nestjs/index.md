@@ -7,7 +7,7 @@ next: false
 
 ![](/static/skill-images/web-backend--nestjs.png)
 
-Express.js 是一个基于 Node.js 的 Web 框架
+Nest.js 是一个基于 Node.js 的 Web 框架
 
 ## 下载安装
 

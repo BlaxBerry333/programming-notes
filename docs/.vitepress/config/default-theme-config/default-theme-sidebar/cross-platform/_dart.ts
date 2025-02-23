@@ -1,7 +1,6 @@
 import { type DefaultTheme } from "vitepress";
-import { FLUTTER_ROOT } from "./_flutter";
 
-export const DART_ROOT = "/notes/mobile-app/languages/dart";
+export const DART_ROOT = "/notes/cross-platform/languages/dart";
 
 export const DART_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
   {

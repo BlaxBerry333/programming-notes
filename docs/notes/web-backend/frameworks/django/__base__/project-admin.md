@@ -363,7 +363,9 @@ class Student(models.Model):
 
 ## 数据的导入导出
 
-需要借助第三方库 [django-import-export](https://django-import-export.readthedocs.io/en/latest/)
+CSV、EXCEL、JSON、YAML 文件的导入导出可以借助第三方库 [django-import-export](https://django-import-export.readthedocs.io/en/latest/)
+
+::: details 1. 下载安装
 
 ```zsh
 % cd [项目名]
@@ -371,4 +373,20 @@ class Student(models.Model):
 (虚拟环境) % pip install django-import-export          # [!code focus:1]
 ```
 
-https://note.com/shinya_hd/n/n1f742973a81c
+:::
+
+::: details 2. 注册应用
+
+::: code-group
+
+```py [主应用/settings.py]
+INSTALLED_APPS = [
+    # 其他应用
+    # ...
+    "import_export"                 # [!code ++]
+]
+```
+
+:::
+
+<!-- https://note.com/shinya_hd/n/n1f742973a81c -->

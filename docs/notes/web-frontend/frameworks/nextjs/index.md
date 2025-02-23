@@ -13,14 +13,14 @@ next: false
 
 ```zsh [新目录]
 % npx create-next-app@latest                          # [!code focus]
-? What is your project named? ›         [项目名]
-? Would you like to use TypeScript? ›                                   Yes
-? Would you like to use ESLint? ›                                       Yes
-? Would you like to use Tailwind CSS? ›                                 Yes
-? Would you like your code inside a `src/` directory? ›                 Yes
-? Would you like to use App Router? (recommended) ›                     Yes
-? Would you like to use Turbopack for `next dev`? ›                     Yes
-? Would you like to customize the import alias (`@/*` by default)? ›    No
+? What is your project named? ›                                       [项目名]
+? Would you like to use TypeScript? ›                                 Yes
+? Would you like to use ESLint? ›                                     Yes
+? Would you like to use Tailwind CSS? ›                               Yes
+? Would you like your code inside a `src/` directory? ›               Yes
+? Would you like to use App Router? (recommended) ›                   Yes
+? Would you like to use Turbopack for `next dev`? ›                   Yes
+? Would you like to customize the import alias (`@/*` by default)? ›  No
 
 % cd [项目名]                                          # [!code focus:2]
 % npm run dev
@@ -89,3 +89,7 @@ next: false
 ```
 
 :::
+
+<!-- ## 相关链接
+
+- [Next14](https://mp.weixin.qq.com/s/6G65dlwKZiFDem3IQ4BBXA) -->

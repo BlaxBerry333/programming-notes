@@ -5,7 +5,7 @@ next: false
 
 # Dart
 
-![](/static/skill-images/mobile-app--dart.png)
+![](/static/skill-images/cross-platform--dart.png)
 
 Dart 是一种编译型和解释型结合的语言，文件后缀名是`.dart`
 

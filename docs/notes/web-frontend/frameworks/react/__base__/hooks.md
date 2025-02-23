@@ -374,6 +374,24 @@ const 组件: FC = () => {
 };
 ```
 
+> [!IMPORTANT] 防抖函数 ( Debounce ) 缓存时也可使用<code>useMemo()</code>
+>
+> ```tsx
+> import { useCallback } from "react";
+> import { debounce } from "lodash-es";
+>
+> const 组件: FC = () => {
+>   const debouncedFunction = useCallback(
+>     debounce(() => {
+>       // ...
+>     }, 2000),
+>     [],
+>   );
+>
+>   debouncedFunction();
+> };
+> ```
+
 ---
 
 ### useDeferredValue( ) <Badge>性能优化 Hook</Badge> {#useDeferredValue}

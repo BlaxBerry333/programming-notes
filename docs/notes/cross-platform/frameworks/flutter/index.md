@@ -5,7 +5,7 @@ next: false
 
 # Flutter
 
-![](/static/skill-images/mobile-app--flutter.png)
+![](/static/skill-images/cross-platform--flutter.png)
 
 Flutter 是一个基于 Dart 的跨平台开发框架
 
