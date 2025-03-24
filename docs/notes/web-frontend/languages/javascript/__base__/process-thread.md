@@ -25,3 +25,4 @@ JavaScript 是单线程执行
 ## 相关链接
 
 - [高级JavaScript教程](https://www.bilibili.com/video/BV1p4411u7TT?spm_id_from=333.788.videopod.episodes&p=182)
+- [使用 Service Worker 让首页秒开](https://mp.weixin.qq.com/s/qXW5clC0MCz4f9p4MJBzFg)

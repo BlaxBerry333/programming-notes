@@ -6,12 +6,15 @@ import { JS_ROOT, JS_SIDEBAR } from "./web-frontend/_javascript";
 import { TS_ROOT, TS_SIDEBAR } from "./web-frontend/_typescript";
 import { REACT_JS_ROOT, REACT_JS_SIDEBAR } from "./web-frontend/_react";
 import { VUE_JS_ROOT, VUE_JS_SIDEBAR } from "./web-frontend/_vue";
+import { DART_ROOT, DART_SIDEBAR } from "./web-frontend/_dart";
+import { FLUTTER_ROOT, FLUTTER_SIDEBAR } from "./web-frontend/_flutter";
 
 // web-backend
 // ------------------------------------------------------------------------------------------------------------------------
 import { PYTHON_ROOT, PYTHON_SIDEBAR } from "./web-backend/_python";
 import { DJANGO_ROOT, DJANGO_SIDEBAR } from "./web-backend/_django";
 import { GOLANG_ROOT, GOLANG_SIDEBAR } from "./web-backend/_golang";
+import { RUST_ROOT, RUST_SIDEBAR } from "./web-backend/_rust";
 
 // dev-tools
 // ------------------------------------------------------------------------------------------------------------------------
@@ -25,13 +28,6 @@ import {
   DOCKER_ROOT,
   DOCKER_SIDEBAR,
 } from "./web-infrastructure/_docker";
-
-// cross-platform
-// ------------------------------------------------------------------------------------------------------------------------
-import { DART_ROOT, DART_SIDEBAR } from "./cross-platform/_dart";
-import { FLUTTER_ROOT, FLUTTER_SIDEBAR } from "./cross-platform/_flutter";
-
-// ------------------------------------------------------------------------------------------------------------------------
 
 export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
   /**
@@ -50,6 +46,7 @@ export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
   [PYTHON_ROOT]: PYTHON_SIDEBAR,
   [DJANGO_ROOT]: DJANGO_SIDEBAR,
   [GOLANG_ROOT]: GOLANG_SIDEBAR,
+  [RUST_ROOT]: RUST_SIDEBAR,
 
   /**
    * dev-tools

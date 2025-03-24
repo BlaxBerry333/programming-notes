@@ -8,6 +8,16 @@ export const GOLANG_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
     collapsed: false,
     items: [
       {
+        text: "项目构建、包管理",
+        collapsed: true,
+        items: [
+          {
+            text: "Go Modules",
+            link: `${GOLANG_ROOT}/__base__/pkgs-management/go-modules`,
+          },
+        ],
+      },
+      {
         text: "数据类型",
         collapsed: true,
         items: [
@@ -53,10 +63,6 @@ export const GOLANG_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
             text: "常用内置包",
             collapsed: true,
             link: `${GOLANG_ROOT}/__base__/modules-dev/builtin-packages`,
-          },
-          {
-            text: "第三方包管理 ( Go Modules )",
-            link: `${GOLANG_ROOT}/__base__/modules-dev/go-modules`,
           },
         ],
       },

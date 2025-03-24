@@ -90,38 +90,38 @@ JavaScript 代码不需编译便可执行在浏览器环境、非浏览器的运
 - 使用分号`;`来分隔每个语句，一行建议仅书写一条语句
 - 使用大括号`{ }`来定义代码块，每一级缩进 2 或 4 个空格
 
-> [!IMPORTANT] 第三方格式化工具
-> 建议使用 [prettier](https://prettier.io/docs/en/install) 来统一代码的风格
-
-::: code-group
-
-```zsh [依赖包]
-# 1. 下载依赖包
-% npm install prettier
-
-# 2. 创建基础配置文件
-node --eval "fs.writeFileSync('.prettierrc','{}\n')"
-node --eval "fs.writeFileSync('.prettierignore','# Ignore artifacts:\nbuild\ncoverage\n')"
-
-# 2. 执行命令，格式化当前目录下的所有文件并使用缓存文件优化加载速度
-% npm run prettier . --write --cache --cache-location=./.cache/.prettiercache
-```
-
-```json{0} [VSCode 插件配置]
-{
-  "editor.formatOnSave": true,                          // [!code ++:2]
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
-}
-```
-
-```json [.prettierrc 配置]
-{
-  "printWidth": 100 /* 设置一行最大数字符数 */,
-  "plugins": [
-    "prettier-plugin-organize-imports" /* 自动整理和排序 import 语句 */,
-    "prettier-plugin-css-order" /* 自动排序 CSS 文件中的属性*/
-  ]
-}
-```
-
-:::
+> [!IMPORTANT] 代码风格
+> 建议使用第三方工具 [prettier](https://prettier.io/docs/en/install) 来统一代码的风格
+>
+> ::: code-group
+>
+> ```zsh [依赖包]
+> # 1. 下载依赖包
+> % npm install -D prettier
+>
+> # 2. 创建基础配置文件
+> node --eval "fs.writeFileSync('.prettierrc','{}\n')"
+> node --eval "fs.writeFileSync('.prettierignore','# Ignore artifacts:\nbuild\ncoverage\n')"
+>
+> # 2. 执行命令，格式化当前目录下的所有文件并使用缓存文件优化加载速度
+> % npm run prettier . --write --cache --cache-location=./.cache/.prettiercache
+> ```
+>
+> ```json{0} [VSCode 插件配置]
+> {
+>   "editor.formatOnSave": true,                          // [!code ++:2]
+>   "editor.defaultFormatter": "esbenp.prettier-vscode"
+> }
+> ```
+>
+> ```json [.prettierrc 配置]
+> {
+>   "printWidth": 100 /* 设置一行最大数字符数 */,
+>   "plugins": [
+>     "prettier-plugin-organize-imports" /* 自动整理和排序 import 语句 */,
+>     "prettier-plugin-css-order" /* 自动排序 CSS 文件中的属性*/
+>   ]
+> }
+> ```
+>
+> :::

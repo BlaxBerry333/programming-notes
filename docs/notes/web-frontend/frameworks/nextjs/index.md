@@ -23,10 +23,8 @@ next: false
 ? Would you like to customize the import alias (`@/*` by default)? ›  No
 
 % cd [项目名]                                          # [!code focus:2]
-% npm run dev
-> react-next@0.1.0 dev
+% yarn run dev   # 默认 3000 端口
 > next dev --turbopack
-
    ▲ Next.js 15.1.6 (Turbopack)
    - Local:        http://localhost:3000
    - Network:      http://192.168.1.3:3000
@@ -46,10 +44,8 @@ next: false
 ? Would you like to use Turbopack for `next dev`? ›                     Yes
 ? Would you like to customize the import alias (`@/*` by default)? ›    No
 
-% npm run dev                                        # [!code focus]
-> react-next@0.1.0 dev
+% yarn run dev   # 默认 3000 端口                      # [!code focus]
 > next dev --turbopack
-
    ▲ Next.js 15.1.6 (Turbopack)
    - Local:        http://localhost:3000
    - Network:      http://192.168.1.3:3000
@@ -90,6 +86,6 @@ next: false
 
 :::
 
-<!-- ## 相关链接
+## 相关链接
 
-- [Next14](https://mp.weixin.qq.com/s/6G65dlwKZiFDem3IQ4BBXA) -->
+- [Next14](https://mp.weixin.qq.com/s/6G65dlwKZiFDem3IQ4BBXA)

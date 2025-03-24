@@ -1,6 +1,6 @@
 import { type DefaultTheme } from "vitepress";
 
-export const FLUTTER_ROOT = "/notes/cross-platform/frameworks/flutter";
+export const FLUTTER_ROOT = "/notes/web-frontend/frameworks/flutter";
 
 export const FLUTTER_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
   {

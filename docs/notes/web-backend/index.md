@@ -13,82 +13,121 @@ hero:
 <script setup lang="ts"> 
 import SkillIconsBlock from '../../components/SkillIconsBlock.vue'
 
+const __LANGUAGES_AND_RELATED_FRAMEWORKS__ = {
+    ['__NODEJS__']: [
+        { 
+            name: "Node.js", 
+            link: "/notes/web-backend/runtimes/nodejs/", 
+            imgSrc: "/static/skill-icons/web-backend--nodejs.png"
+        },
+        { 
+            name: "Express.js", 
+            link: "/notes/web-backend/frameworks/expressjs/", 
+            imgSrc: "/static/skill-icons/web-backend--expressjs.png"
+        },
+        { 
+            name: "Nest.js", 
+            link: "/notes/web-backend/frameworks/nestjs/", 
+            imgSrc: "/static/skill-icons/web-backend--nestjs.png"
+        }
+    ],
 
-const __NODEJS_AND_RELATED_FRAMEWORKS__ = [
-    { 
-        name: "Node.js", 
-        link: "/notes/web-backend/runtimes/nodejs/", 
-        imgSrc: "/static/skill-icons/web-backend--nodejs.png"
-    },
-    { 
-        name: "Express.js", 
-        link: "/notes/web-backend/frameworks/expressjs/", 
-        imgSrc: "/static/skill-icons/web-backend--expressjs.png"
-    },
-    { 
-        name: "Nest.js", 
-        link: "/notes/web-backend/frameworks/nestjs/", 
-        imgSrc: "/static/skill-icons/web-backend--nestjs.png"
-    }
-]
+    ['__PYTHON__']: [
+        { 
+            name: "Python", 
+            link: "/notes/web-backend/languages/python/", 
+            imgSrc: "/static/skill-icons/web-backend--python.png"
+        },
+        { 
+            name: "Django", 
+            link: "/notes/web-backend/frameworks/django/", 
+            imgSrc: "/static/skill-icons/web-backend--django.png"
+        },
+    ],
 
-const __PYTHON_AND_RELATED_FRAMEWORKS__ = [
-    { 
-        name: "Python", 
-        link: "/notes/web-backend/languages/python/", 
-        imgSrc: "/static/skill-icons/web-backend--python.png"
-    },
-    { 
-        name: "Django", 
-        link: "/notes/web-backend/frameworks/django/", 
-        imgSrc: "/static/skill-icons/web-backend--django.png"
-    },
-    // { 
-    //     name: "Fast API", 
-    //     link: "/notes/web-backend/frameworks/fastapi/", 
-    //     imgSrc: "/static/skill-icons/web-backend--fastapi.png"
-    // }
-]
+    ['__GOLANG__']: [
+        { 
+            name: "Golang", 
+            link: "/notes/web-backend/languages/golang/", 
+            imgSrc: "/static/skill-icons/web-backend--golang.png"
+        },
+        { 
+            name: "Gin", 
+            link: "/notes/web-backend/frameworks/gin/", 
+            imgSrc: "/static/skill-icons/web-backend--gin.png"
+        }  
+    ],
 
-const __GOLANG_AND_RELATED_FRAMEWORKS__ = [
-    { 
-        name: "Golang", 
-        link: "/notes/web-backend/languages/golang/", 
-        imgSrc: "/static/skill-icons/web-backend--golang.png"
-    },
-    { 
-        name: "Gin", 
-        link: "/notes/web-backend/frameworks/gin/", 
-        imgSrc: "/static/skill-icons/web-backend--gin.png"
-    }
-]
+    ['__RUBY__']: [
+        { 
+            name: "Ruby", 
+            link: "/notes/web-backend/languages/ruby/", 
+            imgSrc: "/static/skill-icons/web-backend--ruby.png"
+        },
+        { 
+            name: "Ruby On Rails", 
+            link: "/notes/web-backend/frameworks/ruby-on-rails/", 
+            imgSrc: "/static/skill-icons/web-backend--ruby-on-rails.png"
+        }
+    ],
 
-// const __RUBY_AND_RELATED_FRAMEWORKS__ = [
-//     { 
-//         name: "Ruby", 
-//         link: "/notes/web-backend/languages/ruby/", 
-//         imgSrc: "/static/skill-icons/web-backend--ruby.png"
-//     },
-//     { 
-//         name: "Ruby On Rails", 
-//         link: "/notes/web-backend/frameworks/ruby-on-rails/", 
-//         imgSrc: "/static/skill-icons/web-backend--ruby-on-rails.png"
-//     }
-// ]
+    ['__RUST__']: [
+        { 
+            name: "Rust", 
+            link: "/notes/web-backend/languages/rust/", 
+            imgSrc: "/static/skill-icons/web-backend--rust.png"
+        },
+        { 
+            name: "Actix Web", 
+            link: "https://actix.rs/", 
+            imgSrc: "/static/skill-icons/web-backend--actix-web.png",
+            openNewTag: true
+        }
+    ]
+}
 
-// const __RUST_AND_RELATED_FRAMEWORKS__ = [
-//     { 
-//         name: "Rust", 
-//         link: "/notes/web-backend/languages/rust/", 
-//         imgSrc: "/static/skill-icons/web-backend--rust.png"
-//     },
-//     { 
-//         name: "Actix Web", 
-//         link: "https://actix.rs/", 
-//         imgSrc: "/static/skill-icons/web-backend--actix-web.png",
-//         openNewTag: true
-//     }
-// ]
+const __DATABASES__ = {
+    ['__SQL__']: [
+        { 
+            name: "MySQL", 
+            link: "/notes/web-backend/database/mysql/", 
+            imgSrc: "/static/skill-icons/database--mysql.png"
+        },
+        { 
+            name: "PostgreSQL", 
+            link: "/notes/web-backend/database/postgresql/", 
+            imgSrc: "/static/skill-icons/database--postgresql.png"
+        } 
+    ],
+
+    ['__NO_SQL__']: [
+        { 
+            name: "MongoDB", 
+            link: "/notes/web-backend//database/mongodb/", 
+            imgSrc: "/static/skill-icons/database--mongodb.png"
+        },
+        { 
+            name: "Redis", 
+            link: "/notes/web-backend//database/redis/", 
+            imgSrc: "/static/skill-icons/database--redis.png"
+        },
+        { 
+            name: "Amazon DynamoDB", 
+            link: "https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/Introduction.html", 
+            imgSrc: "/static/skill-icons/database--dynamodb.png",
+            openNewTag: true
+        }, 
+    ],
+
+    ['__ORM__']: [
+        { 
+            name: "Prisma",  
+            link: "https://www.prisma.io/", 
+            imgSrc: "/static/skill-icons/database--prisma.png", 
+            openNewTag: true
+        }
+    ]
+}
 
 const __API__ = [
     { 
@@ -124,39 +163,35 @@ const __API__ = [
         imgSrc: "/static/skill-icons/web-backend--websocket.png"
     },
 ]
-
-const __AUTHENTICATION_AUTHORIZATION__ = [
-    { 
-        name: "JWT", 
-        link: "https://qiita.com/asagohan2301/items/cef8bcb969fef9064a5c", 
-        imgSrc: "/static/skill-icons/web-backend--jwt.png",
-        openNewTag: true
-    },
-    { 
-        name: "OAuth", 
-        link: "https://oauth.net/2/", 
-        imgSrc: "/static/skill-icons/web-backend--oauth.png",
-        openNewTag: true
-    },
-    
-]
 </script>
 
-## 编程语言与其开发框架
+## 编程语言与其框架
 
-<SkillIconsBlock :skillList="__NODEJS_AND_RELATED_FRAMEWORKS__"/>
-<SkillIconsBlock :skillList="__PYTHON_AND_RELATED_FRAMEWORKS__"/>
-<SkillIconsBlock :skillList="__GOLANG_AND_RELATED_FRAMEWORKS__"/>
-<!-- <SkillIconsBlock :skillList="__RUBY_AND_RELATED_FRAMEWORKS__"/> -->
-<!-- <SkillIconsBlock :skillList="__RUST_AND_RELATED_FRAMEWORKS__"/> -->
+<SkillIconsBlock :skillList="__LANGUAGES_AND_RELATED_FRAMEWORKS__['__PYTHON__']"/>
+<SkillIconsBlock :skillList="__LANGUAGES_AND_RELATED_FRAMEWORKS__['__GOLANG__']"/>
+<!-- <SkillIconsBlock :skillList="__LANGUAGES_AND_RELATED_FRAMEWORKS__['__NODEJS__']"/> -->
+<!-- <SkillIconsBlock :skillList="__LANGUAGES_AND_RELATED_FRAMEWORKS__['__RUBY__']"/> -->
+<SkillIconsBlock :skillList="__LANGUAGES_AND_RELATED_FRAMEWORKS__['__RUST__']"/>
 
-## API 开发
+## 数据库
 
-<SkillIconsBlock :skillList="__API__"/>
+<!-- ### 关系型数据库 -->
+<!-- > Relational Database -->
 
-## 身份验证与权限
+<SkillIconsBlock :skillList="__DATABASES__['__SQL__']"/>
 
-<SkillIconsBlock :skillList="__AUTHENTICATION_AUTHORIZATION__"/>
+<!-- ### 非关系型数据库 -->
+<!-- > Non-Relational Database ( NoSQL Database ) -->
+
+<SkillIconsBlock :skillList="__DATABASES__['__NO_SQL__']"/>
+
+<!-- ## API 开发
+
+<SkillIconsBlock :skillList="__API__"/> -->
+
+<!-- ## 身份验证与权限
+
+<SkillIconsBlock :skillList="__AUTHENTICATION_AUTHORIZATION__"/> -->
 
 <!-- ## 架构设计
 

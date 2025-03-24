@@ -12,7 +12,7 @@
 - [sass]()
 - [markdown]()
 
-## 🎨 Assets
+<!-- ## 🎨 Assets
 
 |                 | Link URL                                                                                                                                                                                                                                                                                                 |                                                                           |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
@@ -31,4 +31,4 @@
 5. Ensure that the `base` configuration is set to the GitHub repo name.
 6. Commit your changes and push them to the remote `main` branch.
 7. Merge the `main` branch into the `deploy_github_pages` branch.
-8. Finally, push the `deploy_github_pages` branch to the remote repository.
+8. Finally, push the `deploy_github_pages` branch to the remote repository. -->

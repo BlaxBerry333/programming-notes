@@ -199,9 +199,9 @@ andy.show_info()                            # Hello, I'm Andy and 999 years old
 
 ### 私有属性、私有方法
 
-名字前面加上前缀`__`的成员为类中私有成员
+名字前面加上前缀双下划线`__`的成员为类中私有成员
 
-私有成员无法从从类的外部被访问，但是可借助自定义实例方法 Getter、Setter
+私有成员无法从从类的外部被直接访问，但是可借助自定义实例方法 Getter、Setter
 
 私有成员在类内部被其他成员使用需通过`self` ( 当前的实例对象 )
 
@@ -254,20 +254,19 @@ class 类:
 
 :::
 
-::: details 例子：验证类中私有属性与私有方法以及 Getter、Setter 的使用
+> [!IMPORTANT] 外部强制访问私有成员 ( 不推荐，了解即可 )
+> 前缀双下划线实质是改写成员名为`实例._类名__属性名`使其从类的外部通过其原本名称被直接访问，但是强制访问会破坏类的封装性，更建议使用 Getter、Setter、property 装饰器等
+
+::: details 例子：验证类中私有属性以及 Getter、Setter 的使用
 
 ```py{0}
-import uuid
-
-
 class Person:
     def __init__(self, **kwargs):
         self.name = kwargs.get("name", "")
-        self.__age = kwargs.get("age", 0)       # [!code hl:2]
-        self.__id = uuid.uuid4()
+        self.__age = kwargs.get("age", 0)       # [!code hl]
 
-    def get_info(self):
-        return {"name": self.name, "age": self.__age, "id": self.__id}
+    def get_age(self):
+        return self.__age
 
     def set_age(self, new_age):
         self.__age = new_age
@@ -275,13 +274,32 @@ class Person:
 
 andy = Person(name="Andy", age=28)
 
-print(andy.name)        # "Andy"
-# print(andy.__age)     # 报错 AttributeError: 'Person' object has no attribute '__age' # [!code error]
-# print(andy.__id)      # 报错 AttributeError: 'Person' object has no attribute '__id' # [!code error]
-print(andy.get_info())  # {'name': 'Andy', 'age': 28, 'id': UUID('1fb0759a-be85-4ddf-86b2-073fc5b17250')}
+print(andy.name)         # "Andy"
+# print(andy.__age)      # 报错 AttributeError: 'Person' object has no attribute '__age' # [!code error]
+print(andy.get_age())    # 28
 
 andy.set_age(100)
-print(andy.get_info())  # {'name': 'Andy', 'age': 100, 'id': UUID('1fb0759a-be85-4ddf-86b2-073fc5b17250')}
+print(andy.get_age())    # 100
+```
+
+:::
+
+::: details 例子：验证外部强制访问私有属性 ( 不推荐，了解即可 )
+
+```py{0}
+class Person:
+    def __init__(self, **kwargs):
+        self.name = kwargs.get("name", "")
+        self.__age = kwargs.get("age", 0)       # [!code hl]
+
+
+andy = Person(name="Andy", age=28)
+
+# print(andy.__age)        # 报错 AttributeError: 'Person' object has no attribute '__age' # [!code error]
+print(andy._Person__age)   # 28
+
+andy._Person__age=100
+print(andy._Person__age)   # 100
 ```
 
 :::

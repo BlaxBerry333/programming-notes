@@ -12,6 +12,16 @@ export const PYTHON_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         link: `${PYTHON_ROOT}/__base__/virtual-env`,
       },
       {
+        text: "项目构建、包管理",
+        collapsed: true,
+        items: [
+          {
+            text: "pip",
+            link: `${PYTHON_ROOT}/__base__/pkgs-management/pip`,
+          },
+        ],
+      },
+      {
         text: "数据类型",
         collapsed: true,
         items: [
@@ -25,7 +35,7 @@ export const PYTHON_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
           },
           {
             text: "数据类型操作",
-            link: `${PYTHON_ROOT}/__base__/data-types/type-operations`,
+            link: `${PYTHON_ROOT}/__base__/data-types/__type-operations`,
           },
         ],
       },
@@ -71,10 +81,6 @@ export const PYTHON_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
             text: "常用内置模块",
             collapsed: true,
             link: `${PYTHON_ROOT}/__base__/modules-dev/builtin-modules`,
-          },
-          {
-            text: "第三方包管理",
-            link: `${PYTHON_ROOT}/__base__/modules-dev/third-party-packages-managers`,
           },
         ],
       },

@@ -70,9 +70,9 @@ const __CI_CD__ = [
 
 <SkillIconsBlock :skillList="__CONTAINERIZATION__"/>
 
-## CI/CD 与自动部署
+<!-- ## CI/CD 与自动部署
 
-<SkillIconsBlock :skillList="__CI_CD__"/>
+<SkillIconsBlock :skillList="__CI_CD__"/> -->
 
 <!-- ## 网络基础
 

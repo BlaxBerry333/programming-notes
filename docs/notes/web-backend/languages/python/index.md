@@ -45,57 +45,57 @@ Python 代码不需编译便可执行
 - 使用换行来分隔每个语句，一行建议仅书写一条语句
 - 使用缩进来表示代码块的层次结构，每一级缩进使用 4 个空格 ( 不建议使用 Tab )
 
-> [!IMPORTANT] 第三方格式化工具
-> 建议使用 [black](https://black.readthedocs.io/en/stable/getting_started.html) 来统一代码的风格
-
-::: code-group
-
-```zsh [依赖包]
-# 0. 开启并进入虚拟环境
-% python -m venv 虚拟环境
-% source 虚拟环境/bin/active
-
-# 1. 下载依赖包
-(虚拟环境) % pip install black
-
-# 2. 执行命令，格式化当前目录下的所有文件
-(虚拟环境) % python black .
-```
-
-```toml [pyproject.toml 插件配置]
-[tool.black]
-line-length = 80  # 设置一行最大数字符数
-target-version = ["py39", "py310"]
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.eggs
-  | \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-  | migrations
-)/
-'''
-```
-
-```json [VSCode 插件配置]
-{
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true
-  },
-  "python.formatting.provider": "black",
-  "black-formatter.args": ["--line-length=80" /* 设置一行最大数字符数 */]
-}
-```
-
-:::
+> [!IMPORTANT] 代码风格
+> 建议使用第三方工具 [black](https://black.readthedocs.io/en/stable/getting_started.html) 来统一代码的风格
+>
+> ::: code-group
+>
+> ```zsh [依赖包]
+> # 0. 开启并进入虚拟环境
+> % python -m venv 虚拟环境
+> % source 虚拟环境/bin/active
+>
+> # 1. 下载依赖包
+> (虚拟环境) % pip install black
+>
+> # 2. 执行命令，格式化当前目录下的所有文件
+> (虚拟环境) % python black .
+> ```
+>
+> ```toml [pyproject.toml 插件配置]
+> [tool.black]
+> line-length = 80  # 设置一行最大数字符数
+> target-version = ["py39", "py310"]
+> include = '\.pyi?$'
+> exclude = '''
+> /(
+>     \.eggs
+>   | \.git
+>   | \.hg
+>   | \.mypy_cache
+>   | \.tox
+>   | \.venv
+>   | _build
+>   | buck-out
+>   | build
+>   | dist
+>   | migrations
+> )/
+> '''
+> ```
+>
+> ```json [VSCode 插件配置]
+> {
+>   "[python]": {
+>     "editor.defaultFormatter": "ms-python.black-formatter",
+>     "editor.formatOnSave": true
+>   },
+>   "python.formatting.provider": "black",
+>   "black-formatter.args": ["--line-length=80" /* 设置一行最大数字符数 */]
+> }
+> ```
+>
+> :::
 
 ## 相关链接
 

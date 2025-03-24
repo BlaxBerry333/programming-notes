@@ -9,12 +9,16 @@ import { PYTHON_ROOT } from "../default-theme-sidebar/web-backend/_python";
 // ------------------------------------------------------------------------------------------------------------------------
 import { REACT_JS_ROOT } from "../default-theme-sidebar/web-frontend/_react";
 import { DJANGO_ROOT } from "../default-theme-sidebar/web-backend/_django";
-import { FLUTTER_ROOT } from "../default-theme-sidebar/cross-platform/_flutter";
+import { FLUTTER_ROOT } from "../default-theme-sidebar/web-frontend/_flutter";
 
 // 常用工具
 // ------------------------------------------------------------------------------------------------------------------------
 import { DOCKER_ROOT } from "../default-theme-sidebar/web-infrastructure/_docker";
-import { DEV_TOOLS_ROOT__GIT } from "../default-theme-sidebar/dev-tools";
+import {
+  DEV_TOOLS_ROOT__CURL,
+  DEV_TOOLS_ROOT__GIT,
+  DEV_TOOLS_ROOT__MAKEFILE,
+} from "../default-theme-sidebar/dev-tools";
 
 export const DEFAULT_THEME_NAVBAR: Array<DefaultTheme.NavItem> = [
   {
@@ -41,7 +45,9 @@ export const DEFAULT_THEME_NAVBAR: Array<DefaultTheme.NavItem> = [
     text: "常用工具",
     items: [
       { text: "Git", link: `${DEV_TOOLS_ROOT__GIT}/` },
+      { text: "cURL", link: `${DEV_TOOLS_ROOT__CURL}/` },
       { text: "Docker", link: `${DOCKER_ROOT}/` },
+      { text: "Makefile", link: `${DEV_TOOLS_ROOT__MAKEFILE}/` },
     ],
   },
 ];

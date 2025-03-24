@@ -29,14 +29,6 @@ DRF 是一个 Django 的第三方应用，主要用于快速构建 Restful Web A
 
 ## 架构组成
 
-|                | 原生 Django  | Django REST Framework ( DRF ) |
-| -------------- | ------------ | ----------------------------- |
-| 路由           | urls         | [Router](#路由) + urls        |
-| 视图           | Views        | [ViewSets](#视图集)           |
-| 模型           | Models       | Models                        |
-| 数据序列化     | 在视图中手写 | [Serializers](#序列化器)      |
-| 测试与管理界面 | Django Admin | DRF Browsable API             |
-
 ::: code-group
 
 ```txt[DRF 架构组成]
@@ -45,14 +37,14 @@ DRF 是一个 Django 的第三方应用，主要用于快速构建 Restful Web A
        │                     ┌────────────────────────────────┐  │
        │                     │           Application          │  │
 Client │                     │                                │  │ Database
-───────┼───▶ Router + url ───┼───▶  ViewSet  ◀────▶  Model  ──┼──┼────────▶
-       │                     │        │               ▲       │  │
-       │                     │        ▼               │       │  │
-◀──────┼────( JSON Data )────┼──── Serializer         │       │  │
-       │                     │                        │       │  │
-       │                     └────────────────────────┼───────┘  │
-       │                                              |          │
-       │                     ┌────────────────────────▼───────┐  │
+───────┼────▶ DRF Router ────┼───▶  ViewSet  ◀────▶  Model  ──┼──┼────────▶
+       │                     │         │              ▲ ▲     │  │
+       │                     │         ▼              │ │     │  │
+◀──────┼────( JSON Data )────┼──── Serializer ◀───────┘ │     │  │
+       │                     │                          │     │  │
+       │                     └──────────────────────────┼─────┘  │
+       │                                                |        │
+       │                     ┌──────────────────────────▼─────┐  │
        │                     │           Django Admin         │  │
        │                     │        DRF Browsable API       │  │
        │                     └────────────────────────────────┘  │
@@ -66,9 +58,9 @@ Client │                     │                                │  │ Datab
        │                 │           Application          │  │
 Client │                 │                                │  │ Database
 ───────┼────▶  url  ─────┼───▶  View  ◀─────▶  Model  ────┼──┼────────▶
-       │                 │        │              ▲        │  │
-◀──────┼──( JSON Data )──┼────────┤              │        │  │
-       │                 │        │              │        │  │
+       │                 │       │ │             ▲        │  │
+◀──────┼──( JSON Data )──┼───────┘ │             │        │  │
+       │                 │         ▼             │        │  │
 ◀──────┼──( HTML Page )──┼──── Template          │        │  │
        │                 │                       │        │  │
        │                 └───────────────────────┼────────┘  │
@@ -80,6 +72,14 @@ Client │                 │                                │  │ Database
 ```
 
 :::
+
+|                | 原生 Django             | Django REST Framework                |
+| -------------- | ----------------------- | ------------------------------------ |
+| 路由           | 手写 URL                | [Router](#路由)                      |
+| 视图           | Views                   | [ViewSets](#视图集)                  |
+| 模型           | Models                  | Models                               |
+| 数据序列化     | 在视图中直接操作 Models | [Serializers](#序列化器) 操作 Models |
+| 测试与管理界面 | Django Admin            | Django Admin + Browsable API         |
 
 ## 前提配置
 
@@ -143,7 +143,7 @@ urlpatterns = [
 
 > Routers
 
-DRF 提供了比原生 Django 更简洁的路由，用于快速实现与 [视图集](#视图集) 的映射关系
+DRF 的路由可以快速实现与 [视图集](#视图集) 的映射关系，比原生 Django 更简洁
 
 ::: code-group
 
@@ -152,7 +152,7 @@ DRF 提供了比原生 Django 更简洁的路由，用于快速实现与 [视图
 ├─ manage.py
 │
 ├─ [主应用]/
-│   ├─ urls.py      # [!code ++]
+│   ├─ urls.py
 │   └─ ...
 │
 └─ [自定义应用名]/
@@ -239,7 +239,7 @@ urlpatterns = [
 
 > Serializers
 
-DRF 序列化器用于处理复杂数据类型 ( Django 模型实例 ) 与 JSON 格式数据的相互转换
+DRF 序列化器用于处理 Django 模型实例与 JSON 格式数据的相互转换，比原生 Django 更简洁
 
 建议以模块化的形式组织定义在自定义应用目录下
 
@@ -768,7 +768,7 @@ urlpatterns = [
 
 > Viewsets
 
-DRF 提供了视图集来简化原生 Django 的视图，可快速实现请求响应处理以及数据的 CRUD 操作
+DRF 的视图集可快速实现请求响应处理以及数据的 CRUD 操作，比原生 Django 的视图更简洁
 
 建议定义在自定义应用目录下替代原生 Django 的视图
 

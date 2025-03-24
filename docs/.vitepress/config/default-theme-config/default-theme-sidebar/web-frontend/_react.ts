@@ -45,6 +45,17 @@ export const REACT_JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
   },
 
   {
+    text: "React 高级",
+    collapsed: false,
+    items: [
+      {
+        text: "设计规范",
+        link: `${REACT_JS_ROOT}/__advanced__/design-patterns`,
+      },
+    ],
+  },
+
+  {
     text: "功能扩展",
     collapsed: false,
     items: [

@@ -1,6 +1,6 @@
 import { type DefaultTheme } from "vitepress";
 
-export const DART_ROOT = "/notes/cross-platform/languages/dart";
+export const DART_ROOT = "/notes/web-frontend/languages/dart";
 
 export const DART_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
   {
@@ -21,7 +21,7 @@ export const DART_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
           },
           {
             text: "类型操作",
-            link: `${DART_ROOT}/__base__/data-types/type-operations`,
+            link: `${DART_ROOT}/__base__/data-types/__type-operations`,
           },
         ],
       },

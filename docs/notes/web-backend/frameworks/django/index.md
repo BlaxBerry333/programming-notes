@@ -76,9 +76,9 @@ root@[项目容器ID]:/# python -m django --version
        │                 │           Application          │  │
 Client │                 │                                │  │ Database
 ───────┼────▶  url  ─────┼───▶  View  ◀─────▶  Model  ────┼──┼────────▶
-       │                 │        │              ▲        │  │
-◀──────┼──( JSON Data )──┼────────┤              │        │  │
-       │                 │        │              │        │  │
+       │                 │       │ │             ▲        │  │
+◀──────┼──( JSON Data )──┼───────┘ │             │        │  │
+       │                 │         ▼             │        │  │
 ◀──────┼──( HTML Page )──┼──── Template          │        │  │
        │                 │                       │        │  │
        │                 └───────────────────────┼────────┘  │
@@ -100,6 +100,8 @@ Client │                 │                                │  │ Database
 ```zsh [新目录]
 (虚拟环境) % django-admin startproject [项目名]
 (虚拟环境) % cd [项目名]
+
+(虚拟环境) % python manage.py runserver  # 默认 8000 端口
 (虚拟环境) % python manage.py runserver [自定端口号]
 ```
 
@@ -107,7 +109,9 @@ Client │                 │                                │  │ Database
 % cd [项目名]                                          # [!code focus]
 % python -m venv [虚拟环境]
 % source [虚拟环境]/bin/activate
-(虚拟环境) % django-admin startproject [主应用名] .     # [!code focus:2]
+(虚拟环境) % django-admin startproject [主应用名] .      # [!code focus:4]
+
+(虚拟环境) % python manage.py runserver  # 默认 8000 端口
 (虚拟环境) % python manage.py runserver [自定端口号]
 ```
 

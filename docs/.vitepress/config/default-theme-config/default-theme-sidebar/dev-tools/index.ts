@@ -55,9 +55,4 @@ export const DEV_TOOLS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
       },
     ],
   },
-
-  {
-    text: "返回首页",
-    link: `${DEV_TOOLS_ROOT}/`,
-  },
 ];

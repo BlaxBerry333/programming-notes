@@ -40,14 +40,14 @@ const __LANGUAGES__ = [
 
 const  __FRAMEWORKS__ = [
     { 
-        name: "Vue", 
-        link: "/notes/web-frontend/frameworks/vue/", 
-        imgSrc: "/static/skill-icons/web-frontend--vue.png"
-    },
-    { 
         name: "React", 
         link: "/notes/web-frontend/frameworks/react/", 
         imgSrc: "/static/skill-icons/web-frontend--react.png"
+    },
+    { 
+        name: "Vue", 
+        link: "/notes/web-frontend/frameworks/vue/", 
+        imgSrc: "/static/skill-icons/web-frontend--vue.png"
     }
 ]
 
@@ -124,6 +124,30 @@ const __EXTENSIONS__ = [
     },
 ]
 
+const __CROSS_PLATFORM__ = [
+    { 
+        name: "Dart", 
+        link: "/notes/web-frontend/languages/dart/", 
+        imgSrc: "/static/skill-icons/cross-platform--dart.png"
+    },
+    { 
+        name: "Flutter", 
+        link: "/notes/web-frontend/frameworks/flutter/", 
+        imgSrc: "/static/skill-icons/cross-platform--flutter.png"
+    },
+    // { 
+    //     name: "Tauri", 
+    //     link: "/notes/web-frontend/frameworks/tauri/", 
+    //     imgSrc: "/static/skill-icons/cross-platform--tauri.png",
+    // },
+    { 
+        name: "React Native", 
+        link: "https://reactnative.dev/", 
+        imgSrc: "/static/skill-icons/web-frontend--react.png",
+        openNewTag: true
+    },
+]
+
 const __PERFORMANCE_OPTIMIZATION__ = [
     {
         name: "首屏加载优化",
@@ -144,25 +168,23 @@ const __PERFORMANCE_OPTIMIZATION__ = [
 ]
 </script>
 
-<!-- ## 前端基础 -->
-<!-- - HTML5、CSS3 -->
-
-## 编程语言与其开发框架
+## 编程语言与其框架
 
 <SkillIconsBlock :skillList="__LANGUAGES__"/>
 <SkillIconsBlock :skillList="__FRAMEWORKS__"/>
 
-## 构建工具
+<!-- ## 构建工具
+<SkillIconsBlock :skillList="__BUILD_TOOLS__"/> -->
 
-<SkillIconsBlock :skillList="__BUILD_TOOLS__"/>
+<!-- ## 自动化测试
+<SkillIconsBlock :skillList="__AUTOMATED_TESTING__"/> -->
 
-## 自动化测试
+<!-- ## 前端扩展
+<SkillIconsBlock :skillList="__EXTENSIONS__"/> -->
 
-<SkillIconsBlock :skillList="__AUTOMATED_TESTING__"/>
+## 跨平台
 
-## 前端扩展
-
-<SkillIconsBlock :skillList="__EXTENSIONS__"/>
+<SkillIconsBlock :skillList="__CROSS_PLATFORM__"/>
 
 ## 性能优化
 

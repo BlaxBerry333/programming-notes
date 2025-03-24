@@ -22,7 +22,7 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
           },
           {
             text: "类型操作",
-            link: `${JS_ROOT}/__base__/data-types/type-operations`,
+            link: `${JS_ROOT}/__base__/data-types/__type-operations`,
           },
         ],
       },
