@@ -7,9 +7,9 @@ next: false
 
 ![](/static/skill-images/web-infrastructure--docker-compose.png)
 
-Docker Compose 是一个容器编排工具 ( 自动化部署等 )
+Docker Compose 是一个管理多个 Docker 容器的编排工具
 
-可通过一个`docker-compose.yaml`配置文件实现对 Docker 容器的批量处理
+可通过配置文件`docker-compose.yaml`管理各个容器的启动停止、网络、端口映射、数据卷等
 
 ## 下载安装
 
@@ -52,7 +52,43 @@ Server: Docker Desktop 4.37.2 (179585)
   GitCommit:        de40ad0
 ```
 
+## 配置文件
+
+Docker Compose 配置文件使用 YAML 格式，文件名为`docker-compose.yaml`
+
+```yaml
+version: "3"
+
+services:
+  [服务名]:
+    [配置项]: [配置值]
+  [服务名]:
+    [配置项]: [配置值]
+
+networks:
+  [网络名]:
+    [配置项]: [配置值]
+  [网络名]:
+    [配置项]: [配置值]
+
+volumes:
+  [数据卷名]:
+    [配置项]: [配置值]
+  [数据卷名]:
+    [配置项]: [配置值]
+```
+
 ## 常用命令
+
+Docker Compose 会默认在当前目录下查找名为`docker-compose.yaml`的配置文件
+
+可以使用`-f`选项指定配置文件路径
+
+```zsh
+% docker compose \
+    -f [配置文件路径] \
+    up
+```
 
 > [!CAUTION] 新版命令变化
 >

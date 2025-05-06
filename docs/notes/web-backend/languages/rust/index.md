@@ -81,12 +81,19 @@ Rust 代码需要先编译为二进制文件后才能执行
 - 使用分号`;`来分隔每个语句，一行建议仅书写一条语句
 - 使用大括号`{ }`来定义代码块，每一级缩进 4 个空格
 
-> [!IMPORTANT] 代码检查
+```rs
+fn main() {
+    println!("Hello World!");
+}
+```
+
+> [!IMPORTANT] 代码风格
 >
-> 使用`cargo check`进行代码检查
+> 建议使用`cargo`进行统一代码的风格
 >
 > ```zsh
 > % cargo check
+> % cargo fmt
 > ```
 
 ## 相关链接

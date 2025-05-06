@@ -1,4 +1,5 @@
 import { type DefaultTheme } from "vitepress";
+import { DRF_ROOT } from "./_django-rest-framework";
 
 export const DJANGO_ROOT = `/notes/web-backend/frameworks/django`;
 
@@ -7,10 +8,6 @@ export const DJANGO_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
     text: "Django 基础",
     collapsed: false,
     items: [
-      {
-        text: "路由",
-        link: `${DJANGO_ROOT}/__base__/url`,
-      },
       {
         text: "视图 ( View )",
         link: `${DJANGO_ROOT}/__base__/mtv/view`,
@@ -22,6 +19,10 @@ export const DJANGO_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
       {
         text: "模版 ( Template )",
         link: `${DJANGO_ROOT}/__base__/mtv/template`,
+      },
+      {
+        text: "路由",
+        link: `${DJANGO_ROOT}/__base__/url`,
       },
       {
         text: "后台管理系统",
@@ -48,7 +49,7 @@ export const DJANGO_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
     items: [
       {
         text: "Django REST Framework",
-        link: `${DJANGO_ROOT}/__extensions__/django-rest-framework/`,
+        link: `${DRF_ROOT}`,
       },
       {
         text: "django-allauth",

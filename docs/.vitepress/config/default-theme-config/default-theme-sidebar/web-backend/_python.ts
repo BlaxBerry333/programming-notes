@@ -54,6 +54,10 @@ export const PYTHON_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         ],
       },
       {
+        text: "注释与文档",
+        link: `${PYTHON_ROOT}/__base__/comments-docs`,
+      },
+      {
         text: "变量",
         link: `${PYTHON_ROOT}/__base__/variable`,
       },

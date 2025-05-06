@@ -90,6 +90,14 @@ JavaScript 代码不需编译便可执行在浏览器环境、非浏览器的运
 - 使用分号`;`来分隔每个语句，一行建议仅书写一条语句
 - 使用大括号`{ }`来定义代码块，每一级缩进 2 或 4 个空格
 
+```js
+function main() {
+  console.log("Hello World!");
+}
+
+main();
+```
+
 > [!IMPORTANT] 代码风格
 > 建议使用第三方工具 [prettier](https://prettier.io/docs/en/install) 来统一代码的风格
 >

@@ -91,6 +91,9 @@ AA/*.txt
 ```zsh
 # 以交互式合并最近的 N 个提交
 % git rebase -i HEAD~N
+
+# 取消合并
+git rebase --abort
 ```
 
 ```

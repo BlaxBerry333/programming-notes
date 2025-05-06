@@ -96,3 +96,35 @@ Golang 代码需要先编译为二进制文件后才能执行
 ```
 
 :::
+
+## 书写规范
+
+
+- 文件名使用使用小写蛇形命名 ( snake_case )
+- 文件第一行需要通过`package`指明其所属的包名
+- 应用程序入口文件 ( 主包 ) 需要一个含有`main`函数
+- 使用换行来分隔每个语句，一行建议仅书写一条语句
+- 使用大括号`{ }`来定义代码块，每一级缩进使用 8 个空格或 1 个 Tab
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+        fmt.Println("Hello World!")
+}
+```
+
+> [!IMPORTANT] 代码风格
+>
+> 建议使用`gofmt`进行统一代码的风格
+>
+> ```zsh
+> % gofmt -s -w .                     # 格式化当前目录下的 main.go
+> % gofmt -s -w xxx.go                # 格式化当前目录下的 xxx.go
+> % gofmt -s -w xxx/main.go           # 格式化指定目录下的 xxx/main.go
+> 
+> % gofmt -r '(a) -> a' -l *.go       # 检查当前目录下所有文件中是否有不必要的括号
+> % gofmt -r '(a) -> a' -w *.go       # 删除当前目录下所有文件中的括号
+> ```

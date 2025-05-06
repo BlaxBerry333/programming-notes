@@ -36,6 +36,10 @@ export const GOLANG_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         ],
       },
       {
+        text: "注释与文档",
+        link: `${GOLANG_ROOT}/__base__/comments-docs`,
+      },
+      {
         text: "变量",
         link: `${GOLANG_ROOT}/__base__/variable`,
       },

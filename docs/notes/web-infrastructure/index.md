@@ -4,7 +4,7 @@ layout: home
 hero:
   name: Web Infrastructure
   text: 基础设施
-  tagline: BlaxBerry 的个人编程学习笔记
+  tagline: 基础知识 & 经验总结
   image:
     src: /static/cartoon-images/hero--captainmarvel.webp
     alt: picture
@@ -46,6 +46,22 @@ const __CONTAINERIZATION__ = [
     }
 ]
 
+const __WEB_SERVER__ = [
+    {
+        name: "Nginx",
+        link: "/notes/web-infrastructure/web-server/nginx/",
+        imgSrc: "/static/skill-icons/web-infrastructure--nginx.png"
+    },
+]
+
+const __CLOUD_SERVER__ = [
+    {
+        name: "AWS",
+        link: "/notes/web-infrastructure/cloud-server/aws/",
+        imgSrc: "/static/skill-icons/web-infrastructure--aws.png"
+    },
+]
+
 const __CI_CD__ = [
     { 
         name: "GitLab CI/CD", 
@@ -60,6 +76,19 @@ const __CI_CD__ = [
         openNewTag: true
     }
 ]
+
+const __DATA_EXCHANGE__ = [
+    { 
+        name: "JSON",
+        link: "/notes/web-infrastructure/data-exchange/json/", 
+        imgSrc: "/static/skill-icons/web-infrastructure--json.png",
+    },
+    {
+        name: "Protocol Buffers",
+        link: "/notes/web-infrastructure/data-exchange/protobuf/", 
+        imgSrc: "/static/skill-icons/web-infrastructure--protobuf.png",
+    }
+]
 </script>
 
 ## 操作系统
@@ -70,24 +99,18 @@ const __CI_CD__ = [
 
 <SkillIconsBlock :skillList="__CONTAINERIZATION__"/>
 
-<!-- ## CI/CD 与自动部署
+## Web 服务器
+
+<SkillIconsBlock :skillList="__WEB_SERVER__"/>
+
+<!-- ## 云服务器
+
+<SkillIconsBlock :skillList="__CLOUD_SERVER__"/> -->
+
+<!-- ## CI/CD
 
 <SkillIconsBlock :skillList="__CI_CD__"/> -->
 
-<!-- ## 网络基础
+## 数据交换格式
 
-OSI 模型、TCP/IP 协议栈、IPv4/IPv6、子网划分
-
-### 网络协议
-
-网络层与传输层协议: TCP、UDP、IP、ICMP
-
-应用层协议: HTTP/HTTPS、FTP、DNS、SMTP、WebSocket
-
-### 网络安全
-
-加密（对称、非对称、哈希算法）、SSL/TLS、HTTPS
-
-## 负载均衡
-
-Nginx、HAProxy、LVS、负载均衡算法 -->
+<SkillIconsBlock :skillList="__DATA_EXCHANGE__"/>

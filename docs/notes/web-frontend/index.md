@@ -4,7 +4,7 @@ layout: home
 hero:
   name: Web Frontend Dev
   text: 前端开发
-  tagline: BlaxBerry 的个人编程学习笔记
+  tagline: 基础知识 & 经验总结
   image:
     src: /static/cartoon-images/hero--deadpool.webp
     alt: picture
@@ -31,11 +31,11 @@ const __LANGUAGES__ = [
     //     link: "/notes/web-frontend/languages/css/", 
     //     imgSrc: "/static/skill-icons/web-frontend--css.png"
     // },
-    // { 
-    //     name: "Sass", 
-    //     link: "/notes/web-frontend/languages/sass/", 
-    //     imgSrc: "/static/skill-icons/web-frontend--sass.png"
-    // }
+    { 
+        name: "Sass", 
+        link: "/notes/web-frontend/languages/sass/", 
+        imgSrc: "/static/skill-icons/web-frontend--sass.png"
+    }
 ]
 
 const  __FRAMEWORKS__ = [

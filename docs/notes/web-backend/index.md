@@ -4,7 +4,7 @@ layout: home
 hero:
   name: Web Backend Dev
   text: 后端开发
-  tagline: BlaxBerry 的个人编程学习笔记
+  tagline: 基础知识 & 经验总结
   image:
     src: /static/cartoon-images/hero--spiderman.webp
     alt: picture
@@ -42,6 +42,11 @@ const __LANGUAGES_AND_RELATED_FRAMEWORKS__ = {
             name: "Django", 
             link: "/notes/web-backend/frameworks/django/", 
             imgSrc: "/static/skill-icons/web-backend--django.png"
+        },
+        { 
+            name: "Django REST Framework", 
+            link: "/notes/web-backend/frameworks/django-rest-framework/", 
+            imgSrc: "/static/skill-icons/web-backend--django-rest-framework.png"
         },
     ],
 
@@ -141,31 +146,25 @@ const __API__ = [
         imgSrc: "/static/skill-icons/web-backend--graphql.png"
     },
     { 
-        name: "gRPC", 
-        link: "https://grpc.io/", 
-        imgSrc: "/static/skill-icons/web-backend--grpc.png",
-        openNewTag: true
-    },    
-    { 
         name: "tRPC", 
-        link: "https://trpc.io/", 
+        link: "/notes/web-backend/api/trpc/", 
         imgSrc: "/static/skill-icons/web-backend--trpc.png",
-        openNewTag: true
-    },  
-    { 
-        name: "Protocol Buffers",
-        link: "/notes/web-backend/api/protobuf/", 
-        imgSrc: "/static/skill-icons/web-backend--protobuf.png",
     },
-    { 
-        name: "WebSocket", 
-        link: "/notes/web-backend/api/websocket/", 
-        imgSrc: "/static/skill-icons/web-backend--websocket.png"
-    },
+    // { 
+    //     name: "gRPC",  
+    //     link: "https://grpc.io/", 
+    //     imgSrc: "/static/skill-icons/web-backend--grpc.png",
+    //     openNewTag: true
+    // },  
+    // { 
+    //     name: "WebSocket", 
+    //     link: "/notes/web-backend/api/websocket/", 
+    //     imgSrc: "/static/skill-icons/web-backend--websocket.png"
+    // },
 ]
 </script>
 
-## 编程语言与其框架
+## 编程语言与框架
 
 <SkillIconsBlock :skillList="__LANGUAGES_AND_RELATED_FRAMEWORKS__['__PYTHON__']"/>
 <SkillIconsBlock :skillList="__LANGUAGES_AND_RELATED_FRAMEWORKS__['__GOLANG__']"/>
@@ -177,17 +176,15 @@ const __API__ = [
 
 <!-- ### 关系型数据库 -->
 <!-- > Relational Database -->
-
 <SkillIconsBlock :skillList="__DATABASES__['__SQL__']"/>
 
 <!-- ### 非关系型数据库 -->
 <!-- > Non-Relational Database ( NoSQL Database ) -->
-
 <SkillIconsBlock :skillList="__DATABASES__['__NO_SQL__']"/>
 
-<!-- ## API 开发
+## API 开发
 
-<SkillIconsBlock :skillList="__API__"/> -->
+<SkillIconsBlock :skillList="__API__"/>
 
 <!-- ## 身份验证与权限
 

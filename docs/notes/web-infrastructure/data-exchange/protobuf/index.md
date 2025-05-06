@@ -5,11 +5,11 @@ next: false
 
 # Protobuf
 
-![](/static/skill-images/web-backend--protobuf.png)
+![](/static/skill-images/web-infrastructure--protobuf.png)
 
 > Protocol Buffers
 
-Protobuf 主要用于数据序列化和传输，是一种数据交换格式，文件后缀名是`.proto`
+Protobuf 是一种主要用于数据序列化和传输的数据交换格式，文件后缀名是`.proto`
 
 其描述的数据结构可在不同语言、数据流中使用
 

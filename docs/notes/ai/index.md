@@ -4,7 +4,7 @@ layout: home
 hero:
   name: AI & ML
   text: 人工智能 & 机器学习
-  tagline: BlaxBerry 的个人编程学习笔记
+  tagline: 基础知识 & 经验总结
   image:
     src: /static/cartoon-images/hero--daredevil.webp
     alt: picture

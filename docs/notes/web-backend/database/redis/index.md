@@ -38,7 +38,7 @@ root@[自定义容器ID]:/data# redis-cli
 [主机IP地址]:[Redis服务端口号]> # Redis CLI 命令
 [主机IP地址]:[Redis服务端口号]> exit
 
-# 退出容器 ( 停止 Redis 服务 )
+# 4. 退出容器 ( 停止 Redis 服务 )
 root@[自定义容器ID]:/data# exit
 ```
 

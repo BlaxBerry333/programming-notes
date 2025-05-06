@@ -4,7 +4,7 @@ layout: home
 hero:
   name: Web3 & Blockchain
   text: Web3 & 区块链
-  tagline: BlaxBerry 的个人编程学习笔记
+  tagline: 基础知识 & 经验总结
   image:
     src: /static/cartoon-images/villain--loki.webp
     alt: picture

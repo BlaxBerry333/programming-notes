@@ -35,6 +35,10 @@ export const TS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         // link: `${TS_ROOT}/__extensions__/zod`,
         link: `https://zenn.dev/terrierscript/books/2023-01-typed-zod/viewer/0-1-introduction`,
       },
+      {
+        text: "tRPC",
+        link: `/notes/web-backend/api/trpc/`,
+      },
     ],
   },
 

@@ -145,35 +145,88 @@ const 组件: FC = () => {
           {/* 渲染内容 */}
           {/* 渲染内容 */}
         </>,
-        目标DOM节点,
-        唯一标识,
+        目标DOM节点元素,
+        唯一标识ID,
       )}
     </>
   );
 };
 ```
 
-::: details 例子：利用传送门 ( Portal ) 指定 JSX 要渲染在哪里
+::: details 例子：利用 Portal 指定 JSX 要渲染在哪里
 
 ```tsx
 import type { FC } from "react";
 import { createPortal } from "react";
+
+const elementID = "content-wrapper";
+
+const ContentWrapperComponent: FC = () => {
+  return <div id={elementID} />;
+};
 
 const ContentComponent: FC = () => {
   return (
     <>
       {createPortal(
         <p>Hello World</p>,
-        document.getElementById("content-wrapper"),
-        "xxx",
+        document.getElementById(elementID)
+        elementID,
       )}
     </>
   );
 };
-
-const ContentWrapperComponent: FC = () => {
-  return <div id="content-wrapper" />;
-};
 ```
 
 :::
+
+> [!IMPORTANT] 自定义事件模拟 Protal 组件的卸载
+>
+> Portal 容器组件使用 CSS 属性`display`来控制显示隐藏时，作为渲染内容的组件没有卸载行为所以无法通过常规`useEffect()`来监控，此时可以在 Portal 目标容器组件内注册一个自定义事件，然后监听该事件来实现监控组件卸载的效果
+>
+> ```tsx
+>  import type { FC } from "react";
+>  import { createPortal } from "react";
+>
+>  const elementID = "content-wrapper";
+>  const customEventName = "CUSTOM_EVENT_NAME";
+>
+>  const ContentWrapperComponent: FC = () => {
+>    const isShowProtal = useStateOfContentWrapperComponent();
+>
+>    useEffect(() => {                                               // [!code ++:6]
+>      if (!isShowProtal) {
+>        const event = new CustomEvent(customEventName);
+>        document.getElementById(elementID)?.dispatchEvent(event);
+>      }
+>    }, [isShowProtal]);
+>
+>    return (
+>      <div
+>        id={elementID}
+>        style={{ display: isShowProtal ? "block : "none" }}
+>      />
+>    );
+>  };
+>
+>  const ContentComponent: FC = () => {
+>    useEffect(() => {                                               // [!code ++:8]
+>      const doSomething: VoidFunction = () => { /* ... */ };
+>      const elementContainer = document.getElementById(elementID)
+>      elementContainer?.addEventListener(customEventName, doSomething);
+>      return () => {
+>        elementContainer?.removeEventListener(customEventName, doSomething);
+>      };
+>    }, []);
+>
+>    return (
+>      <>
+>        {createPortal(
+>          <p>Hello World</p>,
+>          document.getElementById(elementID),
+>          elementID,
+>        )}
+>      </>
+>    );
+>  };
+> ```

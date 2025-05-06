@@ -42,6 +42,10 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         ],
       },
       {
+        text: "注释与文档",
+        link: `${JS_ROOT}/__base__/comments-docs`,
+      },
+      {
         text: "变量",
         link: `${JS_ROOT}/__base__/variable`,
       },
@@ -63,7 +67,7 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         items: [
           {
             text: "ES Module",
-            link: `${JS_ROOT}/__base__/module-dev/es-module`,
+            link: `${JS_ROOT}/__base__/modules-dev/es-module`,
           },
         ],
       },

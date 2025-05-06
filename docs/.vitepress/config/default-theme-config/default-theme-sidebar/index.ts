@@ -13,12 +13,9 @@ import { FLUTTER_ROOT, FLUTTER_SIDEBAR } from "./web-frontend/_flutter";
 // ------------------------------------------------------------------------------------------------------------------------
 import { PYTHON_ROOT, PYTHON_SIDEBAR } from "./web-backend/_python";
 import { DJANGO_ROOT, DJANGO_SIDEBAR } from "./web-backend/_django";
+import { DRF_ROOT, DRF_SIDEBAR } from "./web-backend/_django-rest-framework";
 import { GOLANG_ROOT, GOLANG_SIDEBAR } from "./web-backend/_golang";
 import { RUST_ROOT, RUST_SIDEBAR } from "./web-backend/_rust";
-
-// dev-tools
-// ------------------------------------------------------------------------------------------------------------------------
-import { DEV_TOOLS_ROOT, DEV_TOOLS_SIDEBAR } from "./dev-tools";
 
 // web-infrastructure
 // ------------------------------------------------------------------------------------------------------------------------
@@ -44,15 +41,10 @@ export const DEFAULT_THEME_SIDEBAR: DefaultTheme.Sidebar = {
    * ------------------------------------------------------------------------------------------------------------------------
    */
   [PYTHON_ROOT]: PYTHON_SIDEBAR,
+  [DRF_ROOT]: DRF_SIDEBAR,
   [DJANGO_ROOT]: DJANGO_SIDEBAR,
   [GOLANG_ROOT]: GOLANG_SIDEBAR,
   [RUST_ROOT]: RUST_SIDEBAR,
-
-  /**
-   * dev-tools
-   * ------------------------------------------------------------------------------------------------------------------------
-   */
-  [DEV_TOOLS_ROOT]: DEV_TOOLS_SIDEBAR,
 
   /**
    * web-infrastructure

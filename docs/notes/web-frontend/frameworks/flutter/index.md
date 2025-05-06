@@ -37,6 +37,8 @@ Flutter 是一个基于 Dart 的跨平台开发框架
 > 如下：本文使用 Flutter v3.24.0 + Dart v3.5.0
 
 ```zsh
+% dart --version            # [!code focus]
+Dart SDK version: 3.5.0 (stable) (Tue Jul 30 02:17:59 2024 -0700) on "macos_arm64"
 % flutter --version         # [!code focus]
 Flutter 3.24.0 • channel stable • https://github.com/flutter/flutter.git
 Framework • revision 80c2e84975 (5 months ago) • 2024-07-30 23:06:49 +0700

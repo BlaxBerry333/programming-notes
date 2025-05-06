@@ -42,8 +42,18 @@ Python 代码不需编译便可执行
 
 ## 书写规范
 
+- 文件名使用使用小写蛇形命名 ( snake_case )
 - 使用换行来分隔每个语句，一行建议仅书写一条语句
-- 使用缩进来表示代码块的层次结构，每一级缩进使用 4 个空格 ( 不建议使用 Tab )
+- 使用缩进来定义代码块，每一级缩进使用 4 个空格 ( 不建议使用 Tab )
+
+```py
+def main():
+    print("Hello World!")
+
+
+if __name__ == "__main__":
+    main()
+```
 
 > [!IMPORTANT] 代码风格
 > 建议使用第三方工具 [black](https://black.readthedocs.io/en/stable/getting_started.html) 来统一代码的风格

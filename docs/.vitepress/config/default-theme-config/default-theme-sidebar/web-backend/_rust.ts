@@ -44,6 +44,12 @@ export const RUST_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
           },
         ],
       },
+
+
+      {
+        text: "注释与文档",
+        link: `${RUST_ROOT}/__base__/comments-docs`,
+      },
       {
         text: "变量",
         link: `${RUST_ROOT}/__base__/variable`,
