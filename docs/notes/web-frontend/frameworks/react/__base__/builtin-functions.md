@@ -99,7 +99,8 @@ const 组件: FC = () => {
   const 缓存的数据 = useMemo<传递的数据的类型>(() => 数据, [依赖项]);
 
   return (
-    <上下文对象.Provider value={缓存的数据}>                    // [!code focus:3]
+    <上下文对象.Provider value={缓存的数据}>                    // [!code focus:4]
+      <子组件 />
       <子组件 />
     </上下文对象.Provider>
   );
@@ -122,8 +123,13 @@ const 子组件: FC = () => {
 };
 ```
 
-- context + useState() 状态直接各自独立、状态的操作简单
-- context + useReducer() 状态之间关系复杂、状态的操作复杂
+> [!IMPORTANT] React 19 新变化
+>
+> - React 18 及之前版本中，必须使用`<上下文对象.Provider>`组件包裹后代子组件
+> - React 19 中可以使用`<上下文对象>`来代替 ( 上下文对象首字母必须大写 )
+
+<!-- - context + useState() 状态直接各自独立、状态的操作简单
+- context + useReducer() 状态之间关系复杂、状态的操作复杂 -->
 
 ## forwardRef( )
 

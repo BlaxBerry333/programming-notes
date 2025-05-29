@@ -73,6 +73,7 @@ next: false
 │
 ├─ src/
 │   ├─ app/
+│   │   ├─ api/
 │   │   └─ ...
 │   │
 │   └─ ...
@@ -89,3 +90,4 @@ next: false
 ## 相关链接
 
 - [Next14](https://mp.weixin.qq.com/s/6G65dlwKZiFDem3IQ4BBXA)
+- https://www.bilibili.com/video/BV1dJ4m1W7k5/?spm_id_from=333.1387.collection.video_card.click&vd_source=8960252a3845b76b699282b11f36ab5c

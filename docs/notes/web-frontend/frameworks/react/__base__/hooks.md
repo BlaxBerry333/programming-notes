@@ -145,7 +145,7 @@ const SampleComponent: FC = () => {
 
 该钩子函数用于获取深处传递的上下文对象中的数据
 
-使用该钩子函数的组件必须被 [上下文对象 Context Provider](./builtin-functions.md#createcontext) 组件包裹
+使用该钩子函数的组件必须被[`<上下文对象.Provider>`](./builtin-functions.md#createcontext)组件包裹
 
 ```tsx
 import type { FC } from "react";
@@ -159,6 +159,7 @@ const 组件: FC = () => {
   return (
     <上下文对象.Provider value={缓存的数据}>
       <子组件 />
+      <子组件 />
     </上下文对象.Provider>
   );
 };
@@ -167,7 +168,7 @@ const 子组件: FC = () => {
   const 传递的数据 = useContext<传递的数据的类型>(上下文对象); // [!code focus:6]
 
   if (!传递的数据) {
-    // 当前组件没有被上下文 Provider 组件包裹时的处理
+    // throw new Error('当前组件没有被 <上下文.Provider> 组件包裹');
     // ...
   }
 
@@ -179,6 +180,11 @@ const 子组件: FC = () => {
   );
 };
 ```
+
+> [!IMPORTANT] React 19 新变化
+>
+> - React 18 及之前版本中，必须通过内置钩子函数`useContext(上下文对象)`获取上下文
+> - React 19 中可以使用内置钩子函数`use(上下文对象)`替代
 
 ---
 
@@ -260,7 +266,7 @@ TODO:
 
 该钩子函数会在当前组件加载完成后异步执行一次，如果有依赖项则依赖项变更时会再次执行
 
-该钩子函数可以有一个函数作为返回值，该返回函数会在组件卸载时执行
+该钩子函数可以`return`有一个函数作为返回值，该函数会在组件卸载时执行
 
 ```tsx{0}
 import type { FC } from "react";
@@ -280,7 +286,7 @@ const 组件: FC = () => {
     return () => {
       // ...
     }
-  }, [依赖项]);
+  }, []);
 
   return (
     <>
@@ -290,6 +296,51 @@ const 组件: FC = () => {
   );
 };
 ```
+
+::: details 例子：实现组件展示时的定时任务
+
+```tsx
+import type { FC } from "react";
+import { useEffect } from "react";
+
+const SampleComponent: FC = () => {
+  useEffect(() => {
+    startDoSomething(1000, () => console.log("do Something"));
+    return () => {
+      stopDoSomething();
+    };
+  }, []);
+
+  return null;
+};
+
+let timer: NodeJS.Timeout | null = null;
+
+function startDoSomething(
+  interval: number = 15 * 60 * 1000,
+  callback: () => void,
+) {
+  if (timer) {
+    clearInterval(timer);
+  }
+  timer = setInterval(() => {
+    try {
+      callback();
+    } catch (error) {
+      console.error(error);
+    }
+  }, interval);
+}
+
+function stopDoSomething() {
+  if (timer) {
+    clearInterval(timer);
+    timer = null;
+  }
+}
+```
+
+:::
 
 ---
 
@@ -571,4 +622,4 @@ const 表单控件组件: FC<{ label: string }> = ({ label }) => {
 
 建议积极利用自定义钩子函数实现组件逻辑与视图的分离以及逻辑复用，来保持组件内结构的简洁
 
-- [ahooks](https://ahooks.js.org/zh-CN)
+- [ahooks](https://github.com/alibaba/hooks/tree/master/packages/hooks/src)

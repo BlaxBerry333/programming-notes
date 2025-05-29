@@ -102,26 +102,20 @@ const __DATABASES__ = {
             name: "PostgreSQL", 
             link: "/notes/web-backend/database/postgresql/", 
             imgSrc: "/static/skill-icons/database--postgresql.png"
-        } 
+        },
     ],
 
     ['__NO_SQL__']: [
         { 
             name: "MongoDB", 
-            link: "/notes/web-backend//database/mongodb/", 
+            link: "/notes/web-backend/database/mongodb/", 
             imgSrc: "/static/skill-icons/database--mongodb.png"
         },
         { 
             name: "Redis", 
-            link: "/notes/web-backend//database/redis/", 
+            link: "/notes/web-backend/database/redis/", 
             imgSrc: "/static/skill-icons/database--redis.png"
         },
-        { 
-            name: "Amazon DynamoDB", 
-            link: "https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/Introduction.html", 
-            imgSrc: "/static/skill-icons/database--dynamodb.png",
-            openNewTag: true
-        }, 
     ],
 
     ['__ORM__']: [

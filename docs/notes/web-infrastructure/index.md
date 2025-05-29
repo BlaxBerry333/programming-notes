@@ -46,6 +46,19 @@ const __CONTAINERIZATION__ = [
     }
 ]
 
+const __DATA_EXCHANGE__ = [
+    { 
+        name: "JSON",
+        link: "/notes/web-infrastructure/data-exchange/json/", 
+        imgSrc: "/static/skill-icons/web-infrastructure--json.png",
+    },
+    {
+        name: "Protocol Buffers",
+        link: "/notes/web-infrastructure/data-exchange/protobuf/", 
+        imgSrc: "/static/skill-icons/web-infrastructure--protobuf.png",
+    }
+]
+
 const __WEB_SERVER__ = [
     {
         name: "Nginx",
@@ -59,6 +72,16 @@ const __CLOUD_SERVER__ = [
         name: "AWS",
         link: "/notes/web-infrastructure/cloud-server/aws/",
         imgSrc: "/static/skill-icons/web-infrastructure--aws.png"
+    },   
+    {
+        name: "GCP",
+        link: "/notes/web-infrastructure/cloud-server/gcp/",
+        imgSrc: "/static/skill-icons/web-infrastructure--gcp.png"
+    }, 
+    {
+        name: "Azure",
+        link: "/notes/web-infrastructure/cloud-server/azure/",
+        imgSrc: "/static/skill-icons/web-infrastructure--azure.png"
     },
 ]
 
@@ -76,19 +99,6 @@ const __CI_CD__ = [
         openNewTag: true
     }
 ]
-
-const __DATA_EXCHANGE__ = [
-    { 
-        name: "JSON",
-        link: "/notes/web-infrastructure/data-exchange/json/", 
-        imgSrc: "/static/skill-icons/web-infrastructure--json.png",
-    },
-    {
-        name: "Protocol Buffers",
-        link: "/notes/web-infrastructure/data-exchange/protobuf/", 
-        imgSrc: "/static/skill-icons/web-infrastructure--protobuf.png",
-    }
-]
 </script>
 
 ## 操作系统
@@ -99,18 +109,18 @@ const __DATA_EXCHANGE__ = [
 
 <SkillIconsBlock :skillList="__CONTAINERIZATION__"/>
 
+## 数据交换格式
+
+<SkillIconsBlock :skillList="__DATA_EXCHANGE__"/>
+
 ## Web 服务器
 
 <SkillIconsBlock :skillList="__WEB_SERVER__"/>
 
-<!-- ## 云服务器
+## 云服务器
 
-<SkillIconsBlock :skillList="__CLOUD_SERVER__"/> -->
+<SkillIconsBlock :skillList="__CLOUD_SERVER__"/>
 
 <!-- ## CI/CD
 
 <SkillIconsBlock :skillList="__CI_CD__"/> -->
-
-## 数据交换格式
-
-<SkillIconsBlock :skillList="__DATA_EXCHANGE__"/>
