@@ -55,13 +55,11 @@ const __BIG_DATA_ANALYSIS__ = [
 ]
 </script>
 
-# GCP
+# Google Cloud
 
 ![](/static/skill-images/web-infrastructure--gcp.png)
 
-> Google Cloud Platform
-
-GCP 是 Google 提供的云平台，提供了一套模块化云服务，包括计算、数据存储、数据分析、网络等
+Google Cloud 是一个云平台，提供了一套模块化云服务，包括了计算、存储、数据分析、网络等
 
 ## 计算
 

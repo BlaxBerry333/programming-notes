@@ -5,7 +5,7 @@ next: false
 
 # JSON
 
-![](/static/skill-images/web-infrastructure--protobuf.png)
+![](/static/skill-images/web-infrastructure--json.png)
 
 > JavaScript Object Notation
 

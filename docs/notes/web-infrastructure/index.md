@@ -74,8 +74,8 @@ const __CLOUD_SERVER__ = [
         imgSrc: "/static/skill-icons/web-infrastructure--aws.png"
     },   
     {
-        name: "GCP",
-        link: "/notes/web-infrastructure/cloud-server/gcp/",
+        name: "Google Cloud",
+        link: "/notes/web-infrastructure/cloud-server/google-cloud/",
         imgSrc: "/static/skill-icons/web-infrastructure--gcp.png"
     }, 
     {

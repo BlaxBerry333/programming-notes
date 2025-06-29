@@ -52,6 +52,10 @@ export const REACT_JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         text: "设计规范",
         link: `${REACT_JS_ROOT}/__advanced__/design-patterns`,
       },
+      {
+        text: "表单处理",
+        link: `${REACT_JS_ROOT}/__advanced__/form-handlering`,
+      },
     ],
   },
 

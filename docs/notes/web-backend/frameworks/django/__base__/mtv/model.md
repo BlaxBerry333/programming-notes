@@ -430,9 +430,30 @@ Django 模型需要通过命令迁移后才能映射到数据库中
 # 应用最新的迁移文件的内容
 (虚拟环境) % python manage.py migrate
 
-# 实现回滚至某指定迁移文件的内容
-(虚拟环境) % python manage.py migrate [迁移文件名].py
+# 应用某指定迁移文件的内容
+(虚拟环境) % python manage.py migrate [自定义应用名]
+(虚拟环境) % python manage.py migrate [自定义应用名] [迁移文件名]
 ```
+
+---
+
+### 迁移回滚
+
+```zsh [迁移回滚]
+# 回滚至指定迁移文件
+(虚拟环境) % python manage.py migrate [自定义应用名] [迁移文件名]
+
+# 回滚至应用的初始状态 ( 完全移除已经迁移的所有内容 )
+(虚拟环境) % python manage.py migrate [自定义应用名] zero
+```
+
+> [!CAUTION] 迁移文件冲突的解决方法
+>
+> 1. 回滚至指定迁移文件或应用的初始状态
+> 2. 删除`migrations`目录下的指定或所有文件 ( 保留`__init__.py`文件 )
+> 3. 删除数据库中对应的迁移表或重建数据库
+> 4. 重新重新生成迁移文件
+> 5. 重新应用上述迁移文件
 
 ---
 
@@ -442,14 +463,14 @@ Django 模型需要通过命令迁移后才能映射到数据库中
 
 ```zsh [数据导出]
 # 导出全部的数据
-(虚拟环境) % python manage.py dumpdata --output=[文件.后缀]
+(虚拟环境) % python manage.py dumpdata --output=[文件名.后缀]
 
 # 仅导出指定的自定义应用中某模型映射的数据
-(虚拟环境) % python manage.py dumpdata [自定义应用.模型] --output=[文件.后缀]
+(虚拟环境) % python manage.py dumpdata [自定义应用.模型] --output=[文件名.后缀]
 ```
 
 ```zsh [数据导入]
-(虚拟环境) % python manage.py loaddata [文件.后缀]
+(虚拟环境) % python manage.py loaddata [文件名.后缀]
 
 ```
 

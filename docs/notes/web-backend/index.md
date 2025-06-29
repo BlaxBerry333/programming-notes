@@ -104,7 +104,6 @@ const __DATABASES__ = {
             imgSrc: "/static/skill-icons/database--postgresql.png"
         },
     ],
-
     ['__NO_SQL__']: [
         { 
             name: "MongoDB", 
@@ -117,13 +116,11 @@ const __DATABASES__ = {
             imgSrc: "/static/skill-icons/database--redis.png"
         },
     ],
-
     ['__ORM__']: [
         { 
             name: "Prisma",  
-            link: "https://www.prisma.io/", 
+            link: "/notes/web-backend/database/prisma/", 
             imgSrc: "/static/skill-icons/database--prisma.png", 
-            openNewTag: true
         }
     ]
 }
@@ -156,6 +153,19 @@ const __API__ = [
     //     imgSrc: "/static/skill-icons/web-backend--websocket.png"
     // },
 ]
+
+const __AUTH__ = [
+    { 
+        name: "SpiceDB ", 
+        link: "/notes/web-backend/auth/spicedb/", 
+        imgSrc: "/static/skill-icons/web-backend--spicedb.png"
+    },
+    { 
+        name: "Keycloak", 
+        link: "/notes/web-backend/auth/keycloak/", 
+        imgSrc: "/static/skill-icons/web-backend--keycloak.png"
+    },
+]
 </script>
 
 ## 编程语言与框架
@@ -171,18 +181,20 @@ const __API__ = [
 <!-- ### 关系型数据库 -->
 <!-- > Relational Database -->
 <SkillIconsBlock :skillList="__DATABASES__['__SQL__']"/>
-
 <!-- ### 非关系型数据库 -->
 <!-- > Non-Relational Database ( NoSQL Database ) -->
 <SkillIconsBlock :skillList="__DATABASES__['__NO_SQL__']"/>
+<!-- ### 对象关系映射 -->
+<!-- > Object-Relational Mapping (ORM) -->
+<SkillIconsBlock :skillList="__DATABASES__['__ORM__']"/>
 
 ## API 开发
 
 <SkillIconsBlock :skillList="__API__"/>
 
-<!-- ## 身份验证与权限
+## 验证与权限
 
-<SkillIconsBlock :skillList="__AUTHENTICATION_AUTHORIZATION__"/> -->
+<SkillIconsBlock :skillList="__AUTH__"/>
 
 <!-- ## 架构设计
 

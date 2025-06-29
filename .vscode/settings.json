@@ -1,8 +1,10 @@
 {
   "material-icon-theme.folders.associations": {
     "database": "",
+    "debugging": "",
 
     "__base__": "base",
-    "__performance__": "benchmark"
+    "__performance__": "benchmark",
+    "docker-compose": "docker",
   }
 }
