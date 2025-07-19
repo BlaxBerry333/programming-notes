@@ -156,7 +156,7 @@ const __DATABASES_OOS__ = {
         {
             name: "MinIO", 
             link: "/notes/web-backend/database/minio/", 
-            imgSrc: "/static/skill-icons/web-database--minio.png"
+            imgSrc: "/static/skill-icons/database--minio.png"
         }
     ]
 }

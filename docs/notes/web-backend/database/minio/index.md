@@ -5,7 +5,7 @@ next: false
 
 # MinIO
 
-![](/static/skill-images/web-database--minio.png)
+![](/static/skill-images/database--minio.png)
 
 MinIO 是一个可用于大规模数据存储的分布式对象存储系统 ( Object Storage Service )
 
