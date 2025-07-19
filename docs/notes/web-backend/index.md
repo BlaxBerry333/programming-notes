@@ -91,7 +91,36 @@ const __LANGUAGES_AND_RELATED_FRAMEWORKS__ = {
     ]
 }
 
-const __DATABASES__ = {
+const __API__ = [
+    { 
+        name: "Rest API", 
+        link: "/notes/web-backend/api/restapi/", 
+        imgSrc: "/static/skill-icons/web-backend--restapi.png"
+    },
+    { 
+        name: "GraphQL", 
+        link: "/notes/web-backend/api/graphql/", 
+        imgSrc: "/static/skill-icons/web-backend--graphql.png"
+    },
+    { 
+        name: "tRPC", 
+        link: "/notes/web-backend/api/trpc/", 
+        imgSrc: "/static/skill-icons/web-backend--trpc.png",
+    },
+    // { 
+    //     name: "gRPC",  
+    //     link: "https://grpc.io/", 
+    //     imgSrc: "/static/skill-icons/web-backend--grpc.png",
+    //     openNewTag: true
+    // },  
+    // { 
+    //     name: "WebSocket", 
+    //     link: "/notes/web-backend/api/websocket/", 
+    //     imgSrc: "/static/skill-icons/web-backend--websocket.png"
+    // },
+]
+
+const __DATABASES_OOS__ = {
     ['__SQL__']: [
         { 
             name: "MySQL", 
@@ -122,37 +151,15 @@ const __DATABASES__ = {
             link: "/notes/web-backend/database/prisma/", 
             imgSrc: "/static/skill-icons/database--prisma.png", 
         }
+    ],
+    ['__OOS__']: [
+        {
+            name: "MinIO", 
+            link: "/notes/web-backend/database/minio/", 
+            imgSrc: "/static/skill-icons/web-database--minio.png"
+        }
     ]
 }
-
-const __API__ = [
-    { 
-        name: "Rest API", 
-        link: "/notes/web-backend/api/restapi/", 
-        imgSrc: "/static/skill-icons/web-backend--restapi.png"
-    },
-    { 
-        name: "GraphQL", 
-        link: "/notes/web-backend/api/graphql/", 
-        imgSrc: "/static/skill-icons/web-backend--graphql.png"
-    },
-    { 
-        name: "tRPC", 
-        link: "/notes/web-backend/api/trpc/", 
-        imgSrc: "/static/skill-icons/web-backend--trpc.png",
-    },
-    // { 
-    //     name: "gRPC",  
-    //     link: "https://grpc.io/", 
-    //     imgSrc: "/static/skill-icons/web-backend--grpc.png",
-    //     openNewTag: true
-    // },  
-    // { 
-    //     name: "WebSocket", 
-    //     link: "/notes/web-backend/api/websocket/", 
-    //     imgSrc: "/static/skill-icons/web-backend--websocket.png"
-    // },
-]
 
 const __AUTH__ = [
     { 
@@ -176,21 +183,24 @@ const __AUTH__ = [
 <!-- <SkillIconsBlock :skillList="__LANGUAGES_AND_RELATED_FRAMEWORKS__['__RUBY__']"/> -->
 <SkillIconsBlock :skillList="__LANGUAGES_AND_RELATED_FRAMEWORKS__['__RUST__']"/>
 
-## 数据库
-
-<!-- ### 关系型数据库 -->
-<!-- > Relational Database -->
-<SkillIconsBlock :skillList="__DATABASES__['__SQL__']"/>
-<!-- ### 非关系型数据库 -->
-<!-- > Non-Relational Database ( NoSQL Database ) -->
-<SkillIconsBlock :skillList="__DATABASES__['__NO_SQL__']"/>
-<!-- ### 对象关系映射 -->
-<!-- > Object-Relational Mapping (ORM) -->
-<SkillIconsBlock :skillList="__DATABASES__['__ORM__']"/>
-
 ## API 开发
 
 <SkillIconsBlock :skillList="__API__"/>
+
+## 数据库与存储
+
+<!-- ### 关系型数据库 -->
+<!-- > Relational Database -->
+<SkillIconsBlock :skillList="__DATABASES_OOS__['__SQL__']"/>
+<!-- ### 非关系型数据库 -->
+<!-- > Non-Relational Database ( NoSQL Database ) -->
+<SkillIconsBlock :skillList="__DATABASES_OOS__['__NO_SQL__']"/>
+<!-- ### 对象关系映射 -->
+<!-- > Object Relational Mapping ( ORM ) -->
+<SkillIconsBlock :skillList="__DATABASES_OOS__['__ORM__']"/>
+<!-- ### 对象存储服务 -->
+<!-- > Object Storage Service ( OOS )-->
+<SkillIconsBlock :skillList="__DATABASES_OOS__['__OOS__']"/>
 
 ## 验证与权限
 

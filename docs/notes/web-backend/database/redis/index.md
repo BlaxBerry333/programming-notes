@@ -9,7 +9,7 @@ next: false
 
 > Remote Dictionary Server
 
-Redis 是一种 NoSQL 数据库
+Redis 是一种 NoSQL 数据库，以字典的形式存储数据
 
 常用于作为数据库缓存、消息队列等
 
@@ -18,40 +18,78 @@ Redis 是一种 NoSQL 数据库
 :::code-group
 
 ```zsh [Docker]
-# 0. 下载官方镜像                                   # [!code focus:12]
-% docker pull redis
+# 0. 下载官方镜像                                   # [!code focus:2]
+% docker pull redis:6.24
 
-# 1. 创建并运行容器 ( 启动 Redis 服务 )
+# 1. 创建并运行容器 ( 启动 Redis 服务 )               # [!code focus:6]
 % docker run \
-    --name [自定义容器名] \
-    -p [宿主机端口:6379] \
+    --name 容器名 \
+    -p 宿主机端口号:6379 \
     -d \
     redis
 
-# 2. 进入容器
-% docker exec -it [自定义容器名] bash
-root@[自定义容器ID]:/data# redis-server --version
-Redis server v=7.4.2 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=f7bb3bd8ed3c667e
+# 2. 进入容器                                      # [!code focus:3]
+% docker exec -it 容器名 bash
+root@容器ID:/data# redis-server --version
+Redis server v=6.4.2 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=f7bb3bd8ed3c667e
 
-# 3. 启动客户端                                     # [!code focus:7]
-root@[自定义容器ID]:/data# redis-cli
-[主机IP地址]:[Redis服务端口号]> # Redis CLI 命令
-[主机IP地址]:[Redis服务端口号]> exit
+# 4. 退出容器 ( 停止 Redis 服务 )                   # [!code focus:2]
+root@容器ID:/data# exit
+```
 
-# 4. 退出容器 ( 停止 Redis 服务 )
-root@[自定义容器ID]:/data# exit
+```zsh [Docker Compose]
+% cd 项目名
+
+# 0. 创建 docker-compose.yml 文件                                             # [!code focus:18]
+% echo '
+services:
+  服务名:
+    image: redis:6.2.4
+    container_name: 容器名
+    ports:
+      - 宿主机端口号:6379
+    volumes:
+      - 数据卷名:/data
+    networks:
+      - 网络名
+volumes:
+  数据卷名:
+networks:
+  网络名:
+    driver: bridge
+' > docker-compose.yml
+
+# 1. 创建并运行服务                                                            # [!code focus:2]
+% docker compose -f ./docker-compose.yml -p 项目名 up -d 服务名
+
+# 2. 进入容器                                                                 # [!code focus:3]
+% docker-compose -f ./docker-compose.yml -p 项目名 exec 服务名 bash
+root@容器ID:/data# redis-server --version
+Redis server v=6.4.2 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=f7bb3bd8ed3c667e
+
+# 3. 退出容器                                                                 # [!code focus:2]
+root@容器ID:/data# exit
+
+# 4. 停止并并删除服务 ( 保留数据卷 )                                             # [!code focus:2]
+% docker compose  -f ./docker-compose.yml -p 项目名 down
+
+# 5. 停止并并删除服务 ( 彻底清空 )                                               # [!code focus:2]
+% docker compose -f ./docker-compose.yml -p 项目名 down -v
 ```
 
 :::
 
-## 启动服务器
+---
+
+### 启动服务器
 
 Redis 服务器默认开启在`6379`端口
 
 通过 Docker 启动的 Redis 在容器运行后会自动启动服务器
 
 ````zsh
-redis-server                        # [!code focus]
+% docker exec -it [自定义容器名] bash
+root@[自定义容器ID]:/data# redis-server                        # [!code focus]
 32:C 13 Jan 2025 07:48:49.580 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
 32:C 13 Jan 2025 07:48:49.580 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=32, just started
 32:C 13 Jan 2025 07:48:49.580 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
@@ -78,12 +116,15 @@ redis-server                        # [!code focus]
 32:M 13 Jan 2025 07:48:49.586 # Failed listening on port 6379 (tcp), aborting.
 ````
 
-## 启动客户端
+---
+
+### 启动客户端
 
 Redis 客户端也默认连接到`6379`端口启动的服务器
 
 ```zsh
-redis-cli
+% docker exec -it [自定义容器名] bash
+root@[自定义容器ID]:/data# redis-cli               # [!code focus]
 [主机IP地址]:[Redis服务端口号]> # Redis CLI 命令
 [主机IP地址]:[Redis服务端口号]> exit
 ```

@@ -1,10 +1,22 @@
 {
   "material-icon-theme.folders.associations": {
+    "api": "",
+    "auth": "",
     "database": "",
     "debugging": "",
 
     "__base__": "base",
     "__performance__": "benchmark",
     "docker-compose": "docker",
-  }
+  },
+
+  "cSpell.words": [
+    "Actix",
+    "expressjs",
+    "langchain",
+    "langchainjs",
+    "restapi",
+    "spicedb",
+    "spiderman"
+  ]
 }

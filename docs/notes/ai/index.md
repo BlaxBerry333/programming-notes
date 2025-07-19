@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: AI & ML
-  text: 人工智能 & 机器学习
+  name: AI
+  text: 人工智能
   tagline: 基础知识 & 经验总结
   image:
     src: /static/cartoon-images/hero--daredevil.webp
@@ -14,11 +14,13 @@ hero:
 import SkillTextLinksBlock from '../../components/SkillTextLinksBlock.vue'
 import SkillIconsBlock from '../../components/SkillIconsBlock.vue'
 
-
+const __FRAMEWORKS__ = [
+    { 
+        name: "LangChain", 
+        link: "/notes/ai/langchain/", 
+        imgSrc: "/static/skill-icons/ai-langchain.png"
+    },
+]
 </script>
 
-<!-- ## 编程语言与其开发框架
-
-<SkillIconsBlock :skillList="__DART_AND_FLUTTER__"/>
-<SkillIconsBlock :skillList="__OTHERS__"/>
-<SkillIconsBlock :skillList="__DESKTOP_APP__"/> -->
+<SkillIconsBlock :skillList="__FRAMEWORKS__"/>

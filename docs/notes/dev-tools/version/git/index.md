@@ -86,6 +86,22 @@ AA/*.txt
 
 --- -->
 
+### 临时保存
+
+```zsh
+# 临时保存
+% git stash save [名称]
+
+# 列出所有的临时记录
+% git stash list
+
+# 恢复到最近的一个并删除临时记录
+% git stash pop
+
+# 恢复到指定的临时记录
+% git stash pop [stash@{N}]
+```
+
 ### 合并提交记录
 
 ```zsh

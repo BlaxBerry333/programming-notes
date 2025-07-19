@@ -51,25 +51,72 @@ const  __FRAMEWORKS__ = [
     }
 ]
 
-const __BUILD_TOOLS__ = [
+const __CROSS_PLATFORM__ = [
     { 
-        name: "Vite", 
-        link: "https://vitepress.dev/zh/",
-        imgSrc: "/static/skill-icons/web-frontend--vite.png",
+        name: "Dart", 
+        link: "/notes/web-frontend/languages/dart/", 
+        imgSrc: "/static/skill-icons/cross-platform--dart.png"
+    },
+    { 
+        name: "Flutter", 
+        link: "/notes/web-frontend/frameworks/flutter/", 
+        imgSrc: "/static/skill-icons/cross-platform--flutter.png"
+    },
+    // { 
+    //     name: "Tauri", 
+    //     link: "/notes/web-frontend/frameworks/tauri/", 
+    //     imgSrc: "/static/skill-icons/cross-platform--tauri.png",
+    // },
+    { 
+        name: "React Native", 
+        link: "https://reactnative.dev/", 
+        imgSrc: "/static/skill-icons/web-frontend--react.png",
+        openNewTag: true
+    },
+]
+
+const __EXTENSIONS__ = [
+    { 
+        name: "Web Assembly", 
+        link: "/notes/web-frontend/__extensions__/webassembly/",
+        imgSrc: "/static/skill-icons/web-frontend--webassembly.png", 
+    },
+    { 
+        name: "Web Components", 
+        link: "https://www.webcomponents.org/introduction/",
+        imgSrc: "/static/skill-icons/web-frontend--webcomponents.png",
         openNewTag: true
     },
     { 
-        name: "Rollup", 
-        link: "https://rollupjs.org/",
-        imgSrc: "/static/skill-icons/web-frontend--rollupjs.png",
-        openNewTag: true
+        name: "Web RTC", 
+        link: "/notes/web-frontend/__extensions__/webrtc/",
+        imgSrc: "/static/skill-icons/web-frontend--webrtc.png",
     },
     { 
-        name: "Webpack", 
-        link: "https://webpack.js.org/",
-        imgSrc: "/static/skill-icons/web-frontend--webpack.png",
-        openNewTag: true
-    }
+        name: "Chrome Extension", 
+        link: "https://developer.chrome.com/docs/extensions/reference/api?hl=zh-cn",
+        imgSrc: "/static/skill-icons/web-frontend--chrome-extension.png",
+        openNewTag: true 
+    },
+]
+
+const __PERFORMANCE__ = [
+    {
+        name: "首屏加载优化",
+        link: "/notes/web-frontend/__performance__/first-screen-load-optimization"
+    },
+    { 
+        name: "图片优化", 
+        link: "/notes/web-frontend/__performance__/image-optimization", 
+    },
+    { 
+        name: "大文件上传优化", 
+        link: "/notes/web-frontend/__performance__/large-file-uploading", 
+    },
+    { 
+        name: "数据请求优化", 
+        link: "/notes/web-frontend/__performance__/requests-concurrent", 
+    },
 ]
 
 const __AUTOMATED_TESTING__ = [
@@ -99,79 +146,17 @@ const __AUTOMATED_TESTING__ = [
     },
 ]
 
-const __EXTENSIONS__ = [
-    { 
-        name: "Web Assembly", 
-        link: "/notes/web-frontend/__extensions__/webassembly/",
-        imgSrc: "/static/skill-icons/web-frontend--webassembly.png", 
-    },
-    { 
-        name: "Web Components", 
-        link: "https://www.webcomponents.org/introduction/",
-        imgSrc: "/static/skill-icons/web-frontend--webcomponents.png",
-        openNewTag: true
-    },
-    { 
-        name: "Web RTC", 
-        link: "/notes/web-frontend/__extensions__/webrtc/",
-        imgSrc: "/static/skill-icons/web-frontend--webrtc.png",
-    },
-    { 
-        name: "Chrome Extension", 
-        link: "https://developer.chrome.com/docs/extensions/reference/api?hl=zh-cn",
-        imgSrc: "/static/skill-icons/web-frontend--chrome-extension.png",
-        openNewTag: true 
-    },
-]
-
-const __CROSS_PLATFORM__ = [
-    { 
-        name: "Dart", 
-        link: "/notes/web-frontend/languages/dart/", 
-        imgSrc: "/static/skill-icons/cross-platform--dart.png"
-    },
-    { 
-        name: "Flutter", 
-        link: "/notes/web-frontend/frameworks/flutter/", 
-        imgSrc: "/static/skill-icons/cross-platform--flutter.png"
-    },
-    // { 
-    //     name: "Tauri", 
-    //     link: "/notes/web-frontend/frameworks/tauri/", 
-    //     imgSrc: "/static/skill-icons/cross-platform--tauri.png",
-    // },
-    { 
-        name: "React Native", 
-        link: "https://reactnative.dev/", 
-        imgSrc: "/static/skill-icons/web-frontend--react.png",
-        openNewTag: true
-    },
-]
-
-const __PERFORMANCE_OPTIMIZATION__ = [
-    {
-        name: "首屏加载优化",
-        link: "/notes/web-frontend/__performance__/first-screen-load-optimization"
-    },
-    { 
-        name: "图片优化", 
-        link: "/notes/web-frontend/__performance__/image-optimization", 
-    },
-    { 
-        name: "优化大文件上传", 
-        link: "/notes/web-frontend/__performance__/large-file-uploading", 
-    },
-    { 
-        name: "优化请求接口的并发", 
-        link: "/notes/web-frontend/__performance__/requests-concurrent", 
-    },
-]
 </script>
 
 ## 编程语言与其框架
 
 <SkillIconsBlock :skillList="__LANGUAGES__"/>
 <SkillIconsBlock :skillList="__FRAMEWORKS__"/>
+<SkillIconsBlock :skillList="__CROSS_PLATFORM__"/>
+
+## 性能优化
+
+<SkillTextLinksBlock :textList="__PERFORMANCE__"/>
 
 <!-- ## 构建工具
 <SkillIconsBlock :skillList="__BUILD_TOOLS__"/> -->
@@ -181,11 +166,3 @@ const __PERFORMANCE_OPTIMIZATION__ = [
 
 <!-- ## 前端扩展
 <SkillIconsBlock :skillList="__EXTENSIONS__"/> -->
-
-## 跨平台
-
-<SkillIconsBlock :skillList="__CROSS_PLATFORM__"/>
-
-## 性能优化
-
-<SkillTextLinksBlock :textList="__PERFORMANCE_OPTIMIZATION__"/>

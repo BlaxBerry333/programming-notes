@@ -234,6 +234,6 @@ Prisma Studio 可在浏览器中直接查看和管理数据库
 
 ## 相关链接
 
-- [Prisma 官网](https://www.prisma.io/)
+- [Prisma 入门](https://zenn.dev/hayato94087/books/e9c2721ff22ac7/viewer/d00oygw3ghp7jdp)
 - [Prisma 教程](https://www.bilibili.com/video/BV1da4y1g7ee?spm_id_from=333.788.player.player_end_recommend_autoplay&vd_source=8960252a3845b76b699282b11f36ab5c)
 - [Prisma + Supabase](https://zenn.dev/kiriyama/articles/89bac9034bbe7a#3%3Aprisma%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%A8%E8%A8%AD%E5%AE%9A)

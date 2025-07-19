@@ -141,7 +141,7 @@ TODO:
 
 ```tsx{0}
 import type { FC } from "react";
-import { createPortal } from "react";
+import { createPortal } from "react-dom";
 
 const 组件: FC = () => {
   return (
@@ -163,7 +163,8 @@ const 组件: FC = () => {
 
 ```tsx
 import type { FC } from "react";
-import { createPortal } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 const elementID = "content-wrapper";
 
@@ -172,45 +173,52 @@ const ContentWrapperComponent: FC = () => {
 };
 
 const ContentComponent: FC = () => {
-  return (
-    <>
-      {createPortal(
-        <p>Hello World</p>,
-        document.getElementById(elementID)
-        elementID,
-      )}
-    </>
+  const [container, setContainer] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const targetContainer = document.getElementById(SETTING_DRAWER_CONTENT_KEY);
+    if (targetContainer) setContainer(targetContainer)
+  }, []);
+
+  if (!container) {
+    return null;
+  }
+
+  return createPortal(
+    <p>Hello World</p>,
+    document.getElementById(elementID)
+    elementID,
   );
 };
 ```
 
 :::
 
-> [!IMPORTANT] 自定义事件模拟 Protal 组件的卸载
+> [!IMPORTANT] 自定义事件模拟 Portal 组件的卸载
 >
 > Portal 容器组件使用 CSS 属性`display`来控制显示隐藏时，作为渲染内容的组件没有卸载行为所以无法通过常规`useEffect()`来监控，此时可以在 Portal 目标容器组件内注册一个自定义事件，然后监听该事件来实现监控组件卸载的效果
 >
 > ```tsx
 >  import type { FC } from "react";
->  import { createPortal } from "react";
+>  import { createPortal } from "react-dom";
 >
 >  const elementID = "content-wrapper";
 >  const customEventName = "CUSTOM_EVENT_NAME";
 >
 >  const ContentWrapperComponent: FC = () => {
->    const isShowProtal = useStateOfContentWrapperComponent();
+>    const isShowPortal = useStateOfContentWrapperComponent();
 >
 >    useEffect(() => {                                               // [!code ++:6]
->      if (!isShowProtal) {
+>      if (!isShowPortal) {
 >        const event = new CustomEvent(customEventName);
 >        document.getElementById(elementID)?.dispatchEvent(event);
 >      }
->    }, [isShowProtal]);
+>    }, [isShowPortal]);
 >
 >    return (
 >      <div
 >        id={elementID}
->        style={{ display: isShowProtal ? "block : "none" }}
+>        style={{ display: isShowPortal ? "block : "none" }}
 >      />
 >    );
 >  };

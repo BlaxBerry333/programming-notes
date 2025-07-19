@@ -112,37 +112,6 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
           },
         ],
       },
-
-      {
-        text: "常用 Web API",
-        collapsed: true,
-        items: [
-          {
-            text: "BOM",
-            link: `${JS_ROOT}/__base__/web-apis/BOM`,
-          },
-          {
-            text: "DOM",
-            link: `${JS_ROOT}/__base__/web-apis/DOM`,
-          },
-          {
-            text: "Workers",
-            link: `${JS_ROOT}/__base__/web-apis/workers`,
-          },
-          {
-            text: "Browser Storage",
-            link: `${JS_ROOT}/__base__/web-apis/browser-storage`,
-          },
-          // {
-          //   text: "网络请求",
-          //   link: `${JS_ROOT}/__base__/web-apis/networking`,
-          // },
-          // {
-          //   text: "图像预览",
-          //   link: `${JS_ROOT}/web-apis/image-preview`,
-          // },
-        ],
-      },
     ],
   },
 
@@ -158,6 +127,37 @@ export const JS_SIDEBAR: Array<DefaultTheme.SidebarItem> = [
         text: "常见算法",
         link: `${JS_ROOT}/__advanced__/algorithms`,
       },
+    ],
+  },
+
+  {
+    text: "常用 Web API",
+    collapsed: false,
+    items: [
+      {
+        text: "BOM",
+        link: `${JS_ROOT}/__web-apis__/BOM`,
+      },
+      {
+        text: "DOM",
+        link: `${JS_ROOT}/__web-apis__/DOM`,
+      },
+      {
+        text: "Workers",
+        link: `${JS_ROOT}/__web-apis__/workers`,
+      },
+      {
+        text: "Browser Storage",
+        link: `${JS_ROOT}/__web-apis__/browser-storage`,
+      },
+      // {
+      //   text: "网络请求",
+      //   link: `${JS_ROOT}/__web-apis__/networking`,
+      // },
+      // {
+      //   text: "图像预览",
+      //   link: `${JS_ROOT}/__web-apis__/image-preview`,
+      // },
     ],
   },
 
