@@ -6,6 +6,10 @@ React 提供了受控、非受控两种模式处理表单
 
 受控是指通过一个状态 ( State ) 来维护表单元素的值
 
+---
+
+### React.useState
+
 - 表单元素通过属性`value`将状态渲染为输入值
 - 表单元素通过事件`onChange`在每次输入时触发状态更新
 - 状态更新时 React 会重新渲染从而更新输入值的显示
@@ -25,7 +29,7 @@ import React, { useState } from "react";
 
 export default function ControlledForm() {
   const [value, setValue] = useState<string>("");
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
@@ -42,13 +46,9 @@ export default function ControlledForm() {
 }
 ```
 
-## 非受控 ( Uncontrolled )
+## 非控 ( Uncontrolled )
 
-非受控是指通过一个引用 ( Ref ) 直接操作表单元素的 DOM 节点
-
-- 表单元素通过`ref`将 DOM 节点存储在一个变量中
-- 某个特定事件时通过`ref`获取表单元素的值
-- 表单元素通过属性`defaultValue`为输入值渲染一个默认值
+非控是指通过某一个事件在特定的实际获取表单的值 ( 一般是`<form>`标签的`onSubmit`事件 )
 
 > [!IMPORTANT] 优点：
 >
@@ -57,8 +57,18 @@ export default function ControlledForm() {
 
 > [!CAUTION] 缺点：
 >
-> - 无法实现对输入值的实时校验和格式化，只能在某一个时间点来获取表单元素的值
+> - 无法实现对输入值的实时校验和格式化
 > - 脱离了 React 的状态管理，特定场合可能会带来不可预测的行为
+
+---
+
+### React.useRef
+
+可以通过引用 ( Ref ) 直接操作表单元素的 DOM 节点
+
+- 表单元素通过`ref`将 DOM 节点存储在一个变量中
+- 某个特定事件时通过`ref`获取表单元素的值
+- 表单元素通过属性`defaultValue`为输入值渲染一个默认值
 
 ```tsx
 import React, { useRef } from "react";
@@ -78,6 +88,38 @@ export default function UncontrolledForm() {
   return (
     <form onSubmit={handleSubmit}>
       <input ref={inputRef} defaultValue={DEFAULT_VALUE} />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+---
+
+### FormData
+
+可以通过原生的 FormData 对象在表单提交时一次性获取所有表单元素的数据
+
+```tsx
+import React from "react";
+
+type FormValue = {
+  aa: string;
+  bb: string;
+};
+
+export default function UncontrolledForm() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const formValue = Object.fromEntries(formData.entries()) as FormValue;
+    console.log(formValue);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input name="aa" />
+      <input name="bb" />
       <button type="submit">Submit</button>
     </form>
   );

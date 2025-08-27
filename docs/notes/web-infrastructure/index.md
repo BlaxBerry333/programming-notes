@@ -76,7 +76,7 @@ const __CLOUD_SERVER__ = [
     {
         name: "Google Cloud",
         link: "/notes/web-infrastructure/cloud-server/google-cloud/",
-        imgSrc: "/static/skill-icons/web-infrastructure--gcp.png"
+        imgSrc: "/static/skill-icons/web-infrastructure--google-cloud.png"
     }, 
     {
         name: "Azure",

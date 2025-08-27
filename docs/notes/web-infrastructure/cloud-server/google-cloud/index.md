@@ -11,13 +11,13 @@ const __COMPUTE__ = [
     // {
     //     name: "Cloud Run",
     //     link: "https://cloud.google.com/run?hl=zh_cn",
-    //     imgSrc: "/static/skill-icons/web-infrastructure--gcp-cloud-run.png",
+    //     imgSrc: "/static/skill-icons/web-infrastructure--google-cloud-cloud-run.png",
     //     openNewTag: true
     // },
     {
         name: "Cloud Functions",
         link: "https://codelabs.developers.google.com/codelabs/cloud-starting-cloudfunctions?hl=zh-cn",
-        imgSrc: "/static/skill-icons/web-infrastructure--gcp-cloud-functions.png",
+        imgSrc: "/static/skill-icons/web-infrastructure--google-cloud-cloud-functions.png",
         openNewTag: true
     }
 ]
@@ -27,13 +27,19 @@ const __STORAGE__ = [
     {
         name: "Cloud Storage",
         link: "https://cloud.google.com/storage?hl=zh_cn",
-        imgSrc: "/static/skill-icons/web-infrastructure--gcp-cloud-storage.png",
+        imgSrc: "/static/skill-icons/web-infrastructure--google-cloud-cloud-storage.png",
         openNewTag: true
     },
     {
         name: "Cloud SQL",
         link: "https://cloud.google.com/sql?hl=zh_cn",
-        imgSrc: "/static/skill-icons/web-infrastructure--gcp-cloud-sql.png",
+        imgSrc: "/static/skill-icons/web-infrastructure--google-cloud-cloud-sql.png",
+        openNewTag: true
+    },
+    {
+        name: "Bigtable",
+        link: "https://cloud.google.com/bigtable?hl=zh_cn",
+        imgSrc: "/static/skill-icons/web-infrastructure--google-cloud-cloud-bigtable.png",
         openNewTag: true
     },
 ]
@@ -43,13 +49,13 @@ const __BIG_DATA_ANALYSIS__ = [
     {
         name: "BigQuery",
         link: "https://cloud.google.com/bigquery?hl=zh_cn#generative-ai",
-        imgSrc: "/static/skill-icons/web-infrastructure--gcp-bigquery.png",
+        imgSrc: "/static/skill-icons/web-infrastructure--google-cloud-bigquery.png",
         openNewTag: true
     },
     // {
     //     name: "Looker",
     //     link: "https://cloud.google.com/looker?hl=zh_cn",
-    //     imgSrc: "/static/skill-icons/web-infrastructure--gcp-bigquery.png",
+    //     imgSrc: "/static/skill-icons/web-infrastructure--google-cloud-bigquery.png",
     //     openNewTag: true
     // }
 ]
@@ -57,7 +63,7 @@ const __BIG_DATA_ANALYSIS__ = [
 
 # Google Cloud
 
-![](/static/skill-images/web-infrastructure--gcp.png)
+![](/static/skill-images/web-infrastructure--google-cloud.png)
 
 Google Cloud 是一个云平台，提供了一套模块化云服务，包括了计算、存储、数据分析、网络等
 

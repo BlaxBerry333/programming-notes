@@ -518,6 +518,30 @@ export default function Error({ error, reset }: Props) {
 
 :::
 
+---
+
+### 路由处理
+
+> app/api/product/route.ts
+
+```ts
+// GET    /api/route/product
+export async function GET(req: Request) {}
+
+// POST   /api/route/product
+export async function POST(req: Request) {}
+```
+
+> app/api/[id]/route.ts
+
+```ts
+// GET    /api/route/:id
+export async function GET(req: Request) {}
+
+// POST   /api/route/:id
+export async function POST(req: Request) {}
+```
+
 ## 路由导航
 
 ### 声明式导航
@@ -553,6 +577,26 @@ export default function NavLinks() {
   );
 }
 ```
+
+---
+
+### 编程式导航
+
+```tsx
+"use client";
+
+import { useRouter } from "next/router";
+
+export default function MyPage() {
+  const router = useRouter();
+
+  const navigateToHome = () => router.push("/");
+
+  return <button onClick={navigateToHome}>Home Page</button>;
+}
+```
+
+> api
 
 ## 元数据
 
@@ -764,7 +808,7 @@ export default {
 
 :::
 
-## 渲染默认
+## 渲染模式
 
 ### 服务端组件
 
@@ -772,14 +816,11 @@ export default {
 
 Next.js 中的组件默认都是服务端渲染
 
-服务端组件运行在服务器 Node.js 环境，没有 React Hook 生命周期、没有浏览器 DOM
-
-服务端组件不能直接使用 React Hooks，但是其子组件为客户端组件时该子组件内可以使用
-
-服务端组件可定义为同步函数或异步函数
+服务端组件运行在服务器 Node.js 环境，无法使用浏览器 API 以及 React Hooks，但是其子组件为客户端组件时该子组件内可以使用
 
 > [!IMPORTANT] 异步数据的获取
 >
+> 服务端组件可定义为同步函数或异步函数<br/>
 > 将函数定义为`async`异步函数后在函数体内直接使用`await`
 >
 > > 如下：在页面中获取动态路由参数
@@ -803,11 +844,11 @@ Next.js 中的组件默认都是服务端渲染
 
 Next.js 中的组件文件顶层可通过`"use client"`来指定当前文件为客户端渲染
 
-客户端组件可以直接使用 React Hooks
-
-客户端组件必须是同步函数
+客户端组件可以直接使用浏览器 API 以及 React Hooks
 
 > [!IMPORTANT] 异步数据的获取
+>
+> 客户端组件必须是同步函数
 >
 > - 使用`React.use()` ( React v19+ )
 > - 使用`React.useEffect()`+ `async/await` + State 状态管理
@@ -829,7 +870,69 @@ Next.js 中的组件文件顶层可通过`"use client"`来指定当前文件为�
 > }
 > ```
 
-## 相关链接
+---
 
-- [Next.js 中文系列课程 - 基础篇](https://www.bilibili.com/video/BV157pRe8EyD?spm_id_from=333.788.videopod.sections&vd_source=8960252a3845b76b699282b11f36ab5c)
-- https://www.bilibili.com/video/BV1dJ4m1W7k5/?spm_id_from=333.1387.collection.video_card.click&vd_source=8960252a3845b76b699282b11f36ab5c
+### 水合错误
+
+> Hydration Mismatch
+
+水合错误是指：服务端渲染的 HTML 与客户端实际渲染结果不一致
+
+> [!CAUTION] Next.js 中常见的水合错误
+>
+> - 在服务端渲染的组件中使用前端组件库 ( MUI、AntD 等 )
+> - 在服务器渲染时使用了浏览器 API ( window、localStorage、matchMedia 等 )
+> - 在服务端渲染的组件中了 React Hooks
+
+> [!IMPORTANT] 预渲染与水合
+>
+> - 预渲染：在服务端先生成 HTML 页面并返回给浏览器
+> - 水合：浏览器接收到 HTML 后，React 在客户端“激活”页面，绑定事件并恢复状态
+
+::: details 解决方案一：指明仅客户端渲染 ( Only Client )
+
+利用 React Hook 的`useEffect`手动对组件库进行延迟渲染
+
+```tsx
+"use client";
+
+import React from "react";
+
+export default function NoSSR({ children }: React.PropsWitchChildren) {
+  const [isClient, setIsClient] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
+  return <>{children}</>;
+}
+```
+
+:::
+
+::: details 解决方案二：`dynamic`动态导入
+
+```tsx
+import dynamic from "next/dynamic";
+
+const NoSSRComponent = dynamic(() => import("路径"), { ssr: false });
+```
+
+:::
+
+::: details 解决方案三：避免访问浏览器 API 对象
+
+避免访问任何浏览器特有对象 ( window、localStorage、matchMedia、document 等 )
+
+```ts
+if (typeof window !== "undefined") {
+  // ...
+}
+```
+
+:::

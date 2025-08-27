@@ -81,23 +81,23 @@ const __EXTENSIONS__ = [
         link: "/notes/web-frontend/__extensions__/webassembly/",
         imgSrc: "/static/skill-icons/web-frontend--webassembly.png", 
     },
-    { 
-        name: "Web Components", 
-        link: "https://www.webcomponents.org/introduction/",
-        imgSrc: "/static/skill-icons/web-frontend--webcomponents.png",
-        openNewTag: true
-    },
-    { 
-        name: "Web RTC", 
-        link: "/notes/web-frontend/__extensions__/webrtc/",
-        imgSrc: "/static/skill-icons/web-frontend--webrtc.png",
-    },
-    { 
-        name: "Chrome Extension", 
-        link: "https://developer.chrome.com/docs/extensions/reference/api?hl=zh-cn",
-        imgSrc: "/static/skill-icons/web-frontend--chrome-extension.png",
-        openNewTag: true 
-    },
+    // { 
+    //     name: "Web Components", 
+    //     link: "https://www.webcomponents.org/introduction/",
+    //     imgSrc: "/static/skill-icons/web-frontend--webcomponents.png",
+    //     openNewTag: true
+    // },
+    // { 
+    //     name: "Web RTC", 
+    //     link: "/notes/web-frontend/__extensions__/webrtc/",
+    //     imgSrc: "/static/skill-icons/web-frontend--webrtc.png",
+    // },
+    // { 
+    //     name: "Chrome Extension", 
+    //     link: "https://developer.chrome.com/docs/extensions/reference/api?hl=zh-cn",
+    //     imgSrc: "/static/skill-icons/web-frontend--chrome-extension.png",
+    //     openNewTag: true 
+    // },
 ]
 
 const __PERFORMANCE__ = [
@@ -119,32 +119,32 @@ const __PERFORMANCE__ = [
     },
 ]
 
-const __AUTOMATED_TESTING__ = [
-    { 
-        name: "Vitest", 
-        link: "https://cn.vitest.dev/",
-        imgSrc: "/static/skill-icons/web-frontend--vitest.png",
-        openNewTag: true 
-    },
-    { 
-        name: "Jest", 
-        link: "https://jestjs.io/zh-Hans/",
-        imgSrc: "/static/skill-icons/web-frontend--jest.png",
-        openNewTag: true 
-    },
-    { 
-        name: "Cypress", 
-        link: "https://www.cypress.io/",
-        imgSrc: "/static/skill-icons/web-frontend--cypress.png",
-        openNewTag: true 
-    },
-    { 
-        name: "Testing Library", 
-        link: "https://testing-library.com/",
-        imgSrc: "/static/skill-icons/web-frontend--testing-library.png",
-        openNewTag: true 
-    },
-]
+// const __AUTOMATED_TESTING__ = [
+//     { 
+//         name: "Vitest", 
+//         link: "https://cn.vitest.dev/",
+//         imgSrc: "/static/skill-icons/web-frontend--vitest.png",
+//         openNewTag: true 
+//     },
+//     { 
+//         name: "Jest", 
+//         link: "https://jestjs.io/zh-Hans/",
+//         imgSrc: "/static/skill-icons/web-frontend--jest.png",
+//         openNewTag: true 
+//     },
+//     { 
+//         name: "Cypress", 
+//         link: "https://www.cypress.io/",
+//         imgSrc: "/static/skill-icons/web-frontend--cypress.png",
+//         openNewTag: true 
+//     },
+//     { 
+//         name: "Testing Library", 
+//         link: "https://testing-library.com/",
+//         imgSrc: "/static/skill-icons/web-frontend--testing-library.png",
+//         openNewTag: true 
+//     },
+// ]
 
 </script>
 
@@ -154,15 +154,10 @@ const __AUTOMATED_TESTING__ = [
 <SkillIconsBlock :skillList="__FRAMEWORKS__"/>
 <SkillIconsBlock :skillList="__CROSS_PLATFORM__"/>
 
+## 前端扩展
+
+<SkillIconsBlock :skillList="__EXTENSIONS__"/>
+
 ## 性能优化
 
 <SkillTextLinksBlock :textList="__PERFORMANCE__"/>
-
-<!-- ## 构建工具
-<SkillIconsBlock :skillList="__BUILD_TOOLS__"/> -->
-
-<!-- ## 自动化测试
-<SkillIconsBlock :skillList="__AUTOMATED_TESTING__"/> -->
-
-<!-- ## 前端扩展
-<SkillIconsBlock :skillList="__EXTENSIONS__"/> -->

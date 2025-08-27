@@ -18,7 +18,12 @@ const __FRAMEWORKS__ = [
     { 
         name: "LangChain", 
         link: "/notes/ai/langchain/", 
-        imgSrc: "/static/skill-icons/ai-langchain.png"
+        imgSrc: "/static/skill-icons/ai--langchain.png"
+    },
+    { 
+        name: "MCP", 
+        link: "/notes/ai/mcp/", 
+        imgSrc: "/static/skill-icons/ai--mcp.png"
     },
 ]
 </script>

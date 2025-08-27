@@ -5,7 +5,7 @@ next: false
 
 # LangChain
 
-![](/static/skill-images/ai-langchain.png)
+![](/static/skill-images/ai--langchain.png)
 
 LangChain 是个框架，用于开发 LLM 驱动的应用程序
 

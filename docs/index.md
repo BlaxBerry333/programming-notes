@@ -25,11 +25,11 @@ features:
     link: /notes/web-infrastructure/
     icon:
       src: /static/cartoon-images/hero--captainmarvel.webp
-  - title: 人工智能
-    details: AI ( Artificial Intelligence )
-    link: /notes/ai/
-    icon:
-      src: /static/cartoon-images/hero--daredevil.webp
+  # - title: 人工智能
+  #   details: AI ( Artificial Intelligence )
+  #   link: /notes/ai/
+  #   icon:
+  #     src: /static/cartoon-images/hero--daredevil.webp
   # - title: Web3 & 区块链
   #   details: Web3 & Blockchain
   #   link: /notes/web3/

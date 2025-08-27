@@ -9,13 +9,13 @@ import SkillIconsBlock from '../../../../components/SkillIconsBlock.vue'
 // 存储
 const __STORAGE__ = [
     {
-        name: "Azure Blob Storage",
+        name: "Blob Storage",
         link: "https://learn.microsoft.com/zh-cn/azure/storage/blobs/",
         imgSrc: "/static/skill-icons/web-infrastructure--azure-blob-storage.png",
         openNewTag: true
     },
     {
-        name: "Azure File Storage",
+        name: "File Storage",
         link: "https://learn.microsoft.com/zh-cn/azure/storage/files/storage-files-introduction",
         imgSrc: "/static/skill-icons/web-infrastructure--azure-file-storage.png",
         openNewTag: true

@@ -121,6 +121,7 @@ const __API__ = [
 ]
 
 const __DATABASES_OOS__ = {
+    // 事务型关系数据库
     ['__SQL__']: [
         { 
             name: "MySQL", 
@@ -133,6 +134,7 @@ const __DATABASES_OOS__ = {
             imgSrc: "/static/skill-icons/database--postgresql.png"
         },
     ],
+    // 非关系数据库
     ['__NO_SQL__']: [
         { 
             name: "MongoDB", 
@@ -145,6 +147,15 @@ const __DATABASES_OOS__ = {
             imgSrc: "/static/skill-icons/database--redis.png"
         },
     ],
+    // 分析型数据库
+    ['__OLAP__']: [
+        { 
+            name: "ClickHouse", 
+            link: "/notes/web-backend/database/clickhouse/", 
+            imgSrc: "/static/skill-icons/database--clickhouse.png"
+        }
+    ],
+    // 数据库访问层工具
     ['__ORM__']: [
         { 
             name: "Prisma",  
@@ -152,20 +163,26 @@ const __DATABASES_OOS__ = {
             imgSrc: "/static/skill-icons/database--prisma.png", 
         }
     ],
-    ['__OOS__']: [
-        {
-            name: "MinIO", 
-            link: "/notes/web-backend/database/minio/", 
-            imgSrc: "/static/skill-icons/database--minio.png"
-        }
-    ]
+    // 对象存储
+    // ['__OOS__']: [
+    //     {
+    //         name: "MinIO", 
+    //         link: "/notes/web-backend/database/minio/", 
+    //         imgSrc: "/static/skill-icons/database--minio.png"
+    //     }
+    // ]
 }
 
 const __AUTH__ = [
     { 
-        name: "SpiceDB ", 
+        name: "SpiceDB", 
         link: "/notes/web-backend/auth/spicedb/", 
         imgSrc: "/static/skill-icons/web-backend--spicedb.png"
+    }, 
+    { 
+        name: "Casbin",
+        link: "/notes/web-backend/auth/casbin/", 
+        imgSrc: "/static/skill-icons/web-backend--casbin.png"
     },
     { 
         name: "Keycloak", 
@@ -195,6 +212,9 @@ const __AUTH__ = [
 <!-- ### 非关系型数据库 -->
 <!-- > Non-Relational Database ( NoSQL Database ) -->
 <SkillIconsBlock :skillList="__DATABASES_OOS__['__NO_SQL__']"/>
+<!-- ### 分析型数据库 -->
+<!-- > Online Analytical Processing ( OLAP Database ) -->
+<SkillIconsBlock :skillList="__DATABASES_OOS__['__OLAP__']"/>
 <!-- ### 对象关系映射 -->
 <!-- > Object Relational Mapping ( ORM ) -->
 <SkillIconsBlock :skillList="__DATABASES_OOS__['__ORM__']"/>
